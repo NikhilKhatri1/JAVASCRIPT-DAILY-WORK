@@ -1,0 +1,27 @@
+1. What is JavaScript?
+a1. (A)JavaScript is a programing language that makes webpages interactive 
+        it workinside web browser to make website dynamic
+        and interactive.
+    (B) JavaScript is a versatile programing language, primarly used for creating 
+        interactive and dynamic content on webpages.
+    (C) Developeed by brendon eich in 1995.
+    (D) Uses are:- Server Side, Client Side, Database, Animation......
+
+2. Why we use JavaScript on Client-side?
+a2. (A) Client-side Script is used to reduce the burden on server.
+        It manages various interaction in client-side and improve the performance of application....
+    (B) Js is used in client-side to handle:-
+        (a) Dom Manipulation :- 1. Add Element into page.
+                                2. Add Functionality.
+
+        (a) Browser Interaction :-  1. Window Manipulation.
+                                    2. Location.
+
+        (a) Validation :-       1. For security.
+                                2. Monitoring Data.
+
+        
+3. Purpose of Using HTML, CSS ,JS in Webpage?
+a3. (A) HTML:- To define the content of Webpages.
+    (B) CSS:- To Specify the layout of Webpages.
+    (C) JavaScript:- To Program the behaiviour of Webpages.
