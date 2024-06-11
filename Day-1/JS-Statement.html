@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Variable</title>
+    <script>
+        function resultBtn() {
+            valueX = document.getElementById("valueX").value;
+            valueY = document.getElementById("valueY").value;
+            valueZ = parseInt(valueX) + parseInt(valueY);
+            document.getElementById("output").innerHTML = "Output is " + valueZ
+        }
+        // Using multipe variable in one line
+        var x, y, z;
+        x = 10;
+        y = 6;
+        z = x + y;
+        document.write(z);
+        //using different variables
+        var a;
+        let b;
+        a = 5;
+        b = 6;
+        let c = a + b;
+        document.write(c);
+    </script>
+</head>
+
+<body>
+    <h1>Multiple Variable can be declare in one Line</h1>
+    <form action="#" id="frm">
+        X = <input type="text" id="valueX"> <br> <br>
+        Y = <input type="text" id="valueY">
+        <h3>Output = X + Y</h3>
+        <button onclick="resultBtn()">Result</button>
+        <p id="output"></p>
+    </form>
+</body>
+
+</html>
