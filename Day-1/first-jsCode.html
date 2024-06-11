@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Javascript Program</title>
+    <script src="./External-JS.js"></script> <!--  TO Display External-JS -->
+    <script>
+        function displayMessage() {
+            document.getElementById("para").innerHTML = "This is Embedded Javascript";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Inline Javascript</h1>
+    <h5>First JS Program</h5>
+    <button onclick="document.getElementById('demo').innerHTML = Date()"> CLick me here to Display Time.</button>
+    <p id="demo"></p>
+
+    <h1>Embedded Javascript</h1>
+    <button onclick="displayMessage()">Click me for embedded Javascript Message</button>
+    <p id="para"></p>
+
+    <h1>External Javascript</h1>
+    <button onclick="externalJS()">Click me to Display External JS</button>
+    <p id="para1"></p>
+</body>
+
+</html>

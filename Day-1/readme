@@ -25,3 +25,8 @@ a2. (A) Client-side Script is used to reduce the burden on server.
 a3. (A) HTML:- To define the content of Webpages.
     (B) CSS:- To Specify the layout of Webpages.
     (C) JavaScript:- To Program the behaiviour of Webpages.
+
+4. Ways to Write JS in HTML?
+a4. (A) Inline JavaScript
+    (B) Embedded JavaScript
+    (C) External JavaScript
