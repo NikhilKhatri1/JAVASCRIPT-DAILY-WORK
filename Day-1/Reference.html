@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Clicked() {
+            document.getElementById("para").innerHTML = "Using getElementById() method";
+        }
+
+        function imgClick() {
+            poster.src = "../images/movie.PNG";
+        }
+        function btnClick() {
+            document.querySelector("h4").innerHTML = "This is QuerySelector method"
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Javascript Can Change HTML Element</h1>
+    <h3>Using getElementById method</h3>
+    <button onclick="Clicked()">Click me</button>
+    <p id="para"></p>
+    <br>
+    <h3>using their reference Name</h3>
+    <button onclick="imgClick()">Show img</button>
+    <img name="poster">
+    <h3>Using QuerySelector() method</h3>
+    <button onclick="btnClick()">Click me</button>
+    <h4></h4>
+</body>
+
+</html>
