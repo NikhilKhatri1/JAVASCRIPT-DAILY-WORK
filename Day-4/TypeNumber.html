@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SubmitClick() {
+            var age = document.getElementById("txtAge").value;
+            if (age === "") {
+                alert("Age must be a Number");
+            }
+            else {
+                document.write(`Age = ${age}`);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Number Types</h1>
+    <ol>
+        <li>Signed Integer=(-34)</li>
+        <li>UN-Signed Integer=(34)</li>
+        <li>Floating point = (34.45)</li>
+        <li>Double = 450.453</li>
+        <li>decimal = 3400.44</li>
+        <li>Exponent = 2e<Sup>3</Sup> = 2*10<sup>3</sup> = 2000</li>
+        <li>Binary = 0b1010 </li>
+        <li>Hexadecimal = 0x4499</li>
+        <li>Octa = 0o576</li>
+        <li>Bigint = 9849582398n (to tell the compiler that this number is safe)</li>
+    </ol>
+    <h1>To convert the String into number</h1>
+    <ol>
+        <li>parseInt()</li>
+        <dl>
+            <dt>Syntax</dt>
+            <dd>parseInt("24A") // 24</dd>
+            <dd>it will convert 24 into number and any number afer that will be removed</dd>
+        </dl>
+        <li>parseFloat()</li>
+        <dl>
+            <dt>Syntax</dt>
+            <dd>parseFloat("24.45A") // 24.45</dd>
+            <dd>It will convert into float value</dd>
+        </dl>
+    </ol>
+    <h3>Example of number:</h3>
+    Age : <input type="text" id="txtAge"> <button onclick="SubmitClick()">Click me</button>
+</body>
+
+</html>

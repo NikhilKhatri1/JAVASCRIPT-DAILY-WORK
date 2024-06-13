@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function verifyUserId() {
+            var UserId = document.getElementById("UserId").value;
+            if (UserId === "john_nit") {
+                document.getElementById("Password").disabled = false;
+            }
+        }
+        function VerifyPassword() {
+            var pwd = document.getElementById("Password").value;
+            if (pwd === "Admin@123") {
+                document.getElementById("btnLogin").disabled = false;
+            }
+        }
+        function ClickBtn() {
+            document.write("Login Successfull....")
+        }
+    </script>
+</head>
+
+<body>
+    <dl>
+        <dt>User Name/id</dt>
+        <dd><input type="text" id="UserId" onblur="verifyUserId()"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" id="Password" disabled onblur="VerifyPassword()"></dd>
+    </dl>
+    <button id="btnLogin" onclick="ClickBtn()" disabled>Login</button>
+</body>
+
+</html>

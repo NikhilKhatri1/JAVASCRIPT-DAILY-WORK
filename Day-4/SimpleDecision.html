@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function CardNumber() {
+            var crdNum = document.getElementById("txtCard").value;
+            var crdCvv = document.getElementById("txtCvv");
+            var crdYears = document.getElementById("lstYears");
+
+            if (crdNum === "4444555566667890") {
+                crdCvv.disabled = false;
+                crdYears.disabled = false;
+                document.getElementById("btnPay").disabled = false;
+            }
+            else {
+                alert('Invalid Card');
+                crdCvv.disabled = true;
+                crdYears.disabled = true;
+                document.getElementById("btnPay").disabled = true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Payment Detail</legend>
+        <dl>
+            <dt>Card Number</dt>
+            <dd><input type="text" onblur="CardNumber()" id="txtCard" maxlength="16"></dd>
+            <dt>CVV</dt>
+            <dd><input type="text" onblur="" id="txtCvv" maxlength="3" disabled></dd>
+            <dt>Expiry</dt>
+            <dd>
+                <select id="lstYears" disabled>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                </select>
+            </dd>
+        </dl>
+        <button id="btnPay" disabled>Pay</button>
+    </fieldset>
+</body>
+
+</html>

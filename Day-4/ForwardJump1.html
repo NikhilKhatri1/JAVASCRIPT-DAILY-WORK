@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forwardjump</title>
+    <script>
+        function VerifyUser() {
+            var UserId = document.getElementById("txtUser").value;
+            if (UserId === "") {
+                document.getElementById("txtUserError").innerHTML = "Enter your ID";
+            }
+            else {
+                if (UserId === "John_nit") {
+                    document.getElementById("pwd").style.display = "block";
+                    document.getElementById("txtUserError").innerHTML = "";
+                }
+                else {
+                    document.getElementById("txtUserError").innerHTML = "Enter Correct ID"
+                }
+            }
+        }
+        function VerifyPwd() {
+            var Pwd = document.getElementById("txtPwd").value;
+            if (Pwd === "") {
+                document.getElementById("txtPwdError").innerHTML = "Enter Your Password";
+            }
+            else {
+                if (Pwd === "Admin@123") {
+                    document.getElementById("btnLogin").style.display = "block";
+                    document.getElementById("txtPwdError").innerHTML = "";
+                }
+                else {
+                    document.getElementById("txtPwdError").innerHTML = "Enter Your Correct Password";
+                }
+            }
+        }
+        function LoginClick() {
+            document.write("Login Successfull....")
+        }
+    </script>
+</head>
+
+<body>
+    <dl>
+        <dt>User Name/id</dt>
+        <dd><input type="text" id="txtUser" onblur="VerifyUser()"></dd>
+        <dd id="txtUserError"></dd>
+        <div style="display: none;" id="pwd">
+            <dt>Password</dt>
+            <dd><input type="text" id="txtPwd" onblur="VerifyPwd()"></dd>
+            <dd id="txtPwdError"></dd>
+        </div>
+        <div id="btnLogin" style="display: none;">
+            <button onclick="LoginClick()">Login</button>
+        </div>
+    </dl>
+</body>
+
+</html>
