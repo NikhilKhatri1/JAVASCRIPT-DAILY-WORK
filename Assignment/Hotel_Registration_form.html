@@ -4,32 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Trip</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+gbgxcDM1QXJqjv6ALF8gxHz2rw1Bohqc47jc5f" crossorigin="anonymous">
-
-    <!-- Bootstrap icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-h1yss8S+MlMQbik6bsz8DeUPyJbJ6yT9TKlH2N/OEuFjDzo2k4t+JStX6vNVRkaw"
-        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Custom Css Style -->
     <link rel="stylesheet" href="./styles.css">
-    <!-- Custom JavaScript -->
-    <script src="./main.js"></script>
-    <title>NamasteIndia</title>
 </head>
 
 <body>
     <!-- ----- Header ----- -->
-    <header>
-        <div class="container">
-            <a class="d-flex align-item-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">My Trip</a>
+    <div class="header-wrapper sticky-top">
+        <header class="header">
+            <nav class="navbar navbar-expand-lg mx-lg-4 px-lg-4 mx-md-0 px-md-0">
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-bold fs-5" href="#">My Trip</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active mx-lg-2 fw-semibold" aria-current="page" href="#home"
+                                    id="active">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-semibold" href="#about">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-semibold" href="#contact">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-semibold" href="#services">Services</a>
+                            </li>
+                        </ul>
+                        <form action="#" class="d-flex">
+                            <button class="btn btn-warning me-2">Login</button>
+                            <button class="btn btn-primary ms-2">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <!-- -------- Register -------- -->
+
+    <!-- -------- Banner-Area--------- -->
+    <section class="banner-area ">
+        <div class="booking-table d-flex align-items-center">
+            <div class="container">
+                <div class="banner-content text-lg-center">
+                    <h6 class="text-white">Away from monotonous life</h6>
+                    <h2 class="my-4 mx-0">Relax Your Mind</h2>
+                    <p class="fs-6 fw-bold">If you are looking at blank cassettes on the web, you may be very confused
+                        at
+                        the<br> difference
+                        in
+                        price. You may see some for as low as $.17 each.</p>
+                    <a href="#" class="btn btn-warning mt-lg-5 mt-3">Get Started</a>
+                </div>
+            </div>
         </div>
-    </header>
+        <!-- --------- Booking Area ---------- -->
+        <div class="booking-area mx-lg-5">
+            <div class="container">
+                <div class="booking-table row d-flex">
+                    <div class="col-lg-3 col-12 text-lg-start text-center py-lg-0 my-lg-5">
+                        <h2 class="booking-title fw-bold">Book<br> Your Ticket</h2>
+                    </div>
+                    <div class="col-lg-9 col-10 py-lg-0 my-lg-4 text-lg-start px-1 mx-auto">
+                        <div class="booking-detail-table">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <input type="date" class="form-control" placeholder="Arrival Date">
+                                    <br>
+                                    <input type="date" class="form-control" placeholder="Arrival Date">
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="date" class="form-control" placeholder="Arrival Date">
+                                    <br>
+                                    <input type="date" class="form-control" placeholder="Arrival Date">
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="date" class="form-control" placeholder="Arrival Date">
+                                    <br>
+                                    <input type="date" class="form-control" placeholder="Arrival Date">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="py-5 bg-white">
+
+    </section>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="./main.js"></script>
 </body>
 
 </html>

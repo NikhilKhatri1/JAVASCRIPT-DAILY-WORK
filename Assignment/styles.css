@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
 :root {
-    --bg-color: hsl(0, 0%, 87%);
+    --color: hsl(0, 0%, 87%);
     --body-color: hsl(200, 12%, 5%);
     --container-color: hsl(200, 10%, 8%);
     --border-color: hsl(0, 0%, 20%);
     --white: #fff;
+    --content-color: hsla(193, 88%, 16%, 0.849);
+    --content-dark-color: hsla(193, 88%, 16%, 0.979);
 
 
     /* =========font and typography============== */
@@ -28,7 +30,121 @@
 body {
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
     box-sizing: border-box;
-    background-color: var(--bg-color);
+    background-image: url(./images/carousel-img2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width:450px) {
+    body {
+        background-image: url(./images/banner-portrait.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+/* -------header design ------------*/
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header {
+    background-color: rgba(10, 10, 10, 0.55);
+}
+
+#active {
+    color: #f8b100 !important;
+}
+
+.nav-link,
+.navbar-brand {
+    color: var(--color) !important;
+}
+
+.nav-link:hover {
+    color: #f8b100 !important;
+}
+
+.navbar-brand:hover {
+    color: #f8b100 !important;
+}
+
+@media (max-width:450px) {
+    .header {
+        background-color: var(--content-color);
+    }
+
+    .nav-item {
+        color: #fff;
+    }
+}
+
+/* ======= banner Design ======== */
+.banner-content {
+    color: var(--color);
+    text-transform: uppercase;
+    margin-top: 70px;
+}
+
+@media (max-width:450px) {
+    .banner-content {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+.banner-area {
+    margin-top: 80px;
+}
+
+.banner-content h6 {
+    font-size: var(--large-font-size);
+    word-spacing: .15rem;
+}
+
+.banner-content h2 {
+    font-size: var(--big-font-size);
+    line-height: 45px;
+    font-weight: bold;
+}
+
+@media screen and(max-width=450px) {
+    .banner-content h2 {
+        font-size: 35px;
+        font-weight: 400;
+    }
+}
+
+.banner-content p {
+    font-size: 14px;
+    line-height: 30px;
+    margin-bottom: 0px;
+}
+
+.btn {
+    border-radius: 0 !important;
+    padding: 5px 20px;
+}
+
+/* ====== booking area Design ======= */
+
+.booking-area {
+    margin-top: 100px;
+    height: 150px;
+    background-color: var(--content-dark-color);
+}
+
+.booking-title {
+    color: var(--color);
+}
+
+@media (max-width:450px) {
+    .booking-title br {
+        display: none;
+    }
 }
