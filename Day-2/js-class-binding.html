@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Document</title>
+    <script>
+        function SortClick() {
+            var sortClass = document.querySelector("button").className;
+            document.querySelector("button").className = (sortClass == "bi bi-sort-alpha-down") ? "bi bi-sort-alpha-up" : "bi bi-sort-alpha-down";
+        }
+        function ToggleClick() {
+            var btnClass = document.querySelector("button").className;
+            var btn = document.querySelector("button");
+            btn.className = (btnClass == "btn btn-primary") ? "btn btn-danger" : "btn btn-primary";
+            btn.innerHTML = (btn.innerHTML == "Sign in") ? "Sign out" : "Sign in";
+        }
+    </script>
+</head>
+
+<body class="container-fluid">
+    <!-- <h2>Toggle</h2>
+    <button class="bi bi-sort-alpha-down" onclick="SortClick()"></button> -->
+    <h2>Button</h2>
+    <button class="btn btn-primary" onclick="ToggleClick()">Sign in</button>
+</body>
+
+</html>
