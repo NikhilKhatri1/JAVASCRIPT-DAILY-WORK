@@ -28,7 +28,7 @@
         <header class="header">
             <nav class="navbar navbar-expand-lg mx-lg-4 px-lg-4 mx-md-0 px-md-0">
                 <div class="container-fluid">
-                    <a class="navbar-brand fw-bold fs-5" href="#">My Trip</a>
+                    <a class="navbar-brand fw-bold fs-5" href="./Hotel_Registration_form.html">My Trip</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -103,7 +103,7 @@
                                         <div class="room-container d-flex align-items-center text-white mx-lg-4">
                                             <input type="radio" name="room" value="deluxe" class="form-check-input"
                                                 checked>
-                                            <h5 class="ms-1 ms-lg-3 mt-2">Delux Room</h5>
+                                            <h5 class="ms-1 ms-lg-3 mt-2">Deluxe Room</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +137,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="Amenities-container">
-                                        <img src="./images/img3.jpg" width="200" height="200">
+                                        <img src="./images/room2.jpg" width="200" height="200">
                                         <div class="room-container d-flex align-items-center text-white mx-lg-4">
                                             <input type="checkbox" id="lockerCheckbox" name="amenities" value="locker"
                                                 class="form-check-input">
@@ -188,19 +188,20 @@
                         <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <p><strong>Customer Name:</strong> <span id="CustomerNameSummary"></span></p>
-                        <p><strong>Check-In Date:</strong> <span id="CheckInSummary"></span></p>
-                        <p><strong>Room Type:</strong> <span id="roomTypeSummary"></span></p>
-                        <p><strong>Number of Days:</strong> <span id="numberOfDaysSummary"></span></p>
-                        <p><strong>Number of Persons:</strong> <span id="numberOfPersonsSummary"></span></p>
-                        <p><strong>Room Charge:</strong> Rs. <span id="roomChargeSummary"></span></p>
-                        <p><strong>Extra Person Charge:</strong> Rs. <span id="extraPersonChargeSummary"></span></p>
-                        <p><strong>Advance Amount:</strong> Rs. <span id="advanceAmountSummary"></span></p>
+                        <p><b>Customer Name:</b> <span id="CustomerNameSummary"></span></p>
+                        <p><b>Check-In Date:</b> <span id="CheckInSummary"></span></p>
+                        <p><b>Room Type:</b> <span id="roomTypeSummary"></span></p>
+                        <p><b>Number of Days:</b> <span id="numberOfDaysSummary"></span></p>
+                        <p><b>Number of Persons:</b> <span id="numberOfPersonsSummary"></span></p>
+                        <p><b>Room Charge:</b> Rs. <span id="roomChargeSummary"></span></p>
+                        <p><b>Extra Person Charge:</b> Rs. <span id="extraPersonChargeSummary"></span></p>
+                        <p><b>Advance Amount:</b> Rs. <span id="advanceAmountSummary"></span></p>
                         <hr>
-                        <p><strong>Total Amount:</strong> Rs. <span id="totalAmountSummary"></span></p>
+                        <p><b>Total Amount:</b> Rs. <span id="totalAmountSummary"></span></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-warning">Submit</button>
+                        <button type="button" class="btn btn-warning" id="Submit"
+                            data-bs-dismiss="modal">Submit</button>
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
                     </div>
                 </div>
