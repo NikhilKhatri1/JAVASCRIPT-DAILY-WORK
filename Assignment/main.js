@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var extraPersonCharge = numberOfPersons > 2 ? (numberOfPersons - 2) * 1000 : 0;
 
         // Calculate total room charge
-        var totalRoomCharge = (roomPricePerDay + acCharge + lockerCharge) * numberOfDays;
+        var totalRoomCharge = (roomPricePerDay) * numberOfDays + acCharge + lockerCharge;
 
         // Calculate total amount
         var totalAmount = totalRoomCharge + extraPersonCharge - advanceAmount;
