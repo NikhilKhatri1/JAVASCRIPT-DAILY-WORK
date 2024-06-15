@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Trip</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <!-- Custom Css Style -->
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- Custom script -->
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <!-- ----- Header ----- -->
+    <div class="header-wrapper sticky-top">
+        <header class="header">
+            <nav class="navbar navbar-expand-lg mx-lg-4 px-lg-4 mx-md-0 px-md-0">
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-bold fs-5" href="#">My Trip</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active mx-lg-2 fw-semibold" aria-current="page"
+                                    href="./Hotel_Registration_form.html" id="active">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-semibold" href="#about">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-semibold" href="#contact">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-semibold" href="#services">Services</a>
+                            </li>
+                        </ul>
+                        <form action="#" class="d-flex">
+                            <a class="btn btn-warning me-2" href="#">Login</a>
+                            <a class="btn btn-primary ms-2" href="./Register.html">Register</a>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <!-- -------- Hotel Booking Registration -------- -->
+    <div class="booking-wrapper">
+        <section class="booking-section">
+            <div class="booking-frm">
+                <h3 class="text-center mt-2 booking-title bg-warning mx-lg-5 py-lg-3">Hotel Booking Registration
+                </h3>
+                <div class="mx-lg-5 py-lg-2 form">
+                    <h4 class="text-center info-title bg-info mx-lg-5 py-lg-2">Contact Info</h4>
+                    <div class="row mt-4 mx-lg-5 py-lg-2">
+                        <div class="offset-lg-1 col-lg-10">
+                            <div class="row user-input">
+                                <label for="userName" class="text-white col-4 fw-semibold">Customer
+                                    Name</label>
+                                <input type="text" id="userName" class="col-8 txt-input" placeholder="Enter Name"
+                                    required>
+                            </div>
+                            <div class="row user-input">
+                                <label for="userName" class="text-white col-4 fw-semibold">Check in Date</label>
+                                <input type="date" id="checkInDate" class="col-8 txt-input" required>
+                            </div>
+                            <div class="row user-input">
+                                <label for="numberOfDays" class="text-white col-4 fw-semibold">Total no. of Days</label>
+                                <input type="number" id="numberOfDays" class="col-8 txt-input"
+                                    placeholder="Number of Days" required>
+                            </div>
+                            <div class="row user-input">
+                                <label for="numberOfPersons" class="text-white col-4 fw-semibold">Total no. of
+                                    Persons</label>
+                                <input type="number" id="numberOfPersons" class="col-8 txt-input"
+                                    placeholder="Number of Persons" required>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="text-center info-title bg-info mx-lg-5 py-lg-2 my-2">Select Room
+                        Type
+                    </h4>
+                    <div class="row mt-4 mx-lg-5 py-lg-2 text-lg-center">
+                        <div class="offset-lg-2 col-lg-8 offset-0.5 col-11">
+                            <div class="row">
+                                <div class="col-lg-6 col-6">
+                                    <div class="img-container">
+                                        <img src="./images/HotelRoom1.jpg" width="200" height="200">
+                                        <div class="room-container d-flex align-items-center text-white mx-lg-4">
+                                            <input type="radio" name="room" value="deluxe" class="form-check-input"
+                                                checked>
+                                            <h5 class="ms-1 ms-lg-3 mt-2">Delux Room</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-6">
+                                    <div class="img-container">
+                                        <img src="./images/img5.jpeg" width="200" height="200">
+                                        <div class="room-container d-flex align-items-center text-white mx-lg-4">
+                                            <input type="radio" name="room" value="suite" class="form-check-input">
+                                            <h5 class="ms-2 ms-lg-3 mt-2">Suite Room</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="text-center info-title mx-lg-5 py-lg-2 my-2 bg-info">Select
+                        Amenities
+                    </h4>
+                    <div class="row mt-4 mx-lg-5 py-lg-2 text-center">
+                        <div class="offset-lg-2 col-lg-8 offset-0.5 col-11">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="Amenities-container">
+                                        <img src="./images/img3.jpg" width="200" height="200">
+                                        <div class="room-container d-flex align-items-center text-white mx-lg-4">
+                                            <input type="checkbox" id="acCheckbox" name="amenities" value="AC"
+                                                class="form-check-input">
+                                            <h5 class="ms-3 mt-2">A/C Room</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="Amenities-container">
+                                        <img src="./images/img3.jpg" width="200" height="200">
+                                        <div class="room-container d-flex align-items-center text-white mx-lg-4">
+                                            <input type="checkbox" id="lockerCheckbox" name="amenities" value="locker"
+                                                class="form-check-input">
+                                            <h5 class="ms-3 mt-2">Locker Room</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="text-center info-title mx-lg-5 py-lg-2 my-2 bg-info">Advance
+                        Amount
+                    </h4>
+                    <div class="row mt-4 mx-lg-5 py-lg-2 text-center text-lg-center">
+                        <div class="offset-lg-2 col-lg-8">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-lg-4 d-flex align-items-center col-6 px-4 px-lg-0">
+                                    <label for="advanceAmount" class="text-white fw-lg-bold fw-bold">Advance
+                                        Amount</label>
+                                </div>
+                                <div class="col-lg-8 col-6">
+                                    <input type="number" id="advanceAmount" placeholder="Enter Amount"
+                                        class="form-control w-lg-75 w-75" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container text-center py-5">
+                    <!-- Button trigger modal -->
+                    <button id="bookTicketButton" type="button" class="btn btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#summaryModal">
+                        Book Ticket
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- ----- Booking summary (Modal) ----- -->
+    <section class="Booking-Summary">
+        <!-- Modal -->
+        <div class="modal fade bg-theme" id="summaryModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Booking Summary</h5>
+                        <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Customer Name:</strong> <span id="CustomerNameSummary"></span></p>
+                        <p><strong>Check-In Date:</strong> <span id="CheckInSummary"></span></p>
+                        <p><strong>Room Type:</strong> <span id="roomTypeSummary"></span></p>
+                        <p><strong>Number of Days:</strong> <span id="numberOfDaysSummary"></span></p>
+                        <p><strong>Number of Persons:</strong> <span id="numberOfPersonsSummary"></span></p>
+                        <p><strong>Room Charge:</strong> Rs. <span id="roomChargeSummary"></span></p>
+                        <p><strong>Extra Person Charge:</strong> Rs. <span id="extraPersonChargeSummary"></span></p>
+                        <p><strong>Advance Amount:</strong> Rs. <span id="advanceAmountSummary"></span></p>
+                        <hr>
+                        <p><strong>Total Amount:</strong> Rs. <span id="totalAmountSummary"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning">Submit</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
