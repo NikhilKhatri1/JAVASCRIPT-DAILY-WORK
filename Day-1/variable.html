@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+    <script>
+        function function1() {
+            let person = "John Doe", carName = "Volvo", price = 200;
+            document.getElementById("demo").innerHTML = carName;
+        }
+        function function2() {
+            let person;
+            document.getElementById("demo1").innerHTML = person;
+        }
+        // function function3() {
+        //     let x = 10;
+        //     var x = 20;
+        //     document.getElementById("demo3").innerHTML = x;
+        //     //Uncaught SyntaxError: Identifier 'x' has already been declared
+        // }
+        function function4() {
+            let x = 10;
+            {
+                let x = 20;
+                document.getElementById("demo4").innerHTML = x;
+            }
+        }
+        function function5() {
+            const cars = ["Saab", "Volvo", "BMW"];
+            document.getElementById("demo5").innerHTML = cars;
+            cars[0] = "Toyota";
+            document.getElementById("demo6").innerHTML = cars;
+            cars.push("Audi");
+            document.getElementById("demo7").innerHTML = cars;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Javascript Vaiables</h1>
+    <p>You can declare many variables in one statement.</p>
+    <button onclick="function1()">click here</button>
+    <p id="demo"></p>
+    <h4>Variables are container for storing values.</h4>
+    <h4>javascript identifiers</h4>
+    <p> All javascript variables must be identified by unique names.</p>
+    <p>These unique Names are called identifiers... identifiers are case-Sensitve</p>
+    <div class="variable">
+        <button onclick="function2()">Click</button>
+        <p id="demo1"></p>
+        <h4>A variable declared without a value will have the value undefined.</h4>
+
+        <h4>The variable carName will have the value undefined after the execution of this statement:</h4>
+    </div>
+    <div class="redeclaring">
+        <h5>With let, redeclaring a variable in the same block is NOT allowed:</h5>
+        <button onclick="function3()">click</button>
+        <p id="demo3"></p>
+        <h5>But if you redeclared a variable let in another block is allowed:</h5>
+        <button onclick="function4()">click</button>
+        <p id="demo4"></p>
+    </div>
+    <hr>
+    <h2>Constant Array</h2>
+    <button onclick="function5()">Click</button>
+    <p>You can change the elements of a constant array:</p>
+    <p>original:
+    <p id="demo5"></p>
+    </p>
+    <p>add elements:
+    <p id="demo6"></p>
+    </p>
+    <p>Push elements:
+    <p id="demo7"></p>
+    </p>
+    <p>Note: but you cannot reassign the string.</p>
+</body>
+
+</html>
