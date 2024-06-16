@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addclick() {
+            var value_x = parseInt(document.getElementById("value_x").value);
+            var value_y = parseInt(document.getElementById("value_y").value);
+            var value_z = value_x + value_y;
+            document.getElementById("demo").innerText = "z = " + value_z;
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Javascript Operators</h1>
+    <pre>
+        Examples:
+        The Assignment Operator = assigns values
+        
+        The Addition Operator + adds values
+        
+        The Multiplication Operator * multiplies values
+        
+        The Comparison Operator > compares values
+    </pre>
+    <p> x = <input type="text" id="value_x"></p>
+    <p> y = <input type="text" id="value_y"></p>
+    <button onclick="addclick()">ADD</button>
+    <p id="demo"></p>
+    <div class="f1">
+        <h1>Javascript String Comparision</h1>
+        <p id="demo1"></p>
+        <script>
+            // js string Comparision
+            {
+                let text1 = "A";
+                let text2 = "B";
+                let result = text1 < text2;
+                document.getElementById("demo1").innerHTML = `<b> Is ${text1} lesser than ${text2} ? ${result}</b>`;
+            }   
+        </script>
+    </div>
+    <div class="f2">
+        <h1>Javascript string + addition (concatenate)</h1>
+        <p id="demo2"></p>
+        <script>
+            {
+                // js string Addition 
+                let text1 = "John";
+                let text2 = "David";
+                let result = text1 + text2;
+                document.getElementById("demo2").innerHTML = `<b> Result = ${result}`;
+            }
+        </script>
+
+        <h1> Javascript += assignment also used to concatenate strings: </h1>
+        <p id="demo3"></p>
+        <script>
+            {
+                // js string addition using += assignment 
+                let test1 = "Hi!";
+                test1 += ", I'am Javascript";
+                document.getElementById("demo3").innerHTML = `<b> ${test1} </b>`;
+            }
+        </script>
+    </div>
+</body>
+
+</html>
