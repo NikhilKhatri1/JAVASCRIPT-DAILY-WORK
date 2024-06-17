@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greatest Amoung three Value</title>
+    <script>
+        function SubmitClick() {
+            let X = document.getElementById("value_x").value;
+            let Y = document.getElementById("value_y").value;
+            let Z = document.getElementById("value_z").value;
+            if (X === Y) {
+                if (X == Z) {
+                    document.getElementById("demo").innerHTML = "All are equal";
+                }
+                else if (X > Z) {
+                    document.getElementById("demo").innerHTML = "X and Y are greater than Z";
+                }
+                else {
+                    document.getElementById("demo").innerHTML = "Z is greater than X and Y (Same)"
+                }
+            }
+            else if (Y === Z) {
+                if (Y > X) {
+                    document.getElementById("demo").innerHTML = "Y and Z is Greater than X";
+                }
+                else {
+                    document.getElementById("demo").innerHTML = "X is greater than Y and Z (same)"
+                }
+            }
+            else if (X == Z) {
+                if (X > Y) {
+                    document.getElementById("demo").innerHTML = "X and Z is greater than Y";
+                }
+                else {
+                    document.getElementById("demo").innerHTML = "Y is greater than X and Z (same)";
+                }
+            }
+            else {
+                if (X > Y && X > Z) {
+                    document.getElementById("demo").innerHTML = "X is greater than Y and Z";
+                }
+                else if (Y > Z) {
+                    document.getElementById("demo").innerHTML = "Y is greater than X and Z";
+                }
+                else {
+                    document.getElementById("demo").innerHTML = "Z is greater than X and Y";
+                }
+            }
+
+        }
+
+        // function FindGreatest(a, b, c) {
+        //     if (a > b && a > c) {
+        //         document.write(`a is greater than b & c`);
+        //     }
+        //     else if (b > c) {
+        //         document.write(`b is greater than a & c`);
+        //     } else {
+        //         document.write(`c is greater that a & b`);
+        //     }
+        // }
+        // FindGreatest(90, 440, 56);
+        // there is one mistake if two value are same then it will giver wrong result
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <p>X = <input type="text" id="value_x"></p>
+        <p>Y = <input type="text" id="value_y"></p>
+        <p>Z = <input type="text" id="value_z"></p>
+        <button onclick="SubmitClick()">Submit</button>
+        <p id="demo"></p>
+    </div>
+</body>
+
+</html>

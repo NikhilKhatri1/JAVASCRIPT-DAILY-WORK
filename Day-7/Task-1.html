@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <script>
+        function FindGreater() {
+            // input value 
+            let X = parseFloat(document.getElementById("value_x").value);
+            let Y = parseFloat(document.getElementById("value_y").value);
+            // condition to find greater value....
+            if (X == Y) {
+                document.getElementById("demo").innerHTML = `<h3>Both are equal X = ${X} and Y = ${Y}</h3>`;
+            }
+            else if (X > Y) {
+                document.getElementById("demo").innerHTML = `<h3>X = ${X} is Greater then Y = ${Y}</h3>`;
+            }
+            else {
+                document.getElementById("demo").innerHTML = `<h3>Y = ${Y} is Greater then X = ${X}</h3>`;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Find Greater value amoung two...</h2>
+        <h3>X = <input type="text" id="value_x"></h3>
+        <h3>Y = <input type="text" id="value_y"></h3>
+        <button onclick="FindGreater()">Check</button>
+        <p id="demo"></p>
+    </div>
+</body>
+
+</html>

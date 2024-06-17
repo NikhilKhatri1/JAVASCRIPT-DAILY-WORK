@@ -1,0 +1,31 @@
+In JavaScript, the .match() method is used to match a string against a regular expression pattern. Here’s how it works:
+
+javascript
+
+let mobile = "123-456-7890";
+let pattern = /\d{3}-\d{3}-\d{4}/;
+
+if (mobile.match(pattern)) {
+    console.log("Pattern matched in the mobile number.");
+} else {
+    console.log("Pattern not found in the mobile number.");
+}
+
+In this example:
+
+    mobile is a string containing a phone number "123-456-7890".
+    pattern is a regular expression literal /\d{3}-\d{3}-\d{4}/, which matches a phone number in the format 123-456-7890.
+    mobile.match(pattern) checks if the regular expression pattern matches the string mobile.
+
+The .match() method returns an array if the pattern matches, or null if there is no match. If the pattern matches, the array contains the matched substring as the first element, followed by any captured groups if the pattern uses capturing parentheses.
+
+For example:
+
+javascript
+
+let result = mobile.match(pattern);
+console.log(result); // Output: ["123-456-7890"]
+
+If mobile did not match the pattern, mobile.match(pattern) would return null.
+
+So, .match() is a useful method for checking if a string matches a regular expression pattern and can be used in conditional statements like if to perform actions based on whether a match is found.

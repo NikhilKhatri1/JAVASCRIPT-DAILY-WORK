@@ -10,13 +10,71 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
 
     <title>Switch Example</title>
-    <script>
+    <script type="Text/JavaScript">
+        var tip = "";
+        var pattern = / /;
 
+        function CountryChange(){
+            var countryName = document.getElementById("lstCountry").value;
+            var imgFlag = document.getElementById("imgFlag");
+            var txtMobile = document.getElementById("txtMobile");
+
+            function ApplyPattern(flagImage, regExp, screenTip){
+                imgFlag.src = flagImage;
+                pattern = regExp;
+                tip = screenTip;
+                txtMobile.placeholder = tip;
+            }
+            switch(countryName)
+            {
+                case "India":
+                    ApplyPattern("../images/INDIAFlag.jpg", /\+91\d{10}/, "+91 and 10 Digits");
+                    break;
+                case "US":
+                    ApplyPattern("../images/USFlag.jpg", /\(\+1\)\(\d{3}\)\s\d{4}-\d{4}/, "(+1)(233) 4455-5566");
+                    break;
+                case "UK":
+                    ApplyPattern("../images/UKFlag.jpg", /\(\+44\)\s\d{3}\s\d{4}/, "(+44) 123 3456");
+                    break;
+                default:
+                    txtMobile.placeholder = "Select your Country";
+                    imgFlag.src = "";
+            }
+        }
+        function submitClick(){
+            var mobile = document.getElementById("txtMobile").value;
+            var error = document.getElementById("txtError");
+            if (mobile.match(pattern))
+            {
+                document.write("<h2>Mobile verified Successfully...</h2>")
+            }
+            else
+            {
+                error.innerHTML = `Invalid Mobile: ${tip}`;
+            }
+        }
     </script>
 </head>
 
-<body>
-    
+<body class="container-fluid px-4">
+    <h3 class="fw-bold py-5">Verify Number With Country</h1>
+        <dl class="w-25">
+            <dt class="fw-bold">Country</dt>
+            <dd class="input-group">
+                <select id="lstCountry" class="form-select" onchange="CountryChange()">
+                    <option>Select Your Country</option>
+                    <option>India</option>
+                    <option>US</option>
+                    <option>UK</option>
+                </select>
+                <img class="input-group-text" id="imgFlag" width="50">
+            </dd>
+            <dt class="fw-bold">Mobile Number</dt>
+            <dd><input type="text" class="form-control" id="txtMobile"></dd>
+            <dd class="text-danger" id="txtError"></dd>
+            <button class="btn btn-primary w-100" onclick="submitClick()">Submit</button>
+        </dl>
+
 </body>
 
 </html>
