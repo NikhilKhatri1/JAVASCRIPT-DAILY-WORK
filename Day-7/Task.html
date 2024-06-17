@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identify the Type of Triangle</title>
+    <style>
+        body {
+            padding-left: 20px;
+        }
+    </style>
+    <script>
+        function FindTypeOfTriangle() {
+            X = document.getElementById("value_x").value;
+            Y = document.getElementById("value_y").value;
+            Z = document.getElementById("value_z").value;
+            // checking type by using condition
+            if (X === Y && Y === Z) {
+                document.getElementById("demo").innerHTML = `Equilateral Triangle`;
+            }
+            else if (X === Y || Y === Z || X === Z) {
+                document.getElementById("demo").innerHTML = `Issosceles Triangle`;
+            }
+            else {
+                document.getElementById("demo").innerHTML = `Scalene Triangle`;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="Function_container">
+        <h1>Identify the type of Triangle</h1>
+        <p> X = <input type="text" id="value_x"></p>
+        <p> Y = <input type="text" id="value_y"></p>
+        <p> Z = <input type="text" id="value_z"></p>
+        <button onclick="FindTypeOfTriangle()">Check</button>
+        <p id="demo"></p>
+    </div>
+</body>
+
+</html>
