@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data-type</title>
+    <script>
+        function string_numb() {
+            let x;
+            x = 15 + "John";  // second operand is string then it will concate...
+            document.getElementById("demo").innerHTML = x;
+            x = "john" + 15;   // first operand is string then next value will be treated as string
+            document.getElementById("demo1").innerHTML = x;
+            x = 15 + 5 + "John";   // first and second operand are number they will add then concate with third value..
+            document.getElementById("demo2").innerHTML = x;
+        }
+        function f2() {
+            let x;    // undefined
+            x = 5;    // x = 5 number type
+            x = "John";    // string type
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Data types in JavaScript</h1>
+    <h3>
+        <pre>
+            JavaScript has 8 Datatypes
+            String
+            Number
+            Bigint
+            Boolean
+            Undefined
+            Null
+            Symbol
+            Object
+            
+            The Object Datatype
+            The object data type can contain both built-in objects, and user defined objects:
+            
+            Built-in object types can be:
+            
+            objects, arrays, dates, maps, sets, intarrays, floatarrays, promises, and more.
+        </pre>
+    </h3>
+    <div class="f1">
+        <h4>String added with number</h4>
+        <button onclick="string_numb()">Add</button>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+    </div>
+    <div class="f2">
+        <h2>Javascript is dynamic types</h2>
+        <h4>It means same type of variable can hold any type of value( string ,number,etc)....</h4>
+        <script>
+            let x; // undefined
+            x = 5; // 5 is assign in x then it will become number typed
+            x = "John"; // now changes to string typed.....
+        </script>
+    </div>
+
+</body>
+
+</html>
