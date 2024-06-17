@@ -1,11 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Arithmetic Operator</title>
+    <script>
+        function f1() {
+            x = parseInt(document.getElementById("value_x").value);
+            y = parseInt(document.getElementById("value_y").value);
+            z = x + y;
+            document.getElementById("demo").innerHTML = `Z = ${z}`;
+            z = x - y;
+            document.getElementById("demo1").innerHTML = `Z = ${z}`;
+            z = x * y;
+            document.getElementById("demo2").innerHTML = `Z = ${z}`;
+            z = x / y;
+            document.getElementById("demo3").innerHTML = `Z = ${z}`;
+            z = x % y;
+            document.getElementById("demo4").innerHTML = `Z = ${z}`;
+            x++;
+            z = x;
+            document.getElementById("demo5").innerHTML = `Z = ${z}`;
+            x--;
+            z = x;
+            document.getElementById("demo6").innerHTML = `Z = ${z}`;
+            z = x ** y;
+            document.getElementById("demo7").innerHTML = `Z = ${z}`;
+        }
+    </script>
 </head>
+
 <body>
-    
+    <div class="f1">
+        <h1>Arithmetic Operator</h1>
+
+        <h3>
+            X = <input type="text" id="value_x">
+        </h3>
+        <h3>
+            Y = <input type="text" id="value_y">
+        </h3>
+        <button onclick="f1()">Click</button>
+        <h2>Addition</h2>
+        <h3 id="demo"></h3>
+        <h2>Subtraction</h2>
+        <h3 id="demo1"></h3>
+        <h2>Multiplication</h2>
+        <h3 id="demo2"></h3>
+        <h2>Divide</h2>
+        <h3 id="demo3"></h3>
+        <h2>Remainder</h2>
+        <h3 id="demo4"></h3>
+        <h2>Incrementing</h2>
+        <h3 id="demo5"></h3>
+        <h2>Decrementing</h2>
+        <h3 id="demo6"></h3>
+        <h2>Exponential note-- we can use <b>Math.pow(x,y)</b></h2>
+
+        <h3 id="demo7"></h3>
+    </div>
 </body>
+
 </html>
