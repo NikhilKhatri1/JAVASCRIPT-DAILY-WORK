@@ -12,9 +12,9 @@
     </style>
     <script>
         function FindTypeOfTriangle() {
-            X = document.getElementById("value_x").value;
-            Y = document.getElementById("value_y").value;
-            Z = document.getElementById("value_z").value;
+            X = parseFloat(document.getElementById("value_x").value);
+            Y = parseFloat(document.getElementById("value_y").value);
+            Z = parseFloat(document.getElementById("value_z").value);
             // checking type by using condition
             if (X === Y && Y === Z) {
                 document.getElementById("demo").innerHTML = `Equilateral Triangle`;

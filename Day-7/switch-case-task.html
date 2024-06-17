@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function typeTriangle(side1, side2, side3) {
+            var triangleType;
+
+            switch (true) {
+                case side1 === side2 && side2 === side3:
+                    triangleType = "Equilateral";
+                    break;
+                case side1 === side2 || side1 === side3 || side2 === side3:
+                    triangleType = "Isosceles";
+                    break;
+                default:
+                    triangleType = "Scalene";
+                    break;
+            }
+
+            return triangleType;
+        }
+
+        var triangleType = typeTriangle(30, 30, 30);
+        document.write(triangleType);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
