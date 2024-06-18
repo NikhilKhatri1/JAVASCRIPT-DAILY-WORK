@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .container {
+            border: 1px solid black;
+            height: 400px;
+            width: 80%;
+            padding: 5px;
+        }
+
+        .container button {
+            width: 25%;
+        }
+    </style>
+    <script>
+        function GuessClick() {
+            // Generate a random integer between 1 to 10
+            var randomNumber = Math.ceil(Math.random() * 10);
+            document.getElementById("randomNumber").innerHTML = `Random Number = ${randomNumber}`;
+            var guessNumber = parseInt(document.getElementById("gNum").value);
+            if (guessNumber === randomNumber) {
+                document.getElementById("Output").innerHTML = `Good Work Your guess ${guessNumber} is same as random value ${randomNumber}`;
+            }
+            else {
+                document.getElementById("Output").innerHTML = `Try Again you Missed the guess`;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h4>Write a JavaScript program where the program takes a random integer between 1 and 10,<br> and the user
+                is
+                then
+                prompted to
+                input a guess number. The program displays a message "Good Work" <br>if the input matches the guess
+                number
+                otherwise "Not matched".</h4>
+        </div>
+
+        <div>
+            <p>Guess Number = <input type="text" id="gNum"></p>
+        </div>
+        <div>
+            <button onclick="GuessClick()">Guess Click</button>
+            <p id="randomNumber"></p>
+            <p id="Output"></p>
+        </div>
+    </div>
+</body>
+
+</html>

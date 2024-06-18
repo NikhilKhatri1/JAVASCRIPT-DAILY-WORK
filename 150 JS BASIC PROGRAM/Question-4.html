@@ -4,11 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>!st january is sunday or not?</title>
+    <title>1st January is Sunday or not?</title>
+    <script>
+        function SubmitClick() {
+            var startYear = parseInt(document.getElementById("startYear").value);
+            var endYear = parseInt(document.getElementById("endYear").value);
+            var outputHTML = "";
+
+            // Validation input
+            if (isNaN(startYear) || isNaN(endYear) || startYear > endYear) {
+                document.getElementById("output").innerHTML = `Invalid input`;
+            } else {
+                // Loop through the years and check if Jan 1 is Sunday
+                for (var year = startYear; year <= endYear; year++) {
+                    // new Date(Year,Month,Date) contains
+                    var d = new Date(year, 0, 1); // January is 0 in JavaScript
+                    // Check if January 1st is a Sunday (getDay() returns 0 for Sunday)
+                    if (d.getDay() === 0) {
+                        outputHTML += `${year} <br>`;
+                    }
+                }
+
+                document.getElementById("output").innerHTML += outputHTML;
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <h1>Write a JavaScript program to find out if 1st January will be a Sunday between 2014 and 2050.</h1>
+    <h1>Find out if 1st January will be a Sunday between 2014 and 2050.</h1>
+    <p>Start Year = <input type="text" id="startYear"></p>
+    <p>End Year = <input type="text" id="endYear"></p>
+    <button onclick="SubmitClick()">Submit</button>
+    <p id="output"></p>
 </body>
 
 </html>
