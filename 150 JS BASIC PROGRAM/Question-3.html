@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-3 Leap Year</title>
+    <script>
+        function LeapYear() {
+            Year = parseInt(document.getElementById("txtYear").value);
+            // Checking most of cases
+            if (Year % 4 === 0) {
+                // for Exception like in Century
+                // if Year is divisible by 100 then it also need to divisible by 400 to make leap Year
+                if (Year % 100 === 0) {
+                    // Divisible by 100 Check for divisible by 400 For leap Year
+                    if (Year % 400 === 0) {
+                        document.getElementById("demo").innerHTML = `<h3 style="color: green;"> ${Year} is a Leap Year</h3>`;
+                    }
+                    // if not Then Not a Leap Year
+                    else {
+                        document.getElementById("demo").innerHTML = `<h3 style="color: red;"> ${Year} is not a Leap Year</h3>`;
+                    }
+                }
+                else {
+                    document.getElementById("demo").innerHTML = `<h3 style="color: green;"> ${Year} is a Leap Year</h3>`;
+                }
+            }
+            else {
+                document.getElementById("demo").innerHTML = `<h3 style="color: red;"> ${Year} is not a Leap Year</h3>`;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Write a JavaScript program to determine whether a given year is a leap year</h1>
+    <p><b> Year = </b><input type="text" id="txtYear"></p>
+    <button onclick="LeapYear()">Check</button>
+    <p id="demo"></p>
+</body>
+
+</html>

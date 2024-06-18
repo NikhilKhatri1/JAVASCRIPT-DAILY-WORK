@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrenheit to Celsius</title>
+    <script>
+        function Fahrenheit() {
+            let Fahrenheit = document.getElementById("Fahrenheit").value;
+            let celsius = (Fahrenheit - 32) * 5 / 9;
+            document.getElementById("demo").innerHTML = `Celsius is ${celsius.toFixed(2)}`;
+        }   // when not giving it is taking 0 as a value display-- output- (-17.78)...
+
+
+
+    </script>
+</head>
+
+<body>
+    <h1>WAP to convert Fahrenheit to celsius</h1>
+    <p>Fahrenheit = <input type="text" id="Fahrenheit"></p>
+    <button onclick="Fahrenheit()">check</button>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+        // using Return Function
+
+        function Fahrenheit1(f) {
+            return (f - 32) * 5 / 9;
+        }
+        value = Fahrenheit1()
+        document.getElementById("demo1").innerHTML = `Celsius is ${value.toFixed(2)}`;
+        // bcz value is not given in "Fahrenheit1()"
+    </script>
+
+</body>
+
+</html>

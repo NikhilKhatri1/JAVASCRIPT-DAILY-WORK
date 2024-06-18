@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date , Month , year</title>
+    <script>
+        function dateMonthYear() {
+            //get current date
+            var today = new Date();
+            //get day
+            var dd = today.getDate();
+            // get month (adding 1 because months are zero-based)
+            var mm = today.getMonth() + 1;
+            //get Year
+            var yyyy = today.getFullYear();
+            // add zero if value is less than 10...
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+            // add zero if value less than 10...
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+            // format date as dd:MM:year
+            var formattedDate = dd + ":" + mm + ":" + yyyy;
+            document.getElementById("demo").innerHTML = formattedDate;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Write a JavaScript program to get the current date.</h1>
+    <h3>Expected Output :</h3>
+    <h3>mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy</h3>
+    <p>This JavaScript program retrieves the current date and formats it in multiple ways (mm-dd-yyyy, mm/dd/yyyy,
+        dd-mm-yyyy,
+        dd/mm/yyyy). It uses the Date object to get the current day, month, and year, and then adds leading zeros if
+        necessary
+        to ensure proper formatting. Finally, it logs the formatted date strings to the console.</p>
+    <button onclick="dateMonthYear()">Click</button>
+    <p id="demo"></p>
+</body>
+
+</html>
