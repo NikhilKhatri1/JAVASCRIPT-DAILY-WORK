@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Array Elements</title>
+</head>
+
+<body>
+    <h3>
+        <pre>
+            1. Reading Array Elements
+            
+                    toString() : It returns all elements separated with "," delimiter.
+
+                    join() : It returns all elements with custom delimiter.
+
+                    map() : It is an iterator to read all elements with custom presentation.
+
+                    forEach() : It is an iterator to read all elements with index number.
+
+                    for..in : It is an iterator to read all properties
+
+                    for..of : It is an iterator to read all values
+
+                    find() : It returns the first occurrence value that matches give
+                    condition.
+
+                    filter() : It returns all values that match given condition.
+        </pre>
+    </h3>
+    <h2>toString and Join</h2>
+    <script>
+        var values = ["A", "B", "C", "D"];
+        document.write(values.toString() + "<br>");
+        document.write(values.join("|"))
+    </script>
+    <h2>Map and forEach</h2>
+    <h3>Map fuction</h3>
+    <script>
+        var categories = ["A", "B", "C"];
+        categories.map(function (value) {
+            document.write(`<li> ${value} </li>`);
+        })
+    </script>
+    <h2>forEach Function</h2>
+    <br><br>
+    <script>
+        var categories = ["Electronics", "Footwear", "Fashion"];
+
+        categories.forEach(function (value, index) {
+            document.write(`<button style='width:100px;text-align:left'>${index + 1}.${value}</button><br>`);
+        })
+        categories.forEach()
+    </script>
+</body>
+
+</html>

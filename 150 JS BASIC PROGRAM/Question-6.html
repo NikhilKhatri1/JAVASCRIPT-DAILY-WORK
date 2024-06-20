@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculate Days Befor and Event</title>
+    <script>
+        function daysUntilChristmas() {
+            // Get current date
+            var today = new Date();
+
+            // Get current year
+            var currentYear = today.getFullYear();
+
+            // Christmas will always be on December 25th of the current year
+            var christmas = new Date(currentYear, 11, 25); // Month is 0-based, so 11 is December
+
+            // Calculate the time difference between today and Christmas
+            var timeDiff = christmas.getTime() - today.getTime();
+
+            // Convert time difference from milliseconds to days
+            var daysUntilChristmas = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+            return daysUntilChristmas;
+        }
+
+        // Example usage
+        var daysLeft = daysUntilChristmas();
+        console.log("There are " + daysLeft + " days left until Christmas.");
+
+    </script>
 </head>
+
 <body>
     <h1>Write a JavaScript program to calculate the days left before Christmas.</h1>
-    
+
 </body>
+
 </html>

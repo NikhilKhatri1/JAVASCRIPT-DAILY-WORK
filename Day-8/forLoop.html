@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop Concept</title>
+    <script>
+        // loop inside loop
+        // for (let i = 0; i <= 5; i++) {
+        //     document.write(`Outer Loop value : ${i} <br>`);
+        //     for (let j = 0; j < 5; j++) {
+        //         document.write(`Inner Loop value : ${j} and inner Loop value ${i} <br>`);
+
+        //     }
+        // }
+
+        //to print Table
+        // {
+        //     for (let i = 1; i <= 10; i++) {
+        //         document.write(`Table of ${i} <br>`);
+        //         for (let j = 1; j <= 10; j++) {
+        //             document.write(i + '*' + j + '=' + i * j + '<br>');
+        //         }
+        //     }
+        // }
+
+        // for loop in Array
+        // let Array = ["flash", "batman", "superman"];
+        // for (let i = 0; i < Array.length; i++) {
+        //     let element = Array[i];
+        //     document.write(`${element} <br>`);
+        // }
+
+        // for..in
+        // object ki properties ko iterate krne ka kaam krta hai
+        function click() {
+            var mylist = { name: "vipul", age: 300, city: "hyd" };
+            for (var mylist in value) {
+                document.getElementById("forIn").innerHTML = `myist <br> `;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h2>For..in Loop</h2>
+    <h4>It is used to loop through an object's properties</h4>
+    <h5>
+        <pre>
+            Syntax:
+                for(var Variable_name in Object_name){
+                    block of Statement
+                }
+        </pre>
+
+    </h5>
+    <button onclick="click()">click</button>
+    <p id="forIn"></p>
+</body>
+
+</html>

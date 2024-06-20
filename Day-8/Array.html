@@ -17,6 +17,11 @@
                 var category = new Array("saab", 10, true);
                 document.getElementById("demo1").innerHTML = category;
             }
+            {
+                var category = ["saab", 10, true, "log"];
+                 // On array value remove and add Length also change...
+                document.getElementById("demo3").innerHTML = `Category's Length = ${category.length}`;
+            }
         }
 
     </script>
@@ -26,6 +31,9 @@
     <button onclick="SubmitClick()">Submit</button>
     <p id="demo"></p>
     <p id="demo1"></p>
+
+    <h3>Length in Array</h3>
+    <p id="demo3"></p>
 </body>
 
 </html>

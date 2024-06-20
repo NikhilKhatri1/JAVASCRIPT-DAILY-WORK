@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Array Element</title>
+    <script>
+        function bodyLoad() {
+
+            // toString()
+            {
+                var numbers = [1, 2, 3, 4, 5];
+                var stringRepresentation = numbers.toString("/");  // you cannot change delimeter
+                document.getElementById("string").innerHTML = `<h3> ${stringRepresentation} <br> Type = ${typeof stringRepresentation}</h3 > `;
+            }
+            // join()
+            {
+                var numbers = [1, 2, 3, 4, 5];
+                var Join = numbers.join("|");  // you can change delimeter
+                document.getElementById("join").innerHTML = `<h3> ${Join} <br> Type = ${typeof Join}</h3 > `;
+            }
+            // map()
+            {
+                var numbers = [1, 2, 3, 4, 5];
+                var result = numbers.map(function (number) {
+                    return number * 2;
+                })
+                document.getElementById("map").innerHTML = `map array = ${result}`;
+            }
+            // forEach()
+            {
+                var numbers = [1, 2, 3, 4, 5];
+
+                numbers.forEach(function (number) {
+                    document.getElementById("forEach").innerHTML += ` ${(number * 2)}`;
+                });
+            }
+            // find()
+            // only return first occurence that match the value
+            {
+                var number = [100, 200, 50, 600, 70];
+                var result = number.find(function (value) {
+                    return value >= 200;
+                });
+                document.getElementById("find").innerHTML = result;
+            }
+            //filter()
+            // return all value that match the condition...
+            {
+                var number = [100, 200, 50, 600, 700];
+                var result = number.filter(function (value) {
+                    return value >= 200;
+                });
+                document.getElementById("filter").innerHTML = result;
+            }
+            //for Traditional
+            {
+
+                for (let index = 0; index < 10; index++) {
+                    const element = index;
+                    console.log(element);
+                }
+            }
+
+            // for..in
+            // {
+            var person = { name: "Alice", Age: 30, City: "Delhi" };
+
+            var result = "";
+            for (var value in person) {    // for(var variable_name in Object_name)
+                result += `${value}: ${person[value]} <br>`;
+            }
+
+            document.getElementById("forIn").innerHTML = result;
+
+        }
+
+
+
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <h1>toString() And join()</h1>
+    <h3>toString</h3>
+    <p id="string"></p>
+    <h3>join</h3>
+    <p id="join"></p>
+
+    <h1>map() and forEach()</h1>
+    <h3>map()</h3>
+    <p id="map"></p>
+    <h3>forEach()</h3>
+    <p id="forEach"></p>
+    <h1>find() and filter()</h1>
+    <h3>find()</h3>
+    <p id="find"></p>
+    <h3>filter()</h3>
+    <p id="filter"></p>
+    <h1>for..in() & for..of()</h1>
+    <h3>for..in</h3>
+    <p id="forIn"></p>
+    <h3>for..of</h3>
+    <p id="forOf"></p>
+    <p id="forOf1"></p>
+    <script>
+        {
+            var p = ["alice", 30, "delhi"];
+            var value = "";
+            for (var item of p) {
+                value += `${item} <br>`;
+            }
+            document.getElementById("forOf").innerHTML = value;
+        }
+        // string value  
+        {
+            var myString = "Hello";
+            Char_result = "";
+            for (var char of myString) {
+                Char_result += `${char} <br>`;
+            }
+            document.getElementById("forOf1").innerHTML = Char_result;
+        }
+
+    </script>
+
+    <h3>Destructuring in Array</h3>
+    <p>To seperate the element of Array in indvidual reference</p>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+        // destructuring Array
+        {
+            var myArray = ["Alice", 30, "delhi"];
+            var name = myArray[0];
+            var Age = myArray[1];
+            var City = myArray[2];
+            document.getElementById("demo").innerHTML = `Name = ${name} <br> Age = ${Age} <br> City= ${City}`;
+        }
+        //Alternate way....
+        {
+            var myArray = ["Alice", 30, "delhi"];
+            var [Name, Age, City] = myArray;
+            document.getElementById("demo1").innerHTML = `Name = ${name} <br> Age = ${Age} <br> City= ${City}`;
+        }
+    </script>
+</body>
+
+</html>

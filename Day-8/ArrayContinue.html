@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storing & Accessing values from Array:</title>
+    <script>
+        // initailing Array
+        var values = ["ram", 10, true, ["A", 20, ["Log"]], function () { document.write("Hello") }];
+        // to call value of array inside array
+        document.write(values[3][1] + "<br>");
+        //array inside array
+        document.write(values[3][2][0] + "<br>");
+        // to invokes the function of array
+        values[4]();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
