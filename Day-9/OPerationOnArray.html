@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Remove Element from Array</title>
+    <script>
+        function OnAdd() {
+            var myArray = ["All", "Electronics", "TV", "Mobile"];
+            document.getElementById("myArray").innerHTML = `Original Array: ${myArray}`;
+            var addElement = document.getElementById("add_element").value;
+            myArray.push(addElement);
+            document.getElementById("pushValue").innerHTML = "Updated Array:" + myArray.join(',');
+        }
+        function OnAdd1() {
+            var myArray = ["All", "Electronics", "TV", "Mobile"];
+            document.getElementById("myArray1").innerHTML = `Original Array: ${myArray}`;
+            var addElement1 = document.getElementById("add_element1").value;
+            myArray.unshift(addElement1);
+            document.getElementById("unShiftValue").innerHTML = `Updated Array: ${myArray.join(',')}`;
+        }
+        function OnAdd2() {
+            var myArray = ["All", "Electronics", "TV", "Mobile"];
+            document.getElementById("myArray2").innerHTML = `Original Array: ${myArray}`;
+            var addElement2 = document.getElementById("add_element2").value;
+            myArray.splice(2, 0, addElement2);   // (indexnumber,delete value number, add item value)
+            document.getElementById("SpliceValue").innerHTML = `Updated Array: ${myArray.join(',')}`;
+        }
+
+        function remove() {
+            var myArray = ["All", "Electronics", "TV", "Mobile"];
+            alert(myArray.splice(1, 2) + "Deleted");
+            myArray.map(function (category) {
+                document.getElementById("Pop").innerHTML = `<li> ${myArray}</li>`;
+            })
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    <h2>Add Element from Array</h2>
+    <h4>Adding Element Using {Push()} in Array</h4>
+    <p>Add Element = <input type="text" id="add_element"></p>
+    <button onclick="OnAdd()">AddElement</button>
+    <p id="myArray"></p>
+    <p id="pushValue"></p>
+    <p>Note:1. dont use push("") like this Just use push(Element_value) <br>2. add element at last</p>
+    <h4>Adding Element using {unShift()} in Array</h4>
+    <p>Add Element = <input type="text" id="add_element1"></p>
+    <button onclick="OnAdd1()">AddElement</button>
+    <p id="myArray1"></p>
+    <p id="unShiftValue"></p>
+    <p>Note:1. add element at start</p>
+    <h4>Adding Element using {Splice()} in Array</h4>
+    <p>Add Element = <input type="text" id="add_element2"></p>
+    <button onclick="OnAdd2()">AddElement</button>
+    <p id="myArray2"></p>
+    <p id="SpliceValue"></p>
+    <p>Note:1. add element at any place using indexing</p>
+    <hr>
+    <h2>Remove Element from Array</h2>
+    <button onclick="remove()">remove</button>
+    <p id="Pop"></p>
+</body>
+
+</html>

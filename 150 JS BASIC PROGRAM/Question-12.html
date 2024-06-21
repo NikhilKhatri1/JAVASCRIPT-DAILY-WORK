@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>within 20 of 100 or 400</title>
+    <script>
+        function CheckNum() {
+            var num = parseInt(document.getElementById("num").value);
+            var result_100 = Math.abs(100 - num);
+            var result_400 = Math.abs(400 - num);
+            if (result_100 <= 20 || result_400 <= 20) {
+                document.getElementById("result").innerHTML = `True`;
+            }
+            else {
+                document.getElementById("result").innerHTML = `False`;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.</h1>
+    <h3>Use "Math.abs() to get Absolute value"</h3>
+    <p>number = <input type="text" id="num"></p>
+    <button onclick="CheckNum()">Check</button>
+    <p id="result"></p>
+</body>
+
+</html>

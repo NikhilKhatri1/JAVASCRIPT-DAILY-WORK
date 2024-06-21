@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Same Number or Different Number</title>
+    <script>
+        /*
+             Write a JavaScript program to check a pair of numbers and return true 
+                if one of the numbers is 50 or if their sum is 50.
+        */
+
+        {
+            var x = parseInt(prompt("Enter the first number:"));
+            var y = parseInt(prompt("Enter the Second Number:"));
+            var z = x + y;
+            if (z === 50) {
+                document.write(true);
+            }
+            else if (x === 50 && y == 0) {
+                document.write(true);
+            }
+            else if (x === 0 && y === 50) {
+                document.write(true);
+            }
+            else {
+                document.write(false);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeatition of char in String</title>
+    <script>
+        function CheckString() {
+            var myString = document.getElementById("myString").value;
+            var characters = myString.split('');
+
+            // Object to store character counts
+            var charCount = {};
+
+            // Count occurrences of each character
+            characters.forEach(function (char) {
+                if (charCount[char]) {
+                    charCount[char]++;
+                } else {
+                    charCount[char] = 1;
+                }
+            });
+
+            // Prepare result string
+            var result = '';
+            for (var char in charCount) {
+                result += `${char}: ${charCount[char]}<br>`;
+            }
+
+            // Display result in the output element
+            document.getElementById("output").innerHTML = result;
+        }
+
+    </script>
+</head>
+
+<body style="display: flex; justify-content: center;">
+    <div class="container" style="border: 2px solid gray; width: 300px; height: 300px;">
+        <h2 style="display: flex;justify-content:center ;">Count Char in String</h2>
+        <h5>String = <input type="text" id="myString"></h5>
+        <button onclick="CheckString()">Check</button>
+        <p id="output" style="padding-left: 10px;"></p>
+    </div>
+</body>
+
+</html>
