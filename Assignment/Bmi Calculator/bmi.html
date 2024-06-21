@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <title>Document</title>
+    <style>
+        .row {
+            display: flex;
+        }
+
+        .form-switch .form-check-label:first-of-type {
+            order: 1;
+            margin-right: 5px;
+            font-weight: bold;
+            font-size: larger;
+            text-align: center;
+            color: black;
+        }
+
+        .form-switch .form-check-input {
+            order: 2;
+            margin-left: 0;
+            border: none;
+        }
+
+        .form-switch .form-check-label:last-of-type {
+            order: 3;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: larger;
+            text-align: center;
+            color: black;
+        }
+
+        #you {
+            position: absolute;
+        }
+    </style>
+    <script>
+        function calculateBMI() {
+            // BMI CALCULATOR....
+            var weight = parseFloat(document.getElementById("weight").value);
+
+            var height = parseFloat(document.getElementById("height").value);
+
+
+
+            if (height <= 0 || weight <= 0 || isNaN(weight) || isNaN(height)) {
+                document.getElementById("msg").innerHTML = "<b>Provide valid value</b>";
+                return;
+            }
+            var height_m = height / 100;
+
+            var bmi = weight / (Math.pow(height_m, 2));
+
+            document.getElementById("msg").innerHTML = "Your BMI value is <b>" + bmi.toFixed(2) + "</b> kg/m<sup>2";
+            //BMI INDICATOR...
+            var you = document.getElementById("you");
+
+            if (bmi >= 0 && bmi <= 5) {
+                you.style.marginLeft = "30px";
+            }
+            else if (bmi > 5 && bmi <= 10) {
+                you.style.marginLeft = "60px";
+            }
+            else if (bmi > 10 && bmi <= 15) {
+                you.style.marginLeft = "80px";
+            }
+            else if (bmi > 15 && bmi <= 18) {
+                you.style.marginLeft = "100px";
+            }
+            else if (bmi > 18 && bmi <= 21) {
+                you.style.marginLeft = "180px";
+            }
+            else if (bmi > 21 && bmi <= 24) {
+                you.style.marginLeft = "240px";
+            }
+            else if (bmi > 24 && bmi <= 26) {
+                you.style.marginLeft = "280px";
+            }
+            else if (bmi > 26 && bmi <= 28) {
+                you.style.marginLeft = "380px";
+            }
+            else if (bmi > 28 && bmi <= 31) {
+                you.style.marginLeft = "420px";
+            }
+            else if (bmi > 31 && bmi <= 34) {
+                you.style.marginLeft = "460px";
+            }
+            else if (bmi > 34 && bmi <= 37) {
+                you.style.marginLeft = "500px";
+            }
+            else if (bmi > 37 && bmi <= 40) {
+                you.style.marginLeft = "560px";
+            }
+            else if (bmi >= 40) {
+                you.style.marginLeft = "580px";
+            }
+
+            // Status.....
+
+            if (bmi <= 18.5) {
+                document.getElementById("status").innerHTML = "Under-Weight"
+            }
+
+            else if (bmi > 18.5 && bmi <= 24.9) {
+                document.getElementById("status").innerHTML = "Normal";
+            }
+
+            else if (bmi > 24.9 && bmi <= 29.9) {
+                document.getElementById("status").innerHTML = "Over-Weight";
+            }
+            else if (bmi >= 30) {
+                document.getElementById("status").innerHTML = "Obese";
+            }
+        }
+
+        function clearInputs() {
+            document.getElementById("height").value = '';
+            document.getElementById("weight").value = '';
+            document.getElementById("msg").innerHTML = '';
+            document.getElementById("status").innerHTML = '';
+            document.getElementById("you").style.marginLeft = '';
+        }
+    </script>
+</head>
+
+<body class="container-fluid row mx-auto">
+    <div class="offset-lg-3 col-lg-6 py-5">
+        <div class="container text-center border border-2 border-dark bg-warning">
+            <div class="heading">
+                <h1>BMI Calculator</h1>
+            </div>
+            <div class="row my-4">
+                <div class="col-lg-6 my-2 col-12 d-flex">
+                    <label for="weight" class="fw-bold me-lg-2 me-1 mt-2">WEIGHT</label>
+                    <input type="text" id="weight" placeholder="Weight in KG" pattern="[0-9]*"
+                        class="form-control w-100" required>
+                </div>
+                <div class="col-lg-6 my-2 col-12 d-flex">
+                    <label for="height" class="fw-bold me-lg-2 me-1 mt-2">HEIGHT</label>
+                    <input type="text" id="height" placeholder="Height in CM" pattern="[0-9]*"
+                        class="form-control w-100" required>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col-lg-5 col-12 form-switch text-lg-start text-center">
+                    <h4 class="text-lg-start fw-bold text-center mb-2 me-2 me-lg-0">Gender</h4>
+                    <label class="form-check-label mb-2 mx-auto" for="gender">Male</label>
+                    <input type="checkbox" class="form-check-input fs-5 mb-2 mx-auto" id="gender">
+                    <label class="form-check-label mb-2 mx-auto" for="gender">Female</label>
+                </div>
+                <div class="col-lg-7 col-12 text-center text-lg-start">
+                    <h4 class="fw-bold my-2 mx-auto">Age</h4>
+                    <input type="text" id="age" placeholder="Enter Age" pattern="[0-9]*" class="my-2
+                                                form-control w-50 mx-auto mx-lg-0" required>
+                    <p>Age:5-120</p>
+                </div>
+            </div>
+            <div class="btn-icon my-4">
+                <button class="btn btn-primary fw-bold me-2" onclick="calculateBMI()">Calculate</button>
+                <button class="btn btn-secondary fw-bold ms-2" onclick="clearInputs()">Clear</button>
+            </div>
+            <div class="row my-4">
+                <div class="col-12">
+                    <div class="my-4">
+                        <div class="progress w-100">
+                            <div id="underweight"
+                                class="progress-bar bg-dark progress-bar-striped progress-bar-animated"
+                                style="width: 25%;">
+                                underweight = 18.5 or less </div>
+                            <div id="normal" class="progress-bar bg-success progress-bar-striped progress-bar-animated"
+                                style="width: 25%;">
+                                Normal weight = 18.5–24.9
+                            </div>
+                            <div id="overweight"
+                                class="progress-bar bg-primary progress-bar-striped progress-bar-animated"
+                                style="width: 25%;">
+                                Overweight = 25–29.9
+                            </div>
+                            <div id="obese" class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
+                                style="width: 25%;">
+                                Obesity = 30 or greater
+                            </div>
+                        </div>
+                        <div id="you" class="text-dark fw-bold"><span class="bi bi-triangle-fill"></span><br>You
+                        </div>
+                        <div class="my-5">
+                            <div id="msg" class="fs-5 text-center"></div>
+                            <div id="status" class="fs-5 text-center fw-bold"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

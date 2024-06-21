@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Display details in the modal
         document.getElementById('CustomerNameSummary').innerHTML = nameType;
-        document.getElementById('CheckInSummary').innerHTML = checkIn;// Function to calculate total amount
+        document.getElementById('CheckInSummary').innerHTML = checkIn;   // Function to calculate total amount
         function calculateTotalAmount() {
             // Retrieve form values
             var nameType = document.getElementById("userName").value;
