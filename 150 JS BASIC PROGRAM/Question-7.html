@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+    <script>
+            // click multiply 
+        function multiplyValue() {
+            var value1 = parseInt(document.getElementById("first_value").value);
+            var value2 = parseInt(document.getElementById("sec_value").value);
+            result = value1 * value2;
+            document.getElementById("result").innerHTML = `Result Is : <br> ${result}`;
+        }
+        // click divide
+        function divideValue() {
+            var value1 = parseInt(document.getElementById("first_value").value);
+            var value2 = parseInt(document.getElementById("sec_value").value);
+            result = value1 / value2;
+            document.getElementById("result").innerHTML = `Result Is : <br> ${result}`;
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Write a JavaScript program to calculate multiplication and division of two numbers (input from the user).</h1>
+    <div class="container" style="border: 1px solid rgb(155, 151, 151); width: 300px; height: 200px;">
+        <p>1st Number = <input type="text" id="first_value"></p>
+        <p>2nd Number = <input type="text" id="sec_value"></p>
+        <button onclick="multiplyValue()">Multiply</button>
+        <button onclick="divideValue()">Divide</button>
+        <p id="result"></p>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presenting Array Dynamically</title>
+    <script>
+        function loadClick() {
+            var imgElement = document.createElement("img");
+            imgElement.src = "../images/profile-1.jpg";
+            imgElement.height = "200";
+            imgElement.width = "300";
+
+            document.querySelector(".imgcontainer").appendChild(imgElement);
+        }
+        function loadClick1() {
+            //create table
+            var table = document.createElement("table");
+            // create table-head
+            var thead = document.createElement("thead");
+            // create table-body
+            var tbody = document.createElement("tbody");
+            // create table-row
+            var tr_head = document.createElement("tr");
+            var tr_body = document.createElement("tr");
+
+            //create th and td
+            var th = document.createElement("th");
+            var td = document.createElement("td");
+
+            //inserting value innerHTML
+            th.innerHTML = "Name";
+            td.innerHTML = "Alice";
+
+            //appending th into tr
+            tr_head.appendChild(th);
+            tr_body.appendChild(td);
+
+            // appending tr into thead and tbody
+            thead.appendChild(tr_head);
+            tbody.appendChild(tr_body);
+
+            // appending thead and tbody into table..
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            table.border = "1";
+
+            // Using queryselector to append value..
+            document.querySelector(".table-container").appendChild(table);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Presenting Array Dynamically</h1>
+    <h3>By Using Method:-
+        <pre>Syntax
+            document.createElement("img|div|p|table|....");
+            Step-1
+            var pic =document.createElement("img");
+            pic.src = "";
+            pic.height ="";
+            pic.border ="";
+            step-2
+            document.querySelector("body").appendChild(pic);
+        </pre>
+    </h3>
+    <h3>Dynamic Images</h3>
+    <div class="container" style="border: 2px solid black; height: 300px; width: 600px;">
+        <button onclick="loadClick()">Click</button>
+        <br> <br>
+        <div class="imgcontainer">
+
+        </div>
+    </div>
+    <h3>Dynamic Table</h3>
+    <div class="container" style="border: 2px solid black; height: 300px; width: 600px;">
+        <button onclick="loadClick1()">Load List</button>
+        <br> <br>
+        <div class="table-container">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

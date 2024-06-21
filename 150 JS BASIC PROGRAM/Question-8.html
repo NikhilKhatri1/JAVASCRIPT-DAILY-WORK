@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Conversion</title>
+    <script>
+        function calculate() {
+            var c = parseFloat(document.getElementById("Celsius_value").value);
+            // var f = parseFloat(document.getElementById("fah_value").value);
+
+            var fah_result = (c * 9 / 5) + 32;
+            document.getElementById("cInput").innerHTML = `Fahrenheit = ${fah_result}`;
+            // celsius_result = (f - 32) * 5 / 9;
+            // document.getElementById(fInput).innerHTML = `Celsius = ${celsius_result}`;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Write a JavaScript program to convert temperatures to and from celsius, fahrenheit.</h1>
+    <div class="container" style="border: 2px solid gray; width: 300px; height: 200px;">
+        <h3>Temperature Calculator</h3>
+        <!-- <input type="radio" name="temp" id="celsius" checked>Celsius <input type="radio" id="fahrenheit"
+            name="temp">fahrenheit -->
+        <p>Celsius = <input type="text" id="Celsius_value"></p>
+        <!-- <p>fahrenheit = <input type="text" id="fah_value"></p> -->
+        <button onclick="calculate()">calculate</button>
+        <p id="cInput"></p>
+        <!-- <p id="fInput"></p> -->
+    </div>
+
+</body>
+
+</html>

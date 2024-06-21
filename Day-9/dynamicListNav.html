@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic list and navbar</title>
+    <script>
+        var categories = ["All", "Electronics", "Footwear", "Kids Fashion"];
+        function LoadClick() {
+            document.querySelector("ol").innerHTML = "";
+            document.querySelector("select").innerHTML = "";
+            document.querySelector("nav").innerHTML = "";
+            
+            categories.map(function (category) {
+                var li = document.createElement("li");
+                li.innerHTML = category;
+                document.querySelector("ol").appendChild(li);
+                var option = document.createElement("option");
+                option.text = category;
+                option.value = category;
+                document.querySelector("select").appendChild(option);
+                var anchor = document.createElement("a");
+                anchor.href = `${category}.html`;
+                anchor.innerHTML = category;
+
+                document.querySelector("nav").appendChild(anchor);
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Create dynamic list and navbar</h2>
+    <button onclick="LoadClick()">load Click</button>
+    <br> <br>
+    <ol>
+
+    </ol>
+    <select>
+
+    </select>
+    <nav style="display: flex; justify-content: space-between; padding: 10px;">
+
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Check</title>
+    <script>
+        function StringAdd() {
+            var myString = document.getElementById("myString").value;
+            if (myString === "") {
+                alert("provide Correct String");
+            }
+
+            else if (myString.substring(0, 2).toLowerCase() === 'py') {
+
+                document.getElementById("demo").innerHTML = myString;
+            }
+            else {
+                var result = "Py" + myString;
+                document.getElementById("demo").innerHTML = result;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Write a JavaScript program to create another string by adding "Py" in front of a given string. If the given
+        string
+        begins with "Py" return the original string.</h1>
+    <p>String = <input type="text" id="myString"></p>
+    <button onclick="StringAdd()">Add String</button>
+    <p id="demo"></p>
+</body>
+
+</html>
