@@ -1,12 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array Manipulation</title>
-    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- custom js -->
+    <script>
+        var Movies = ["Maharaja", "Dota-2"];
+        function loadMovie() {
+            document.getElementById("lstMovies").innerHTML = "";
+            Movies.map(function (movie) {
+                var option = document.createElement("option");
+                option.text = movie;
+                option.value = movie;
+                document.getElementById("lstMovies").appendChild(option);
+            })
+            document.getElementById("lblCount").innerHTML = `Total Number of Movies: ${Movies.length}`
+        }
+        function AddClick() {
+            var movieName = document.getElementById("movie_input").value;  // the value you Entered and display on input before executed..
+            if (Movies.indexOf(movieName) == -1) {
+                Movies.push(movieName);
+                alert(`${movieName} \n Added Successfully`);
+                document.getElementById("movie_input").value = "";
+                // but innerHTML is the after what executed and  displayed through given value
+                loadMovie();
+            }
+            else {
+                alert(`${movieName} is Already Exists..`);
+            }
+        }
+        // To sort the Movie by Ascending and descending order....
+
+        function SortAsc() {
+            // carefull while typing bcz it follow upperCase and LowerCase....
+            Movies.sort();
+            loadMovie();
+        }
+        function SortDsc() {
+            Movies.sort();
+            Movies.reverse();
+            loadMovie();
+        }
+        // To Edit Movie Name...
+
+        function EditClick() {
+            var movieName = document.getElementById("lstMovies").value;
+            document.getElementById("txtMovie").value = movieName;
+        }
+        function saveClick() {
+            var newName = document.getElementById("txtMovie").value;
+            var CorrectionMovieIndex = Movies.indexOf(document.getElementById("lstMovies").value);
+            Movies[CorrectionMovieIndex] = newName;
+            loadMovie();
+        }
+        // Remove Click
+        function removeClick() {
+            movieName = document.getElementById("lstMovies").value;
+            var removeMovieIndex = Movies.indexOf(movieName);
+            var flag = confirm(`Are you Sure? \n You want to delete ${movieName}`);
+            if (flag == true) {
+                Movies.splice(removeMovieIndex, 1);
+                loadMovie();
+            }
+        }
+        function clearClick() {
+            var flag = confirm("Are you sure? \n want to delete all Movies?");
+            if (flag == true) {
+                Movies.length = 0;
+                loadMovie();
+            }
+        }
+    </script>
 </head>
-<body>
-    
+
+<body class="Container-fluid" onload="loadMovie()">
+    <div class="container border border-4 border-black py-3 my-4" style="width: 550px; height: 500px;">
+        <h3 class="text-center">Admin Dashboard</h3>
+        <hr style="color: rgb(46, 45, 45); border-style: dashed;">
+        <label class="fw-bold mt-3">Movie Name</label>
+        <div class="input-group w-50">
+            <input type="text" class="form-control w-25" id="movie_input" placeholder="New Movie Name">
+            <button class="btn btn-primary bi bi-film" onclick="AddClick()">ADD</button>
+        </div>
+        <label class="fw-bold mt-3">Movies List</label>
+        <div class="my-2">
+            <button class="bi bi-sort-alpha-down btn btn-dark" onclick="SortAsc()"></button>
+            <button class="bi bi-sort-alpha-up btn btn-warning" onclick="SortDsc()"></button>
+            <button class="bi bi-pen-fill btn btn-warning" onclick="EditClick()" data-bs-target="#edit"
+                data-bs-toggle="modal"> Edit</button>
+            <div class="modal fade" id="edit">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Edit Movie Name</h2>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" id="txtMovie" class="form-control">
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" onclick="saveClick()" data-bs-dismiss="modal">Save</button>
+                            <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <select class="form-select w-50" size="3" id="lstMovies">
+
+        </select>
+        <label class="form-label fw-bold text-warning" id="lblCount"></label>
+        <div>
+            <button class="btn btn-danger bi bi-trash-fill" onclick="removeClick()"> Remove Movie</button>
+            <button class="btn btn-outline-danger bi bi-trash-fill" onclick="clearClick()"> Clear All</button>
+        </div>
+    </div>
+
 </body>
+
 </html>
