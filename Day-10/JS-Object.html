@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js Object</title>
+    <script>
+        function showDetail() {
+            var tv = {
+                Name: "Samsung TV",
+                Price: 15000.45,
+                Cities: ["Delhi", "Hyd"],
+                Rating: { Rate: 4.3, Count: 500 },
+                Qty: 2,
+                Total: function () {
+                    return this.Qty * this.Price;
+                }
+            }
+            document.getElementById("detail").innerHTML = `Name=${tv.Name}<br>Price=${tv.Price}<br>Cities=${tv.Cities.toString()}<br>Rating=${tv.Rating.Rate}[${tv.Rating.Count}]<br>Quantity=${tv.Qty}<br>Total=${tv.Total()}`;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Introduction of Object type in JS</h1>
+    <button onclick="showDetail()">Details</button>
+    <p id="detail"></p>
+</body>
+
+</html>
