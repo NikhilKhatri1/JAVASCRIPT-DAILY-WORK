@@ -13,10 +13,13 @@
                 Cities: ["Delhi", "Hyd"],
                 Rating: { Rate: 4.3, Count: 500 },
                 Qty: 2,
+                // we can Use Function inside key:value() pair
                 Total: function () {
+                    // inside Function we can obtain value using "this.Key_name"
                     return this.Qty * this.Price;
                 }
             }
+            // to display value we have to use "var_name.key_name"...
             document.getElementById("detail").innerHTML = `Name=${tv.Name}<br>Price=${tv.Price}<br>Cities=${tv.Cities.toString()}<br>Rating=${tv.Rating.Rate}[${tv.Rating.Count}]<br>Quantity=${tv.Qty}<br>Total=${tv.Total()}`;
         }
     </script>
