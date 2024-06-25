@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Add Char at start and last of String</title>
+
+</head>
+
+<body onload="BodyLoad()">
+    <h1>Write a JavaScript program to create another string from a given string with the first character of the given
+        string added to the front and back.</h1>
+    <p id="Mystring"></p>
+    <p id="newString"></p>
+    <script>
+        function BodyLoad() {
+            myString = prompt("Enter your String");
+            var firstChar = myString.charAt(0);
+            document.getElementById("Mystring").innerHTML = `Original String = ${myString}`;
+            var ModifiedString = firstChar + myString + firstChar;
+            document.getElementById("newString").innerHTML = `New String = ${ModifiedString}`;
+
+        }
+    </script>
+</body>
+
+</html>
