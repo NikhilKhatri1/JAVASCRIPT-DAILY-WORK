@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display prompt value</title>
+    <script>
+        function BodyLoad() {
+            // take input from User...
+            var string_input = prompt("Enter String");
+
+            if (string_input === null) {
+                // Handle case where user cancels the prompt
+                document.getElementById("result").innerHTML = "No input provided.";
+                return;
+            }
+
+            // Display original string
+            document.getElementById("result").innerHTML = `Original string = ${string_input}`;
+
+            // Get the length of the string
+            var stringLength = string_input.length;
+
+            // Ensure the string has at least two characters
+            if (stringLength >= 2) {
+                // Get the first character
+                var firstChar = string_input.charAt(0);
+                // Get the last character
+                var lastChar = string_input.charAt(stringLength - 1);
+                // Get the middle characters
+                var middleChars = string_input.substring(1, stringLength - 1);
+                // Create swapped string
+                var swappedString = lastChar + middleChars + firstChar;
+                document.getElementById("swap").innerHTML = `Modified String = ${swappedString}`;
+            } else {
+                // Handle case where input is too short
+                document.getElementById("swap").innerHTML = "String should have at least two characters.";
+            }
+        }
+    </script>
+</head>
+
+<body onload="BodyLoad()">
+    <h1>Interchange program</h1>
+    <p id="result"></p>
+    <p id="swap"></p>
+</body>
+
+</html>

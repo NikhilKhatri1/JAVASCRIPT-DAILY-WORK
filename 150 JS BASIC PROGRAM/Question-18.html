@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Char from String</title>
+    <script>
+        function removeChar() {
+            var originalString = document.getElementById("inputString").value;
+            var charPos = parseInt(prompt("Enter the Character Position"));
+
+            // Validate position input
+            if (isNaN(charPos) || charPos < 0 || charPos >= originalString.length) {
+                alert("Please enter a valid position.");
+                return; // Exit function if position is invalid
+            }
+
+            // Convert string to array to use splice
+            var stringArray = originalString.split('');
+
+            // Remove character at specified position using splice
+            stringArray.splice(charPos, 1);
+
+            // Convert array back to string
+            var modifiedString = stringArray.join('');
+
+            // Display modified string
+            document.getElementById("result").textContent = `Modified String = ${modifiedString}`;
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript Program to Remove a Character at Specified Position</h1>
+    <label for="inputString">Enter the String:</label>
+    <input type="text" id="inputString">
+    <button onclick="removeChar()">Remove Char</button>
+    <p id="result"></p>
+</body>
+
+</html>
