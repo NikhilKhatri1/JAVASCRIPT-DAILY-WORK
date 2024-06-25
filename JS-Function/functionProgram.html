@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Javascript Function</h1>
+    <p>Invoke (call) a function to convert from Fahrenheit to Celsius:</p>
+    <p id="result"></p>
+
+    <script>
+        function toCelsius() {
+            var f = parseFloat(prompt("Enter Fahrenheit value"));
+
+            if (!isNaN(f)) { // Check if f is a valid number
+                var value = (5 / 9) * (f - 32);
+                document.getElementById("result").innerHTML = "Celsius value: " + value.toFixed(2);
+            } else {
+                alert("Enter a valid number for Fahrenheit.");
+            }
+        }
+
+        toCelsius();
+    </script>
+</body>
+
+</html>

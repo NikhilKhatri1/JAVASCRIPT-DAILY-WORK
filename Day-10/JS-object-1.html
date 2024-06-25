@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function printFunction() {
+            var tv = {
+                Name: "Samsung TV",
+                price: 15.345,
+                Qty: 2,
+                Total: function () {
+                    return this.Qty * this.price;
+                },
+                cities: ["Delhi", "HYD"],
+                rating: { Rate: 4.3, Review: 2345 },
+                print: function () {
+                    document.getElementById("result").innerHTML = `Name = ${this.Name}<br> price = ${this.price}<br> 
+                    Total Price = ${this.Total().toFixed(2)}<br> Cities = ${this.cities.toString()}<br> Rating = ${this.rating.Rate}`;
+                }
+            }
+            tv.Qty = parseInt(prompt("Enter Quantity"));
+            tv.print()
+        }
+    </script>
+</head>
+
+<body>
+    <h1>js Object data display from user</h1>
+    <button onclick="printFunction()">Click</button>
+    <p id="result"></p>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Function with return uses</title>
+</head>
+
+<body>
+    <h1>JavaScript Functions</h1>
+
+    <p>Call a function which performs a calculation and returns the result:</p>
+
+    <p id="result"></p>
+
+    <script>
+        // Function definition
+        function myFunction(x, y) {
+            return x * y;
+        }
+
+        // Prompt for input
+        let x = parseFloat(prompt("Enter the 1st Number:"));
+        let y = parseFloat(prompt("Enter the 2nd Number:"));
+
+        // Call the function and capture the result
+        let result = myFunction(x, y);
+
+        // Display the result in the HTML
+        document.getElementById("result").textContent = "Result of multiplication: " + result;
+    </script>
+</body>
+
+</html>

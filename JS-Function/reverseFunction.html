@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Function</title>
+    <script>
+        function reverseNumber() {
+            // prompt user input value
+            let num = prompt("Enter a number:");
+            // Convert input to number
+            num = parseInt(num);
+            // check if number is valid
+            if (isNaN(num)) {
+                return `Invalid Number, Enter correct value`;
+            }
+            // convert number to string
+            let numStr = num.toString();
+            // Reverse the String
+            let reversedStr = numStr.split('').reverse().join('');
+            // convert the string to number
+            let reversedNum = parseInt(reversedStr);
+            // handle negative numbers
+            if (num < 0) {
+                reversedNum = -reversedNum;
+            }
+            return reversedNum;
+        }
+
+        // Execute the function and update the DOM
+        function updateResult() {
+            let reversed = reverseNumber();
+            // Display original number entered by the user
+            let originalNum = parseInt(document.getElementById("originalNum").textContent);
+            document.getElementById("reverse").innerHTML = `Original number = ${originalNum}<br>Reversed Number = ${reversed}`;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Reversed number function</h1>
+    <p id="original">Original number = <span id="originalNum"></span></p>
+    <button onclick="updateResult()">Reverse Number</button>
+    <p id="reverse"></p>
+
+    <script>
+        // Display the original number initially
+        let originalNumber = parseInt(prompt("Enter a number:"));
+        if (!isNaN(originalNumber)) {
+            document.getElementById("originalNum").textContent = originalNumber;
+        }
+    </script>
+</body>
+
+</html>
