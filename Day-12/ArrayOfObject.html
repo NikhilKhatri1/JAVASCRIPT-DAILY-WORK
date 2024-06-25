@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Details</title>
+    <script>
+        function LoadClick() {
+            fetch("mobiles.json")
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(function (product) {
+                    document.getElementById("lblTitle").innerHTML = product.title;
+                    document.getElementById("lblPrice").innerHTML = product.price;
+                    document.getElementById("lblRating").innerHTML = product.rating.rate;
+                    document.getElementById("imgProduct").src = product.image;
+
+                    product.offers.forEach(function (offer) {
+                        var li = document.createElement("li");
+                        li.textContent = offer;
+                        document.getElementById("lstOffers").appendChild(li);
+                    });
+                })
+                .catch(function (err) {
+                    alert('Fetch error: ' + err);
+                })
+                .finally(function () {
+                    alert("Request Completed..");
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Mobile Details</h1>
+    <button onclick="LoadClick()">Load Data</button>
+    <dl>
+        <dt>Title</dt>
+        <dd id="lblTitle"></dd>
+        <dt>Preview</dt>
+        <dd>
+            <img width="200" height="200" id="imgProduct">
+        </dd>
+        <dt>Price</dt>
+        <dd id="lblPrice"></dd>
+        <dt>Offers</dt>
+        <dd>
+            <ul id="lstOffers">
+
+            </ul>
+        </dd>
+        <dt>Rating</dt>
+        <dd id="lblRating"></dd>
+    </dl>
+</body>
+
+</html>
