@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoadClick() {
+
+            var http = new XMLHttpRequest();
+            var product = {};
+
+            http.open("get", "mobiles.json", true);
+            http.send();
+
+            http.onreadystatechange = function () {
+
+                if (http.readyState == 4) {
+                    product = JSON.parse(http.responseText);
+                    document.getElementById("lblTitle").innerHTML = product.title;
+                    document.getElementById("imgProduct").src = product.image;
+                    document.getElementById("lblPrice").innerHTML = product.price;
+                    document.getElementById("lblRating").innerHTML = `${product.rating.rate}- <b>${product.rating.ratings} ratings & ${product.rating.reviews} reviews</b>`;
+
+                    product.offers.map(function (offer) {
+                        var li = document.createElement("li");
+                        li.innerHTML = offer;
+
+                        document.getElementById("lstOffers").appendChild(li);
+                    })
+
+
+                }
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="LoadClick()">Load Data</button>
+    <dl>
+        <dt>Title</dt>
+        <dd id="lblTitle"></dd>
+        <dt>Preview</dt>
+        <dd>
+            <img width="200" height="300" id="imgProduct">
+        </dd>
+        <dt>Price</dt>
+        <dd id="lblPrice"></dd>
+        <dt>Offers</dt>
+        <dd>
+            <ul id="lstOffers">
+
+            </ul>
+        </dd>
+        <dt>Rating</dt>
+        <dd id="lblRating"></dd>
+    </dl>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Const Array & Object</title>
+</head>
+
+<body>
+    <h1>constant Array</h1>
+    <h2>You can change the elements of a constant array:</h2>
+    <script>
+        // you can Create a Const Array....
+        const cars = ["Saab", "Volvo", "BMW"];
+        // orginal array
+        document.write(`Orginal Array = ${cars} <br>`);
+        // You can Change Element....
+        cars[0] = "Fiat";
+        document.write(`change Element Array = ${cars} <br>`);
+        // you can Add element..
+        cars.push("audi");
+        document.write(`Added Element Array = ${cars} <br>`);
+    </script>
+    <h3>But you cannot Reassign the Array</h3>
+    <hr>
+    <h1>constant Objects</h1>
+    <h2>You can Change the properties of Object:</h2>
+    <script>
+        //You can create const Object.....
+        const car = {
+            name: "Audi",
+            model: "R8",
+            color: "red",
+        }
+        document.write(`Original Object => <br> Name = ${car.name} <br> Model = ${car.model} <br> Color = ${car.color} <br>Your can Chnage property <br> `);
+        // you change property..
+        car.color = "white";
+        document.write(`Color = ${car.color} <br> You can Add property<br>`);
+        car.owner = "Nikhil";
+        document.write(`New Object => <br> Name = ${car.name} <br> Model = ${car.model} <br> Color = ${car.color}<br> Owner = ${car.owner}`);
+    </script>
+    <h3>But you can NOT reassign the object:
+    </h3>
+</body>
+
+</html>
