@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question-21</title>
+
+</head>
+
+<body>
+    <h1>Write a JavaScript program to check whether a given positive number is a multiple of 3 or 7.</h1>
+    <h3>Check Multiple of 3 or 7</h3>
+    <button onclick="multiple()">check</button>
+    <p id="result"></p>
+    <script>
+        function multiple() {
+            var n = parseInt(prompt("Enter the integer number:"));
+            if (n % 3 == 0 || n % 7 == 0) {
+                document.getElementById("result").innerHTML = "true";
+            }
+            else {
+                document.getElementById("result").innerHTML = "false";
+            }
+        }
+    </script>
+</body>
+
+</html>
