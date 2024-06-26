@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Property</title>
+</head>
+
+<body>
+    <h2>Object Property</h2>
+    <h4>An Object is an Unordered Collection of Properties</h4>
+    <h2>Accessing JavaScript Properties</h2>
+    <pre>
+        // objectName.property
+
+        let age = person.age;
+
+        // objectName["property"]
+
+        let age = person["age"];
+
+        // objectName[Expression]
+
+        let age = person[x];
+    </pre>
+    <h3>Example</h3>
+    <p id="demo"></p>
+    <script>
+        const person = {
+            firstName: "john",
+            lastName: "boi",
+            age: 30
+        };
+        let x = "firstName";
+        let y = "lastName";
+        document.getElementById("demo").innerHTML = `<b>${person.firstName}</b> is <b>${person.age}</b> Year Old.<br>
+        <b>${person["firstName"]} ${person[y]} </b>  is a boy`;
+
+    </script>
+    <h2>Adding a new Property</h2>
+    <pre>
+        <b>add property</b>
+
+        <b>person.nationality = "America";</b>
+    </pre>
+    <h5>
+        output:-<p id="demo1"></p>
+    </h5>
+    <h2>Deleting property from object</h2>
+    <p id="demo2"></p>
+    <p>Undefined bcz property is deleted if you to access you need to add again</p>
+    <script>
+        const person1 = {
+            firstName: "john",
+            lastName: "boi",
+            age: 30
+        };
+        person1.nationality = "America";
+        document.getElementById("demo1").innerHTML = person1.nationality;
+        delete person1.age;
+        document.getElementById("demo2").innerHTML = "age = " + person1.age;
+    </script>
+
+</body>
+
+</html>
