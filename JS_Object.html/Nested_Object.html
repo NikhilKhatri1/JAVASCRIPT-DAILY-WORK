@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Objects in JS </title>
+</head>
+
+<body>
+    <h1>Property values in an object can be other objects:</h1>
+    <h3>You can access nested objects using the dot notation or the bracket notation:</h3>
+    <h3>
+        <pre>
+        syntax:-
+            myObj.myCars.car2;
+            myObj.myCars["car2"];
+            myObj["myCars"]["car2"];
+        </pre>
+    </h3>
+    <h4>Example of Nested Object</h4>
+    <p id="demo"></p>
+    <script>
+        myObj = {
+            Name: "John",
+            age: 30,
+            myCars: {
+                car1: "Ford",
+                car2: "Audi",
+                car3: "Tata"
+            }
+        }
+        document.getElementById("demo").innerHTML = "Access Nested Object Property = " + myObj.myCars.car1;
+    </script>
+</body>
+
+</html>

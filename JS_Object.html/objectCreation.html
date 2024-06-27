@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Creation and Read</title>
+    <script>
+        function bodyLoad() {
+            // Creating objects using different methods
+
+            // 1. Literal syntax
+            const person1 = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 30,
+                email: "john@gmail.com"
+            };
+            document.getElementById("demo1").innerHTML = `First Name: ${person1.firstName}`;
+
+            // 2. Using the new Object() syntax
+            const person2 = new Object();
+            person2.firstName = "Jane";
+            person2.lastName = "Smith";
+            person2.age = 25;
+            person2.email = "jane@gmail.com";
+            document.getElementById("demo2").innerHTML = `Age: ${person2.age}`;
+
+            // 3. Object Constructor Function (less common)
+            function Person(firstName, lastName, age) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+            }
+            const person3 = new Person("Mike", "Johnson", 40);
+            document.getElementById("demo3").innerHTML = `Last Name: ${person3.lastName}`;
+
+            // 4. iterate over Object property(for..in loop)
+            // define Object
+            const person4 = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 30,
+            };
+            //iterate over object properties using for...in loop
+            for (let key in person4) {
+                document.getElementById("demo4").innerHTML += key + ":" + person4[key] + "<br> <br>";
+            }
+
+            // 5. forEach and Object.keys()
+            const person5 = {
+                firstName: "yellow",
+                lastName: "shin",
+                age: 30,
+            };
+            Object.keys(person5).forEach(key => {
+                document.getElementById("demo5").innerHTML += `${key} : ${person5[key]} <br> <br>`;
+            });
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <h1>Object Creation and Read using Methods</h1>
+
+    <h3>Using literal syntax</h3>
+    <p id="demo1"></p>
+
+    <h3>Using the new Object() syntax:</h3>
+    <p id="demo2"></p>
+
+    <h3>Object Constructor Function (less common):</h3>
+    <p id="demo3"></p>
+    <h3>iterater using for..in loop</h3>
+    <p id="demo4"></p>
+    <h3>iterater using forEach and Object.keys() loop</h3>
+    <p id="demo5"></p>
+</body>
+
+</html>

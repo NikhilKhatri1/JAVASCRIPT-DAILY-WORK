@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Object.assign() </title>
+</head>
+
+<body>
+    <h1>Assign method in object</h1>
+    <h2>The Object.assign() Method</h2>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <script>
+        // create target Object
+        const person1 = {
+            firstName: "John",
+            lastName: "Boi",
+            age: 30,
+        };
+
+        // Display original person1 object
+        let originalText = "";
+        for (let key in person1) {
+            originalText += `${key}: ${person1[key]}<br>`;
+        }
+        document.getElementById("demo").innerHTML = originalText;
+
+        // create Source Object
+        const person2 = {
+            firstName: "Alice",
+            lastName: "Sam"
+        };
+
+        // Object.assign(target, source)
+        Object.assign(person1, person2);
+
+        // Display modified person1 object after Object.assign
+        let modifiedText = "";
+        for (let key in person1) {
+            modifiedText += `${key}: ${person1[key]}<br>`;
+        }
+        document.getElementById("demo1").innerHTML = modifiedText;
+    </script>
+</body>
+
+</html>
