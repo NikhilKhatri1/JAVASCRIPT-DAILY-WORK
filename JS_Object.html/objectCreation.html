@@ -56,6 +56,32 @@
             Object.keys(person5).forEach(key => {
                 document.getElementById("demo5").innerHTML += `${key} : ${person5[key]} <br> <br>`;
             });
+            // 6. map and ObjectEntries()
+            const person6 = {
+                firstName: "dum",
+                lastName: "yum",
+                age: 30,
+            };
+            const transformEntries = Object.entries(person6).map(([key, value]) => {
+                return `${key} : ${value} <br> <br>`
+            });
+
+            document.getElementById("demo6").innerHTML = transformEntries.join("");
+            // 7. forOf() loop and Object.entries()
+            const person7 = {
+                firstName: "dum",
+                lastName: "dum",
+                age: 30,
+            };
+            for (const [key, value] of Object.entries(person7)) {
+            
+                document.getElementById("demo7").innerHTML += `${key} : ${value} <br> <br>`;
+            };
+
+
+
+
+
         }
     </script>
 </head>
@@ -75,6 +101,10 @@
     <p id="demo4"></p>
     <h3>iterater using forEach and Object.keys() loop</h3>
     <p id="demo5"></p>
+    <h3>iterater using map and ObjectEntries()</h3>
+    <p id="demo6"></p>
+    <h3>For..of loop and ObjectEntries()</h3>
+    <p id="demo7"></p>
 </body>
 
 </html>
