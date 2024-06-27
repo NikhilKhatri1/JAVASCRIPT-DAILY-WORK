@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading all key from Object</title>
+    <script>
+        function BodyLoad() {
+            var product = {
+                id: 1,
+                Name: "Mobile",
+                Price: 4500.45,
+                stock: true
+            };
+            Object.keys(product).map(function (key) {
+                document.getElementById("demo").innerHTML += `${key} : ${product[key]} <br>`;
+            });
+            // deleting Properties
+
+            var product1 = {
+                id: 2,
+                Name: "sam",
+                Price: 1234
+            };
+            delete product.id;
+            Object.keys(product).map(function (key) {
+                document.getElementById("demo1").innerHTML += `${key} : ${product[key]} <br>`;
+            })
+            // identify the Type of property...
+
+            var type_p = typeof product.Price;
+            document.getElementById("demo2").innerHTML = type_p;
+
+            // symbol property...
+            var Id = Symbol();
+
+            var product = {
+                [Id]: 1,
+                Name: "TV",
+                Price: 45000.44,
+                Stock: true
+            };
+
+            document.getElementById("demo3").innerHTML = product[Id];
+
+            // filter Object with filter property
+            var products = [
+                { Name: "TV", Category: "Electronics" },
+                { Name: "Nike Casuals", Category: "Footwear" },
+                { Name: "Watch", Category: "Electronics" }
+            ];
+
+            // Example: Print names of all electronics products
+            products.filter(function (product) {
+                return product.Category === "Electronics";
+            }).map(function (product) {
+                document.getElementById("demo4").innerHTML += product.Name + "<br>";
+            });
+
+            // filter object property from api 
+            var ratingRange = parseFloat(prompt("Enter Rating Minimum Range"));
+
+            fetch('https://fakestoreapi.com/products')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (products) {
+                    const filteredProducts = products.filter(function (product) {
+                        return product.rating.rate >= ratingRange;
+                    });
+
+                    const productHTML = filteredProducts.map(function (product) {
+                        return `<li><img src="${product.image}" width="100" height="100"> ${product.title} <b>[${product.rating.rate}]</b></li>`;
+                    }).join(""); // Join the array into a single string
+
+                    document.getElementById("demo5").innerHTML = productHTML; // Set the innerHTML of the element
+                })
+                .catch(function (error) {
+                    console.error('Error fetching products:', error);
+                });
+
+
+
+        }
+    </script>
+</head>
+
+<body onload="BodyLoad()">
+    <h1>Object Manipulation</h1>
+    <h3>Reading all key from Object</h3>
+    <p id="demo"></p>
+    <h4>Description</h4>
+    <ul>
+        <li>Object.keys(objectName): Returns an array of strings representing all enumerable properties of the object.
+        </li>
+        <li>Object.keys(product): Returns ["Id", "Name", "Price", "Stock"].</li>
+        <li>map(function(key) { ... }): Iterates through each key in the array and prints the key-value pairs.</li>
+    </ul>
+    <hr>
+    <h3>Delete key:value (property) from Object</h3>
+    <h4>To delete a key from an object, you use the delete operator:</h4>
+    <h4>
+        <pre>
+            syntax
+                delete product.id;
+                //code
+                var product1 = {
+                id: 2,
+                Name: "sam",
+                Price: 1234
+                };
+                delete product.id;
+                Object.keys(product).map(function (key) {
+                document.getElementById("demo1").innerHTML += `${key} : ${product[key]} BR`;
+                })
+        </pre>
+    </h4>
+    <hr>
+    <p id="demo1"></p>
+    <hr>
+    <h2>Getting the Data Type of a Value in an Object</h2>
+    <h3>to identify the type: use the "typeof" operator</h3>
+    <p id="demo2"></p>
+    <hr>
+    <h2>Symbol Data Type (ES6)</h2>
+    <h3>Symbols are unique and immutable data types introduced in ES6. They are often used as property keys that are
+        hidden from
+        iteration:</h3>
+    <p id="demo3"></p>
+    <hr>
+    <h2>Filtering Objects in an Array with filter()</h2>
+    <h3>You can use the filter() method to find objects in an array that match certain criteria:</h3>
+    <h4>Example of filter</h4>
+    <p id="demo4"></p>
+    <hr>
+    <h2>Example with External Data (Fetching and Filtering)</h2>
+    <h3>Here’s an example fetching and filtering data from an API:s</h3>
+    <p id="demo5"></p>
+</body>
+
+</html>
