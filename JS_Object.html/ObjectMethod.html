@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Methods</title>
+    <script>
+        function BodyLoad() {
+            // accessing value...
+            const person = {
+                firstName: "John",
+                lastName: "doe",
+                age: 30,
+                fullName: function () {
+                    return this.firstName + " " + this.lastName;
+                    //  "this" refers to the person object:
+                }
+            };
+            document.getElementById("demo").innerHTML = person.fullName();
+
+            // adding propperty..
+            const person1 = {
+                firstName: "jojo",
+                lastName: "jake",
+                age: 90
+            };
+            // adding a method... also Using "toUpperCase()"
+            person1.name = function () {
+                return (this.firstName + " " + this.lastName).toUpperCase();
+            };
+            // display Object data
+            document.getElementById("demo1").innerHTML = "Favourite Character is " +
+                person1.name();
+
+            // Create an Object
+            // Using loop in Object to display Properties...
+
+            const person2 = {
+                name: "John",
+                age: 30,
+                city: "New York"
+            };
+            // Using for..in loop
+            for (let key in person2) {
+                document.getElementById("demo2").innerHTML += `${key} : ${person2[key]} <br>`;
+            }
+            const transformObjectKey = Object.entries(person2).map(function ([key, value]) {
+                return `${key} : ${person2[key]} <br> <br>`;
+            });
+            document.getElementById("demo3").innerHTML += transformObjectKey.join("");
+
+            // display Object properties value...
+
+            // create array
+            const myArray = Object.values(person2);
+            const Array = myArray.map(function (array) {
+                return `${array} <br>`
+            })
+
+            // Display the Array
+            document.getElementById("demo4").innerHTML = Array.join("");
+
+            // Using Object.entries to itterate..
+            // Create and array
+            var entries = Object.entries(person2);
+            document.getElementById("demo5").innerHTML = entries;
+            var values = entries.map(function ([key, value]) {
+                return `${key} : ${value} <br>`;
+            });
+            document.getElementById("demo6").innerHTML += values.join("");
+
+            // Json Stringify()
+            // display Json
+            document.getElementById("demo7").innerHTML = JSON.stringify(person2);
+        }
+    </script>
+</head>
+
+<body onload="BodyLoad()">
+    <h1>JavaScript Objects</h1>
+    <h2>Object Methods</h2>
+    <p>A method is a function definition stored as a property value.</p>
+    <p id="demo"></p>
+
+    <h2>Accessing Object Methods</h2>
+    <h3>
+        <pre>
+            You access an object method with the following syntax:
+            
+                    objectName.methodName()
+        </pre>
+    </h3>
+    <h3>Note:- If you call the function with () it will execute as a function...
+        <br><b>document.getElementById("demo").innerHTML = person.fullName();</b><br>
+        O/p:- <b>John doe</b> <br>
+
+        <b>if you call the function without () it will return function defination..</b> <br>
+        <b>document.getElementById("demo").innerHTML = person.fullName;</b> <br>
+        O/p:- <b>fullName: function () {
+            return this.firstName + " " + this.lastName;
+            // "this" refers to the person object:
+            }</b>
+
+    </h3>
+
+    <hr>
+    <h2>Adding a Method and Using toUpperCase()</h2>
+    <p id="demo1"></p>
+    <hr>
+    <h2>display properties using loop</h2>
+    <p id="demo2"></p>
+    <hr>
+    <h2>Using map properties</h2>
+    <p id="demo3"></p>
+    <hr>
+    <h2>Using Object.values()</h2>
+    <h3>Display Object properties value...</h3>
+    <h4>
+        <pre>
+                // Loop through the values and display them in the demo2 element
+                values.forEach(function(value) {
+                document.getElementById("demo2").innerHTML += value + "<br>";
+                });
+        </pre>
+    </h4>
+    <p id="demo4"></p>
+    <hr>
+    <h2>Using Object.entries()</h2>
+    <h3>Object.entries() makes it simple to use objects in loops:</h3>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <hr>
+    <h2>Display Properties with JSON in string form</h2>
+    <h3>JavaScript objects can be converted to a string with JSON method JSON.stringify().</h3>
+    <h4>The result will be a string written in JSON notation:</h4>
+    <h4>{"name":"John","age":50,"city":"New York"}</h4>
+    <p id="demo7"></p>
+</body>
+
+</html>
