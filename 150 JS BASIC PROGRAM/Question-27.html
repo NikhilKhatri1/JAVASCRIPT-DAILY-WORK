@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>value in range and compare</title>
+    <script>
+        function BodyLoad() {
+            var x = parseInt(prompt("Enter the X integer"));
+            var y = parseInt(prompt("Enter the Y integer"));
+            if (x >= 40 && x <= 60 && y >= 40 && y <= 60) {
+                if (x > y) {
+                    document.getElementById("demo").innerHTML = `x = ${x} is greater than y = ${y}`;
+                }
+                else if (x < y) {
+                    document.getElementById("demo").innerHTML = `y = ${y} is greater than x = ${x}`;
+                }
+                else {
+                    document.getElementById("demo").innerHTML = `x = ${x} and y = ${y} are same`;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body onload="BodyLoad()">
+    <h1>Write a JavaScript program to find the largest number from the two given positive integers. The two numbers are
+        in the
+        range 40..60 inclusive.</h1>
+    <h2 id="demo"></h2>
+</body>
+
+</html>

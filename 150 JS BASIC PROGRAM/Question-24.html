@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchin char in string</title>
+    <script>
+        function BodyLoad() {
+            var myString = prompt("Enter your String");
+            if (myString === null) {
+                alert("Cancelled");
+            }
+            if (myString.length < 4) {
+                document.getElementById("demo").innerHTML = `false`;
+            }
+            var Chars = myString.substring(0, 4).toLowerCase();
+            if (Chars === 'java') {
+                document.getElementById("demo").innerHTML = `true`;
+            }
+
+            else {
+                document.getElementById("demo").innerHTML = `false`;
+            }
+        }
+    </script>
+</head>
+
+<body onload="BodyLoad()">
+    <h1>Write a JavaScript program to check whether a string starts with 'Java' if it does not otherwise.</h1>
+    <h2 id="demo"></h2>
+</body>
+
+</html>

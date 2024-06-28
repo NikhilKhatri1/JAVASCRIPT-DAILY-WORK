@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Msg1() {
+            document.querySelector("p").innerHTML = "Hello !";
+        }
+        function Msg2() {
+            document.querySelector("p").innerHTML = "How are you ?";
+        }
+        function Msg3() {
+            document.querySelector("p").innerHTML = "Welcome to JavaScript !";
+        }
+        var m1, m2, m3;
+        function bodyload() {
+            m1 = setTimeout(Msg1, 3000);   //setTimeout(function_name,time {in sec,min,ms});
+            m2 = setTimeout(Msg2, 6000);
+            m3 = setTimeout(Msg3, 12000);
+        }
+        function CancelClick() {
+            clearTimeout(m2);
+        }
+    </script>
+</head>
+
+<body onload="bodyload()">
+    <button onclick="CancelClick()">Cancel Msg2</button>
+    <p align="center"></p>
+<!-- 
+    Timer Events in JavaScript
+    1. setTimeout() Function
+    
+    The setTimeout() function executes a specified function or code snippet after a specified delay (in milliseconds):
+    
+    javascript
+    
+    setTimeout(function() {
+    // Code to execute after delay
+    }, 3000); // Executes after 3000 milliseconds (3 seconds)
+    
+    2. clearTimeout() Function
+    
+    The clearTimeout() function cancels a timeout previously established by setTimeout():
+    
+    javascript
+    
+    var timeoutId = setTimeout(function() {
+    // Code to execute after delay
+    }, 3000);
+    
+    // Cancel the timeout
+    clearTimeout(timeoutId);
+    
+    Example Usage:
+    
+    html
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>JavaScript Timers</title>
+        <script>
+            function displayMessage() {
+                document.querySelector("p").innerHTML = "Hello!";
+            }
+
+            function cancelMessage() {
+                clearTimeout(msgTimeout);
+            }
+
+            var msgTimeout;
+
+            function startTimers() {
+                msgTimeout = setTimeout(displayMessage, 3000);
+            }
+        </script>
+    </head>
+    
+    <body onload="startTimers()">
+        <p align="center">Waiting for message...</p>
+        <button onclick="cancelMessage()">Cancel Message</button>
+    </body>
+    
+    </html>
+    
+    Summary
+    
+    Date Handling: Use Date object to work with dates and times, and its various getter and setter methods.
+    Timer Events: Use setTimeout() to execute code after a delay and clearTimeout() to cancel the execution.
+    
+    These concepts are foundational in JavaScript for handling dates, times, and managing timed actions in web applications. -->
+
+</body>
+
+</html>

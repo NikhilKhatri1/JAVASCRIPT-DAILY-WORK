@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add string 3char at start and last</title>
+    <script>
+        function BodyLoad() {
+            var myString = prompt("Enter a String");
+            if (myString === null) {
+                alert("Cancelled");
+            }
+            else if (myString.length < 3) {
+                alert("provide Correct String");
+            }
+            else {
+                lastThreeChar = myString.slice(-4);
+                modifiedString = lastThreeChar + myString + lastThreeChar;
+                document.getElementById("demo").innerHTML = `<h2> Output:- ${modifiedString}</h2>`;
+            }
+        }
+    </script>
+</head>
+
+<body onload="BodyLoad()">
+    <h1>Write a JavaScript program to create a string from a given string.
+        <br> This is done by taking the last 3 characters and <br>
+        adding them at both the front and back. The string length must be 3 or more.
+    </h1>
+    <p id="demo"></p>
+</body>
+
+</html>

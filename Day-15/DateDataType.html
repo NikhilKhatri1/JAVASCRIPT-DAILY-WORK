@@ -1,11 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Date and Time Handling in JavaScript</title>
+    <script>
+        function BodyLoad() {
+            // display current Date and Time
+            var now = new Date();
+            document.getElementById("demo").innerHTML = now;
+            // Custom date and Time...
+            var customDate = new Date(" 2024-06-28 12:30:00");
+            document.getElementById("demo1").innerHTML = customDate;
+            //toDateString()..
+            var now = new Date();
+            var dateString = now.toDateString(); // return "Wed Jun 28 2024"
+            document.getElementById("demo2").innerHTML = dateString;
+            // toLocaleDateString()...
+            var now = new Date();
+            var dateString1 = now.toLocaleDateString(); // Returns localized date string (e.g., "6/28/2024" in US locale)
+            document.getElementById("demo3").innerHTML = dateString1;
+
+            // toTimeString()
+            var now = new Date();
+            var dateString2 = now.toTimeString(); // Returns time string (e.g., "14:30:00 GMT+0300 (Eastern European Summer Time)")
+            document.getElementById("demo4").innerHTML = dateString2;
+
+            // toLocaleTimeString()
+            var now = new Date();
+            var dateString3 = now.toLocaleTimeString(); //  "2:30:00 PM"
+            document.getElementById("demo5").innerHTML = dateString3;
+
+
+            // to display msg Using time
+            var now = new Date();
+            // set hrs
+            now.setHours(15);  // 0 to 23..
+            // Access hrs
+            var hrs = now.getHours();
+            // using Condition to print msg
+            if (hrs >= 0 && hrs <= 12) {
+                document.getElementById("demo6").innerHTML = `<p align = 'center'> Good Morning! </p>`;
+            }
+            else if (hrs > 12 && hrs <= 16) {
+                document.getElementById("demo6").innerHTML = `<p align = 'center'> Good Afternoon! </p>`;
+            }
+            else {
+                document.getElementById("demo6").innerHTML = `<p align = 'center'> Good Night! </p>`;
+            }
+
+        }
+    </script>
 </head>
-<body>
-    
+
+<body onload="BodyLoad()">
+    <h1>1. Date Object and Constructors</h1>
+    <h3>
+        <pre>
+            1. To create a Date object with the current date and time:
+                Syntax:-
+                    var now = new Date();
+
+            2. You can also create a Date object by specifying a date and time string:
+                Syntax:-
+                    var customDate = new Date("2024-06-28 12:30:00");
+        </pre>
+
+    </h3>
+    <hr>
+    <h3>new Date:-</h3>
+    <h2 id="demo"></h2>
+    <h3>Custom Date:-</h3>
+    <h2 id="demo1"></h2>
+    <hr>
+    <h2>
+        <pre>
+            2. Methods to Get Date and Time Components
+            
+            The Date object provides various methods to Retrieve different components of the date and time:
+            
+            getHours(), getMinutes(), getSeconds(), getMilliseconds(): Retrieve hour, minute, second,
+            and millisecond components respectively.
+            getDay(): Get the day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday).
+            getMonth(): Get the month (0 = January, 1 = February, ..., 11 = December).
+            getDate(): Get the day of the month (1 to 31).
+            getFullYear(): Get the full year (e.g., 2024).
+            toDateString(): Returns "Wed Jun 28 2024" without Time
+            toLoacleDateString(): Returns localized date string (e.g., "6/28/2024" in US locale).
+            toTimeString(): Returns time string (e.g., "14:30:00 GMT+0300 (Eastern European Summer Time)").
+            tolocaleTimeString(): Returns localized time string (e.g., "2:30:00 PM" in US locale).
+        </pre>
+    </h2>
+    <hr>
+    <h3>toDateString() method</h3>
+    <h2 id="demo2"></h2>
+    <h3>toLocaleDateString() method</h3>
+    <h2 id="demo3"></h2>
+    <h3>toTimeString() method</h3>
+    <h2 id="demo4"></h2>
+    <h3>tolocaleTimeString() method</h3>
+    <h2 id="demo5"></h2>
+    <hr>
+    <h2>
+        <pre>
+            3. Methods to Set Date and Time Components
+            
+            JavaScript also provides setter methods to modify these components dynamically:
+            
+            setHours(), setMinutes(), setSeconds(), setMilliseconds(): Set the hour, minute,
+            second, and millisecond components respectively.
+            setDate(), setMonth(), setFullYear(): Set the day of the month, month, and full year respectively.
+        </pre>
+    </h2>
+    <hr>
+    <h1>Using Condition to Display According to Time</h1>
+    <h2 id="demo6"></h2>
+
 </body>
+
 </html>

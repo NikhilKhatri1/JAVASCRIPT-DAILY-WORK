@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closest Number</title>
+    <script>
+        function BodyLoad() {
+            var x = parseInt(prompt("enter the number between 0 t0 100"));
+            var y = parseInt(prompt("enter the number between 0 to 100"));
+
+            if (x != y) {
+                d_x = 100 - x;
+                d_y = 100 - y;
+                if (d_x < d_y) {
+                    document.getElementById("demo").innerHTML = `x is closer`;
+                }
+                else {
+                    document.getElementById("demo").innerHTML = `y is closer`;
+                }
+            }
+            else {
+                document.getElementById("demo").innerHTML = `Both are Equal`;
+            }
+
+        }
+    </script>
+</head>
+
+<body onload="BodyLoad()">
+    <h1>Write a JavaScript program to find the closest value to 100 from two numerical values.</h1>
+    <h2 id="demo"></h2>
+</body>
+
+</html>

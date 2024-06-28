@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fall on same range</title>
+    <script>
+        function BodyLoad() {
+            var x = parseInt(prompt("Enter the x integer"));
+            var y = parseInt(prompt("Enterr the y integer"));
+            if (x >= 40 && x <= 60 && y >= 40 && y <= 60) {
+                document.getElementById("demo").innerHTML = `x = ${x} and y = ${y} are in Range of 40 to 60`;
+            }
+            else if (x >= 70 && x <= 100 && y >= 70 && y <= 100) {
+                document.getElementById("demo").innerHTML = `x = ${x} and y = ${y} are in range of 70 to 100`;
+            }
+            else {
+                document.getElementById("demo").innerHTML = `x = ${x} and y = ${y} are not in any range`;
+            }
+        }
+    </script>
+</head>
+
+<body onload="BodyLoad()">
+    <h1>Write a JavaScript program to check whether two numbers are in the range 40..60 or 70..100 inclusive.</h1>
+    <h1>This JavaScript program checks if two given numbers fall within either
+        <br> the range 40 to 60 or the range 70 to 100,
+        inclusive. It returns true if both numbers fall <br>
+        within any of these ranges, and false otherwise.
+    </h1>
+    <h2 id="demo"></h2>
+</body>
+
+</html>
