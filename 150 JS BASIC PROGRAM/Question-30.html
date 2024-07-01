@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalizing</title>
+    <script>
+        function bodyLoad() {
+            // "welcome to javascript"
+            var myString = prompt("Enter your string");
+            var parts = myString.split(' ');
+            // document.getElementById("demo").innerHTML = parts.join('<br>');
+            for (i = 0; i < parts.length; i++) {
+                parts[i] = parts[i].charAt(0).toUpperCase() + parts[i].slice(1);
+            }
+            document.getElementById("demo").innerHTML = parts.join(' ');
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <h3>// Write a program to print every word first letter caps.</h3>
+    <h3>welcome to javascript => Welcome To JavaScript</h3>
+    <h3 id="demo"></h3>
+</body>
+
+</html>

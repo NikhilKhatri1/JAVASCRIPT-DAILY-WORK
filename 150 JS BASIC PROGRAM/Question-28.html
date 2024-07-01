@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <script>
+        function bodyLoad() {
+            var myString = prompt("Enter the string");
+            if (myString.length >= 3) {
+                var reverseString = myString.split('').reverse().join('');
+                if (myString === reverseString) {
+                    document.getElementById("demo").innerHTML = `Original string = ${myString} 
+                                <br> Reverse string = ${reverseString} <br> Your string is palindrome`;
+                }
+                else {
+                    document.getElementById("demo").innerHTML = `Not a palindrome`;
+                }
+            }
+            else {
+                alert("String Should have aleast 3 character.");
+            }
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <h2>Write a program to find if the word is a plaindrome</h2>
+    <h2 id="demo"></h2>
+</body>
+
+</html>

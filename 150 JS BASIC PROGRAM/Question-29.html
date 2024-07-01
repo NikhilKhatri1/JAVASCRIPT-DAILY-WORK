@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>replace char</title>
+    <script>
+        function bodyLoad() {
+            var myString = "Macrosoft Word, Macrosoft Excel";
+            var parts = myString.split(' ');
+            //console.log(parts.length);
+            // console.log(parts.join('<br>'));
+            for (var i = 0; i < parts.length; i++) {
+                if (parts[i].toLowerCase() === "macrosoft") {
+                    parts[i] = "Microsoft";
+                }
+            }
+            var result = parts.join(' ');
+
+            document.getElementById("demo").innerHTML += result;
+        }
+
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <h4>// "Macrosoft Word, Macrosoft Excel"</h4>
+    <h4>Replace Macrosoft with Microsoft using loop.</h4>
+    <h5 id="demo"></h5>
+</body>
+
+</html>
