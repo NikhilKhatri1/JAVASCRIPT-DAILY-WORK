@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Clock</title>
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var time = now.toLocaleTimeString();
+            document.querySelector("p").innerHTML = time;
+        }
+
+        var timer;
+
+        function startClock() {
+            timer = setTimeout(updateClock, 1000);
+        }
+
+        function stopClock() {
+            clearTimeout(timer);
+        }
+    </script>
+</head>
+
+<body onload="startClock()">
+    <p align="center"></p>
+    <button onclick="startClock()">Start</button>
+    <button onclick="stopClock()">Stop</button>
+</body>
+
+</html>
