@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing api from FakeStore</title>
+    <script>
+        function bodyload() {
+            fetch('https://fakestoreapi.com/products/categories')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (categories) {
+                    categories.map(function (category) {
+                        var option = document.createElement("option");
+                        option.text = category.toUpperCase();
+                        option.value = category;
+                        document.getElementById("categorySelect").appendChild(option);
+                    })
+                })
+        }
+    </script>
+</head>
+
+<body onload="bodyload()">
+    <select id="categorySelect"></select>
+</body>
+
+</html>

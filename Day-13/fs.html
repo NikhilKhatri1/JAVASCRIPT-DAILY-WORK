@@ -13,23 +13,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- custom Script -->
     <script src="scripts.js"></script>
+    <style>
+        /* Add any additional custom styles here */
+    </style>
 </head>
 
 <body class="container-fluid overflow-hidden" onload="bodyload()" style="height: 500px;">
     <header class="d-flex justify-content-between bg-dark text-white p-2 border mt-2 rounded">
         <div> <span class="fs-3">Shopper.</span> </div>
         <div class="fs-5 p-2">
-            <span class="me-3"> <a href="javascript:LoadProducts('https://fakestoreapi.com/products')&quot; class="
-                    text-white text-decoration-none">Home</a> </span>
+            <span class="me-3"> <a href="javascript:LoadProducts('https://fakestoreapi.com/products')"
+                    class="text-white text-decoration-none">Home</a> </span>
             <span class="me-3">Electronics</span>
-            <span class="me-3">Jewelery</span>
+            <span class="me-3">Jewelry</span>
             <span class="me-3">Men's Fashion</span>
             <span class="me-3">Women's Fashion</span>
         </div>
         <div class="p-2">
             <button onclick="LoadCartItems()" data-bs-target="#cart" data-bs-toggle="modal"
-                class="bi bi-cart4 btn btn-dark position-relative"> <span
-                    class="badge rounded rounded-circle position-absolute bg-danger" id="lblCount"></span> </button>
+                class="bi bi-cart4 btn btn-dark position-relative">
+                <span class="badge rounded rounded-circle position-absolute bg-danger" id="lblCount"></span>
+            </button>
             <div class="modal fade" id="cart">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -76,6 +80,6 @@
 
         </main>
     </section>
-</body>
-
-</html>
+    </body>
+    
+    </html>
