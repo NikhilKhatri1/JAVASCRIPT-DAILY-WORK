@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for Loop</title>
+    <script>
+        function bodyLoad() {
+            //  ADding value
+            {
+                var values = [10, 20, 30, 40, 50];
+                for (var i = 0; i < values.length; i++) {
+                    values[i] = values[i] + 1;
+                }
+                document.getElementById("demo").innerHTML = `Output = [${values}]`;
+            }
+            // access array inside object
+            {
+                var values = [{ Name: "TV", Price: 45000 }, { Name: "Mobile", Price: 12000 }];
+                var total = 0;
+                for (var i = 0; i < values.length; i++) {
+                    document.getElementById("demo1").innerHTML += `${values[i].Name} = ${values[i].Price} <br>`;
+                    // total amount
+                    total = total + values[i].Price;
+                    document.getElementById("demo2").innerHTML = `Total Amount = ${total}`;
+                }
+            }
+            // to read all chars and get the count of "a" in string.
+            {
+                var myString = "Welcome to JavaScript Programming";
+                var count = 0;
+                for (var i = 0; i < myString.length; i++) {
+                    if (myString[i] === "a") {
+                        count = count + 1;
+                    }
+                }
+                document.getElementById("demo3").innerHTML = `Total "a" present = ${count}`;
+            }
+            // count vowel
+            {
+                var myString = "Welcome to JavaScript Programming";
+                var vowel = 0;
+                for (var i = 0; i < myString.length; i++) {
+                    if (myString[i] === "a" || myString[i] === "e" || myString[i] === "i" || myString[i] === "o" || myString[i] === "u") {
+                        vowel = vowel + 1;
+                    }
+                }
+                document.getElementById("demo4").innerHTML = `Total "a" present = ${vowel}`;
+            }
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <h4>return +1 output</h4>
+    <h4>array = [10, 20, 30, 40, 50];</h4>
+    <h4 id="demo"></h4>
+    <h4>access array inside object</h4>
+    <h4>values = [{Name:"TV", Price: 45000}, {Name:"Mobile", Price:12000}]</h4>
+    <h4 id="demo1"></h4>
+    <h4>Total Amount</h4>
+    <h4 id="demo2"></h4>
+    <h4>Count all Character "a"</h4>
+    <h4 id="demo3"></h4>
+    <h4>Count Vowel "a,e,i,o,u"</h4>
+    <h4 id="demo4"></h4>
+</body>
+
+</html>
