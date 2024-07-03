@@ -81,7 +81,7 @@
                 div.style.width = "250px";
                 div.innerHTML = `
                     <img src="${product.image}" class="card-img-top" height="140">
-                    <div class="card-header" style="height:100px overflow:hidden">
+                    <div class="card-header" style="height:100px overflow:auto">
                         <p>${product.title}</p>
                     </div>
                     <div class="card-body">
@@ -108,7 +108,7 @@
     </script>
 </head>
 
-<body onload="bodyLoad()">
+<body onload="bodyLoad()" class="overflow-hidden">
     <div class="header-wrapper border border-1 bg-light mt-1">
         <header class="mx-lg-2 p-lg-2 mx-1">
             <!-- Navbar -->
@@ -156,7 +156,7 @@
 
         </header>
     </div>
-    <div class="row mx-1 my-2 d-flex justify-content-center">
+    <div class="row mx-1 my-2 d-flex justify-content-center ">
         <div class="col-lg-3 col-4 me-lg-3 border border-1 bg-secondary">
             <h4>Accessing API from FakeStore</h4>
             <select id="categoryOption" class="form-select w-100 text-center"></select>
