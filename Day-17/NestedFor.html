@@ -15,22 +15,28 @@
                 "Category": "FootWear",
                 Products: ["Casual", "Slipper", "Boot"]
             }
-        ]
+        ];
+
         function bodyLoad() {
+            var ol = document.querySelector("ol"); // Select the <ol> element
+
             for (var i = 0; i < data.length; i++) {
                 var ol_li = document.createElement("li");
                 ol_li.innerHTML = data[i].Category;
-                // data[i] check product for (0 or 1)....
+
+                var ul = document.createElement("ul"); // Create the <ul> element for each category
+
                 for (var j = 0; j < data[i].Products.length; j++) {
-                    var ul = document.createElement("ul");
                     var ul_li = document.createElement("li");
                     ul_li.innerHTML = data[i].Products[j];
-                    ul.appendChild(ul_li);
-                    ol_li.appendChild(ul);
-                    document.querySelector("ol").appendChild(ol_li);
+                    ul.appendChild(ul_li); // Append each product <li> to the <ul>
                 }
+
+                ol_li.appendChild(ul); // Append the <ul> to the category <li>
+                ol.appendChild(ol_li); // Append the category <li> to the <ol>
             }
         }
+
     </script>
 </head>
 
