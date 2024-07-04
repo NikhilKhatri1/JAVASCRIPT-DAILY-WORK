@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Loop</title>
+    <script>
+        function loadBody() {
+            {
+                var values = [[10, 20, 30], [40, 50, 60]];
+                document.write(`[${values}] <br><br>`);
+                for (var i = 0; i < values.length; i++) {
+                    for (var j = 0; j < values[i].length; j++) {
+                        document.write(`${values[i][j]} &nbsp;&nbsp;`);
+                    }
+                    document.write("<br><br>");
+                }
+            }
+           {
+             /*    *
+                   **
+                   ***
+                   **** */
+                var row = parseInt(prompt("Enter number of row"));
+                for (var i = 1; i <= row; i++) {
+                    for (var j = 1; j <= i; j++) {
+                        document.write("* &nbsp; &nbsp;");
+                    }
+                    document.write("<br><br>")
+                }
+           }
+
+        }
+    </script>
+</head>
+
+<body onload="loadBody()">
+
+</body>
+
+</html>

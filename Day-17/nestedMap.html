@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Map</title>
+    <script>
+        var data = [
+            {
+                "Category": "Electronics",
+                Products: ["TV", "Mobile"]
+            },
+            {
+                "Category": "Mobile",
+                Products: ["Casuals", "Boots"]
+            }
+        ]
+        function bodyLoad() {
+            data.map(function (item) {
+                var ol_li = document.createElement("li");
+                ol_li.innerHTML = item.Category;
+                item.Products.map(function (product) {
+                    var ul = document.createElement("ul");
+                    var ul_li = document.createElement("li");
+                    ul_li.innerHTML = product;
+                    ul.appendChild(ul_li);
+                    ol_li.appendChild(ul);
+                    document.querySelector("ol").appendChild(ol_li);
+                })
+            })
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <h2>Nested Loop Using map function</h2>
+    <ol>
+
+    </ol>
+</body>
+
+</html>

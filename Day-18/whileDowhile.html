@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while and do while</title>
+    <script>
+        function bodyLoad() {
+            // while loop
+            {
+                var i = 1;
+                while (i <= 10) {
+                    document.getElementById("demo").innerHTML += i + "<br>";
+                    i++;
+                }
+            }
+            // {
+            //     var i = 11;
+            //     do {
+            //         document.getElementById("demo1").innerHTML += i + "<br>";
+            //         i++;
+            //     } while (i <= 10)
+            // }
+            // break statement
+
+            {
+                var i = 1;
+                while (i <= 10) {
+                    // to print keep display above condition
+
+                    document.getElementById("demo2").innerHTML += i + "<br>";
+                    // if condition
+                    if (i === 5) {
+
+                        break;
+                    }
+                    i++;
+
+                    //document.getElementById("demo3").innerHTML += i + "<br>";    // ouput-2345
+                }
+                // it will continue working after teminating loop
+                document.getElementById("demo3").innerHTML = "Loop Ended";
+            }
+           
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <hr>
+    <h2>while Loop</h2>
+    <h3 id="demo"></h3>
+    <h2>Do While Loop</h2>
+    <h4>Even when condition is false it will run one time</h4>
+    <h3 id="demo1"></h3>
+    <hr>
+    <h2>Jump Statements</h2>
+    <h3>Break: It end the current block but continue compiling process</h3>
+    <h4 id="demo2"></h4>
+    <h4 id="demo3"></h4>
+    <hr>
+    <h4>
+        <pre>
+            if (i === 5) { break; }: This if statement checks if the current value of i is equal to 5.
+
+            break;: If i is indeed 5, the break statement terminates the while loop immediately. This means the loop will stop
+            executing further iterations once i reaches 5.
+        </pre>
+    </h4>
+    <hr>
+    
+</body>
+
+</html>

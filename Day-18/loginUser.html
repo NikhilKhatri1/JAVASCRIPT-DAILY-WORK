@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoginClick() {
+            var UserId = document.getElementById("UserId").value;
+            var Password = document.getElementById("Password").value;
+
+            fetch("./user.json")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (users) {
+                    var user = users.find(function (document) {
+                        return document.UserId === UserId;
+                    });
+
+                    if (user) {
+                        if (user.password === Password) {
+                            document.write("Login Success");
+                        } else {
+                            alert("Invalid Password");
+                        }
+                    } else {
+                        alert("Invalid UserId");
+                    }
+
+                })
+
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Register User</h2>
+    <dl>
+        <dt>UserId</dt>
+        <dd><input type="text" id="UserId"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" id="Password"></dd>
+    </dl>
+    <button onclick="LoginClick()">Login</button>
+</body>
+
+</html>

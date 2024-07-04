@@ -1,0 +1,20 @@
+<script>
+    // Get the number of rows from the user
+    var row = parseInt(prompt("Enter the number of rows"));
+
+    // Loop through each row
+    for (var i = 1; i <= row; i++) {
+        // Print leading spaces for pyramid shape
+        for (var j = 1; j <= row - i; j++) {
+            document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"); // Non-breaking space for HTML output
+        }
+
+        // Print asterisks for the current row
+        for (var k = 1; k <= 2 * i - 1; k++) {
+            document.write("* &nbsp;&nbsp;");
+        }
+
+        // Move to the next line after each row
+        document.write("<br><br>");
+    }
+</script>
