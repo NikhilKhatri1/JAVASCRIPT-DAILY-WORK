@@ -1,0 +1,17 @@
+<script>
+    try {
+        var x = parseInt(prompt("Enter Number-1"));
+        var y = parseInt(prompt("Enter Number-2"));
+        if (y == 0) {
+            throw "Can't Divide by zero";
+        }
+        var z = x / y;
+        document.write("Division=" + z + "<br>");
+    }
+    catch (ex) {
+        document.write(ex + "<br>");
+    }
+    finally {
+        document.write("Program End");
+    }
+</script>

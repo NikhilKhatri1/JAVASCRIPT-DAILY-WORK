@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using COntinue in Api</title>
+    <script>
+        function bodyLoad() {
+            fetch("https://fakestoreapi.com/products")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (products) {
+                    for (var product of products) {
+                        if (product.category === "electronics" || product.category === "jewelery") {
+                            continue;
+                        }
+                        document.getElementById("demo").innerHTML += `Title = ${product.title} <br>
+                                                         Category = ${product.category}<br>  
+            `;
+                    }
+                })
+
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <h2>Using Continue in API</h2>
+    <h4 id="demo"></h4>
+</body>
+
+</html>
