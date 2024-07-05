@@ -14,6 +14,12 @@
                 }
                 document.getElementById("demo").innerHTML += i + "<br>";
             }
+            for (var i = 1; i <= 10; i++) {
+                if (i === 5 || i === 8) {
+                    continue;
+                }
+                document.getElementById("demo1").innerHTML += i + "<br>";
+            }
         }
     </script>
 </head>
@@ -21,6 +27,8 @@
 <body onload="bodyLoad()">
     <h3>Continue Statements</h3>
     <h4 id="demo"></h4>
+    <h3>condition and continue statement(skip value)</h3>
+    <h4 id="demo1"></h4>
 </body>
 
 </html>
