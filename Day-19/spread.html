@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread parameter</title>
+    <script>
+        function details(name, price, stock, rating) {
+            document.write(`Name:${name}<br> Price:${price}<br> Stock:${stock}<br> Rating:${rating}`);
+        }
+        var product = ["Tv", 20000.44, true, 4.5];
+        details(...product);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

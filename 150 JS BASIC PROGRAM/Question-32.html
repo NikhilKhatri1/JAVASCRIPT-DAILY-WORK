@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display no. b/w two</title>
+    <script>
+        function bodyLoad() {
+            var num_1 = parseInt(prompt("Enter starting Number"));
+            var num_2 = parseInt(prompt("Enter last Number"));
+            function betweenNum() {
+                for (i = num_1; i < num_2; i++) {
+                    var num_between = i
+                    document.getElementById("demo").innerHTML += `${num_between} <br>`;
+                }
+            }
+            betweenNum();
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <h2>Dsiplay number between given two number...</h2>
+    <h3 id="demo"></h3>
+</body>
+
+</html>

@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Remove "Script" from string</title>
+    <script>
+        function RemoveString(str) {
+            // search for Script from string
+            let index = str.toLowerCase().indexOf("script");
+
+            if (index !== -1) {
+                // if Script is found in string
+                return str.substring(0, index) + str.substring(index + "script".length);
+            } else {
+                // if "Script" is not found... return the original string
+                return str;
+            }
+
+        }
+        // Calling function
+        document.write(RemoveString("Hello script world") + "<br> <br>");
+        document.write(RemoveString("Hello Script world"));
+
+    </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

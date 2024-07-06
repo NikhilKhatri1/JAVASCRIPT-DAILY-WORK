@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest parameter</title>
+    <script>
+        {
+            function detail(...product) {
+                var [name, price, stack, rating] = product;
+                document.write(`Name :${name}<br>Price :${price}<br> Stack: ${stack}<br> Rating: ${rating}`);
+            }
+            detail("TV", 2400, true, 4.5);
+        }
+        {
+            function details(title, ...product) {
+                var [name, price, stack, rating] = product;
+                document.write(`<h2>${title}</h2> Name:${name}<br> Price:${price}<br> Stack:${stack}<br> Rating:${rating}`);
+            }
+            details("Product Details", "mobile", 25000, true, 4.5);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

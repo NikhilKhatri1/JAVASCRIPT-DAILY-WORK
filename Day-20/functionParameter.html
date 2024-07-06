@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Parameter</title>
+    <script>
+        function bodyLoad() {
+            var hour = new Date().getHours();
+            var greeting;
+            if (hour < 12) {
+                greeting = function (name) {
+                    document.getElementById("demo").innerHTML = `Good Morning ${name} !`;
+                }
+            } else {
+                greeting = function (name) {
+                    document.getElementById("demo").innerHTML = `Good Afternoon ${name} !`;
+                }
+            }
+            greeting("Emma");
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <h2>expression function</h2>
+    <h3 id="demo"></h3>
+    <!-- var result;
+    var password = prompt("Enter password");
+    if (password === "admin") {
+    result = function() {
+    document.write("Success..");
+    };
+    } else {
+    result = function() {
+    document.write("Invalid Password");
+    };
+    }
+    result(); // Executes the selected function based on password -->
+
+    <h3>
+        <pre>
+            Function Declaration (function greet() { ... }): Used when you want to define a named function that can be called before
+            its declaration due to hoisting.
+            
+            Function Expression (var sayGoodbye = function() { ... };): Used when you want to assign a function to a variable, often
+            for cases where you need to define functions dynamically or conditionally.
+        </pre>
+    </h3>
+</body>
+
+</html>

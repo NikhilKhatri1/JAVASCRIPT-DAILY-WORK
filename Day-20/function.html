@@ -1,0 +1,171 @@
+<h3>
+    <pre>
+        Certainly! Let's illustrate the difference between function declaration and function expression with a few examples in
+        JavaScript.
+        Function Declaration
+        
+        Function declarations are defined using the function keyword. They are hoisted to the top of their scope, meaning you
+        can call the function before it's declared in your code.
+        
+        Example:
+        
+        javascript
+        
+        PrintMessage(); // You can call it before declaration
+        
+        function PrintMessage() {
+        console.log("Hello, this is a function declaration.");
+        }
+        
+        In this example, PrintMessage is declared using the function declaration syntax. It can be called anywhere within the
+        same scope, even before its actual declaration due to hoisting.
+        Function Expression
+        
+        Function expressions involve assigning a function to a variable. They are not hoisted like function declarations, so
+        they cannot be called before the variable assignment.
+        
+        Example:
+        
+        javascript
+        
+        Print(); // This would throw an error: Uncaught TypeError: Print is not a function
+        
+        var Print = function() {
+        console.log("Hello, this is a function expression.");
+        };
+        
+        In this example, Print is assigned an anonymous function using a function expression. If you try to call Print() before
+        the assignment (var Print = ...), it will result in an error because Print is not yet defined as a function.
+        Illustrating the Difference
+        
+        Let's modify your original example to showcase both function declaration and function expression:
+        
+        javascript
+        
+        // Function Declaration
+        function greet() {
+        return "Hello, welcome!";
+        }
+        
+        // Function Expression
+        var sayGoodbye = function() {
+        return "Goodbye, see you soon!";
+        };
+        
+        var time = new Date().getHours();
+        var result;
+        
+        if (time < 12) { result=greet(); } else { result=sayGoodbye(); } console.log(result); Explanation: Function Declaration
+            (greet): greet() is declared using the function declaration syntax. It is hoisted to the top of its scope, so you
+            can call it anywhere within the same scope. Function Expression (sayGoodbye): sayGoodbye is assigned an anonymous
+            function using a function expression. It is not hoisted, so you must define it before you call it. Usage: Depending
+            on the time variable (current hour), either greet() or sayGoodbye() is called and assigned to result, which is then
+            printed to the console. Conclusion Function Declaration (function greet() { ... }): Used when you want to define a
+            named function that can be called before its declaration due to hoisting. Function Expression (var
+            sayGoodbye=function() { ... };): Used when you want to assign a function to a variable, often for cases where you
+            need to define functions dynamically or conditionally. These examples demonstrate the practical differences between
+            function declaration and function expression in JavaScript. understood <script>
+            function greet(name) {
+            var hours = new Date().getHours();
+            if (hours < 12) { document.write(Good Morning ${name}); } else { document.write(Good Afternoon ${name}); } }
+                greet("Emma"); </script>
+                this function declaration but doing tha same work and expresion then whts the meaning of using expression
+                ChatGPT
+        
+                In JavaScript, both function declarations and function expressions serve similar purposes—they define functions
+                that can be executed later in the code. However, there are subtle differences in how they are used and where
+                they are advantageous.
+                Function Declaration vs Function Expression
+        
+                Let's rewrite your example using a function expression instead of a function declaration:
+                Function Declaration (Original)
+        
+                javascript
+        
+                <script>
+                    function greet(name) {
+                        var hours = new Date().getHours();
+                        if (hours < 12) {
+                            document.write(`Good Morning ${name}`);
+                        }
+                        else {
+                            document.write(`Good Afternoon ${name}`);
+                        }
+                    }
+                    greet("Emma");
+                </script>
+        
+                Function Expression (Equivalent)
+        
+                javascript
+        
+                <script>
+                    var greet = function (name) {
+                        var hours = new Date().getHours();
+                        if (hours < 12) {
+                            document.write(`Good Morning ${name}`);
+                        }
+                        else {
+                            document.write(`Good Afternoon ${name}`);
+                        }
+                    };
+                    greet("Emma");
+                </script>
+        
+                Meaning of Using Function Expression
+        
+                1. Anonymous Functions:
+        
+                Function expressions allow you to create anonymous functions (functions without a name), which can be useful in
+                situations where the function is used only once or where you want to assign different functions dynamically
+                based on conditions.
+        
+                2. Dynamic Function Assignment:
+        
+                You can conditionally assign different functions to variables based on runtime conditions, which can't be easily
+                achieved with function declarations.
+        
+                Example:
+        
+                javascript
+        
+                <script>
+                    var greet;
+
+                    if (new Date().getHours() < 12) {
+                        greet = function (name) {
+                            document.write(`Good Morning ${name}`);
+                        };
+                    } else {
+                        greet = function (name) {
+                            document.write(`Good Afternoon ${name}`);
+                        };
+                    }
+
+                    greet("Emma");
+                </script>
+        
+                In this example using function expressions:
+        
+                Depending on the current time, the greet variable is assigned a different function. This allows for dynamic
+                behavior based on conditions that wouldn't be straightforward with function declarations.
+        
+                3. Function Scope and Hoisting:
+        
+                Function expressions are not hoisted like function declarations. They are only accessible after the assignment
+                statement has been executed. This can be advantageous for controlling the order of execution and managing scope.
+        
+                When to Use Function Expressions
+        
+                Dynamic Functionality: When you need to assign different functions dynamically based on conditions or variables.
+                Scope Control: When you want to control the visibility and availability of functions within specific scopes.
+                Encapsulation: When you want to encapsulate functions within variables to avoid polluting the global namespace.
+        
+                Conclusion
+        
+                While function declarations and function expressions both define functions, function expressions provide more
+                flexibility in certain scenarios, such as dynamic function assignment and scope management. Understanding when
+                to use each type helps in writing more efficient and maintainable JavaScript code.
+                ChatGPT can make
+    </pre>
+</h3>
