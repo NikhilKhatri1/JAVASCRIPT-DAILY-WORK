@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Between 2 to 4</title>
+    <script>
+        function bodyLoad() {
+            function Between2To4th(str, char) {
+                if (str.length >= 4) {
+                    var subString = str.substring(1, 4);
+                    if (subString.indexOf(char) !== -1) {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                }
+            }
+            var str = "shubham";
+            var char = "u";
+            var result = Between2To4th(str, char);
+            document.getElementById("demo").innerHTML = result;
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <h2>Write a program to check whether a specified character exists between the 2nd and 4th positions in a given
+        string.</h2>
+
+    <h3 id="demo"></h3>
+</body>
+
+</html>

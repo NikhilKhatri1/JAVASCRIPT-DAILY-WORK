@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Array side by side</title>
+    <script>
+        function bodyLoad() {
+            var Array_1 = ["Apple", "banana", "mango"];
+            var Array_2 = ["Orange", "Guava", "grapes"];
+            for (var i = 0; i < Array_1.length && i < Array_2.length; i++) {
+                document.getElementById("demo").innerHTML += `${Array_1[i]} - ${Array_2[i]} <br>`;
+            }
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <h2>Array Side by side</h2>
+    <h3 id="demo"></h3>
+</body>
+
+</html>
