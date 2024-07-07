@@ -1,0 +1,22 @@
+<script>
+
+    var FetchData = new Promise(function (resolve, reject) {
+        var url = prompt('Enter URL');
+        if (url == "http://fakestoreapi.com") {
+            resolve('Data Fetched Successfully..<br>');
+        } else {
+            reject('Invalid URL - Unable to Fetch<br>');
+        }
+    });
+
+    FetchData
+        .then(function (response) {
+            document.write(response);
+        })
+        .catch(function (reason) {
+            document.write(reason);
+        })
+        .finally(function () {
+            document.write("Program End");
+        })
+</script>

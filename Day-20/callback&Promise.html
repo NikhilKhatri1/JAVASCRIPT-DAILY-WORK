@@ -1,0 +1,30 @@
+<script>
+    function chopVegetables(callback) {
+        document.write("Alice is chopping vegetables...");
+        setTimeout(() => {
+            document.write("Alice finished chopping vegetables.");
+            callback();
+        }, 1000);
+    }
+
+    function boilPasta() {
+        setTimeout(() => {
+            document.write("You start boiling pasta.");
+            callback();
+        }, 2000);
+    }
+
+    function grillChicken() {
+
+        setTimeout(() => {
+            document.write("You start grilling chicken.");
+            callback();
+        }, 3000);
+    }
+
+    chopVegetables(() => {
+        boilPasta();
+        grillChicken();
+    });
+
+</script>
