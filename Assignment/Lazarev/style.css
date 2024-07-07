@@ -138,3 +138,21 @@ nav:hover #nav-bottom {
     font-weight: 600;
     text-transform: uppercase;
 }
+
+nav button {
+    background-color: #0da34e;
+    display: flex;
+    align-items: center;
+    padding: 2px 7px;
+    font-size: 1.125vw;
+    font-weight: 800;
+    border-radius: 50px;
+    border: none;
+}
+
+
+nav button svg {
+    height: 3vw;
+    width: 3vw;
+    margin-left: 0.4vw;
+}
