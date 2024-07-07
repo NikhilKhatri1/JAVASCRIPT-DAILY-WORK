@@ -1,0 +1,12 @@
+<script>
+    function fetchData(url, success, failure) {
+        if (url === "http://fakestoreapi") {
+            success();
+        }
+        else {
+            failure();
+        }
+    }
+    fetchData(prompt("Enter Url"), function () { document.write('Fetch Successfully') }, function () {
+        document.write('Invalid Url')});
+</script>
