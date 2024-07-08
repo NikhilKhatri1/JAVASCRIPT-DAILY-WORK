@@ -1,0 +1,13 @@
+<script>
+    function findFactorial(num) {
+        if (num === 0) {
+            return 1;
+        }
+        // Correctly call findFactorial recursively, not 'factorial'
+        let factorial = num * findFactorial(num - 1);
+        return factorial;
+    }
+
+    var result = findFactorial(5); // Calculate factorial of 5 and store in 'result'
+    document.write("Factorial is: " + result); // Output the result
+</script>

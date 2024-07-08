@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion function</title>
+    <script>
+        function doSomething(n) {
+            if (n === 0) {
+                document.write("Task Completed");
+                return
+            }
+            else {
+                document.write("I'm Doing Something" + "<br><br>");
+                doSomething(n - 1);
+            }
+        }
+        doSomething(3);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
