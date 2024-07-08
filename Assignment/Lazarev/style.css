@@ -76,9 +76,10 @@ body {
 /* ====== nav bar ======= */
 nav {
     position: fixed;
-    /* background-color: red; */
+    /* background-color: rgb(218, 162, 162); */
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    height: 12vh;
     width: 100%;
     padding: 1.85vw 6.5vw;
     justify-content: space-between;
@@ -87,23 +88,14 @@ nav {
 
 #nav-bottom {
     /* background-color: red; */
-    height: 0%;
+    height: 3vh;
     width: 87%;
     position: absolute;
-    bottom: 0%;
-    border-bottom: 1px solid #dadada;
-    transition: all ease 0.65s;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 1.85vw 15vw;
-    padding-left: 18vw;
-    /* padding-top: 6vw; */
+    top: 100%;
+    z-index: 9;
+    border-bottom: 1px solid white;
 }
 
-#nav-bottom .bottom-div:nth-last-child(1) {
-    margin-right: -0.35vw;
-}
 
 .bottom-div {
     /* background-color: red; */
@@ -119,24 +111,44 @@ nav {
 .bottom-div h5 span {
     font-weight: 500;
     font-size: 0.85vw;
-    opacity: 0;
+    /* opacity: 0; */
+    display: none;
 }
 
-nav:hover #nav-bottom {
+/* nav:hover #nav-bottom {
     height: 100%;
     bottom: -100%;
     background-color: #111;
-}
+} */
 
 .nav-part2 {
     display: flex;
     gap: 2vw;
+    align-items: flex-start;
+    padding: 1vh 0;
+    position: relative;
+    z-index: 10;
 }
+
 
 .nav-part2 h4 {
     font-size: 0.9vw;
     font-weight: 600;
     text-transform: uppercase;
+    margin-bottom: 2.6vw;
+}
+
+.nav-part2 h5 {
+    margin-bottom: 1vw;
+    /* background-color: red; */
+    opacity: 0;
+}
+
+.nav-part2 h5 span {
+    font-size: 0.77vw;
+    font-weight: 400;
+    /* margin-bottom: 1vw; */
+    display: inline-block;
 }
 
 nav button {
