@@ -168,7 +168,7 @@ nav button svg {
 
 #moving-div .move {
     display: inline-block;
-    animation-name: mobe;
+    animation-name: move;
     animation-duration: 9s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -179,7 +179,7 @@ nav button svg {
     margin: 0 1.2vw;
 }
 
-@keyframes mobe {
+@keyframes move {
     0% {
         transform: translateX(0);
     }
