@@ -1,0 +1,17 @@
+<!-- 39. Write a JavaScript program to compute the sum of the two given integers. If the sum is in the range 50..80 return 65
+otherwise return 80. -->
+<script>
+    function sumOfTwo(a, b) {
+        var z = a + b;
+        if (z >= 50 && z <= 80) {
+            return 65;
+        }
+        else {
+            return 80;
+        }
+    }
+    var num1 = parseInt(prompt("Enter the first number"));
+    var num2 = parseInt(prompt("Enter the second Number"));
+    var result = sumOfTwo(num1, num2);
+    document.write(result);
+</script>
