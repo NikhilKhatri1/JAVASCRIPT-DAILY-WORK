@@ -1,0 +1,33 @@
+<!-- 38. Write a JavaScript program to evaluate a student's total marks across various examinations and determine their grade.
+The grading criteria are as follows:
+If the total marks fall within the range of 89 to 100 (inclusive), the student receives an A+ grade.
+If the examination is labeled as "Final-exam," the student will receive an A+ grade only if their total marks are 90 or
+greater. Assume that final examination means we pass 'true' as second parameter otherwise blank.
+If the student achieves an A+ grade, the program should return 'true'; otherwise, it should return 'false'. -->
+
+<script>
+    function marks(totalMark, isExam) {
+        if (isExam) {
+            return totalMark >= 90;
+        }
+        else {
+            return totalMark >= 89 && totalMark <= 100;
+        }
+    }
+    var result = marks(89, false);
+    document.write(result + "<br>");
+    var result = marks(89, true);
+    document.write(result + "<br>");
+    var result = marks(90, true);
+    document.write(result + "<br>");
+</script>
+<!-- 
+function marksAbove90(marks) {
+if (marks > 89) {
+return true;
+}
+else {
+return false;
+}
+}
+document.write(marksAbove90(80)); -->

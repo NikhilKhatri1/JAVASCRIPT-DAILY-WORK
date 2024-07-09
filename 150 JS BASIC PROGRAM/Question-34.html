@@ -5,12 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>same first and last digit</title>
-    <script>
-        function SameLastDigit(){
-            var num = parseInt(prompt("Enter the three digit number"));
-            
-        }
-    </script>
+
 </head>
 
 <body>
@@ -18,6 +13,22 @@
         36. Write a JavaScript program that checks whether the last digit of three positive integers is the same.
     </h2>
     <h2 id="demo"></h2>
+    <script>
+        function SameLastDigit(x, y, z) {
+            // var x = parseInt(prompt("Enter the First digit number"));
+            // var y = parseInt(prompt("Enter the First digit number"));
+            // var z = parseInt(prompt("Enter the First digit number"));
+            if (x > 0 && y > 0 && z > 0) {
+
+                return x % 10 === y % 10 && y % 10 === z % 10 && x % 10 === z % 10;
+            } else {
+                return false; 
+            }
+
+        }
+        var result = SameLastDigit(30, 40, 100);
+        document.getElementById("demo").innerHTML = result;
+    </script>
 </body>
 
 </html>
