@@ -1,0 +1,15 @@
+<!-- Write a JavaScript program to find the greatest common divisor (GCD) of two positive numbers using recursion. -->
+
+<script>
+    function gcd(a, b) {
+        // BASE CASE
+        if (b === 0) {
+            return a;
+        }
+        // recursive case
+        return gcd(b, a % b);
+    }
+    const num1 = 48;
+    const num2 = 18;
+    document.write(`The GCD of ${num1} and ${num2} is ` + gcd(num1, num2));
+</script>

@@ -1,0 +1,19 @@
+<script>
+    function integersInRange(x, y) {
+        // Base case: if x is equal to y-1 or y, stop recursion
+        if (x >= y - 1) {
+            return [];
+        }
+
+        // Recursive case: print x+1 and recurse with x+1 and y
+        document.write("<br>", x + 1, "<br>");
+        return [x + 1, ...integersInRange(x + 1, y)];
+    }
+
+    // Example usage:
+    const start = 3;
+    const end = 8;
+    document.write(`Integers in range (${start}, ${end}):`);
+    integersInRange(start, end);
+
+</script>

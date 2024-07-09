@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Number Recursively</title>
+    <script>
+        function PrintNum(num) {
+            if (num > 0) {
+                // Recursively call PrintNum with num - 1
+                PrintNum(num - 1);
+                // Print the number before recursion
+                document.write(num + "<br>");
+            }
+        }
+
+        PrintNum(15); // Start printing numbers from 15 down to 1
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<script>
+    function createHelloWorld() {
+        // Define the inner function that will be returned
+        function innerFunction() {
+            return "Hello World";
+        }
+
+        // Return the inner function
+        return innerFunction;
+    }
+
+    // Usage example:
+    const helloWorldFunction = createHelloWorld();
+    console.log(helloWorldFunction()); // Output: "Hello World"
+
+</script>
