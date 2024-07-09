@@ -1,0 +1,20 @@
+<!-- 40. Write a JavaScript program to check from two given integers whether one of them is 8 or their sum or difference is
+8. -->
+
+<script>
+    function AnythingEight(a, b) {
+        if (a === 8 || b === 8) {
+            return `anyone number is 8 condition is true`;
+        }
+        else if (a + b === 8) {
+            return `sum condition is true`;
+        }
+        else if (math.abs(a - b) === 8) {
+            return `Difference condition is true`;
+        }
+    }
+    var num1 = parseInt(prompt("Enter the first number"));
+    var num2 = parseInt(prompt("Enter the second Number"));
+    var result = AnythingEight(num1, num2);
+    document.write(result);
+</script>
