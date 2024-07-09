@@ -110,8 +110,17 @@ nav button svg {
     height: 6vw;
     border-radius: 50%;
     width: 6vw;
-
+    transition: all .5s ease-in-out;
     background-color: #0BA34E;
+}
+
+/* ===== svg container===== */
+#page1 h1 svg:hover {
+    height: 5vw;
+    width: 5vw;
+    transition: all .5s ease-in-out;
+    margin-bottom: 8px;
+    transform: rotate(-20deg);
 }
 
 #page1 p {
@@ -142,6 +151,8 @@ nav button svg {
     border: none;
     padding: 2px;
 }
+
+
 
 #moving-div {
     /* background-color: red; */
