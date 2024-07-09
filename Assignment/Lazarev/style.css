@@ -155,27 +155,27 @@ nav button svg {
 
 
 #moving-div {
-    background-color: #0ba34d18;
+    background-color: #0df37118;
     margin-top: 10vh;
     position: absolute;
     bottom: 3%;
     white-space: nowrap;
-    padding: 1.2vw;
+    padding: 1.75vw;
     overflow: hidden;
-    width: 44%;
+    width: 60%;
 
 }
 
 #moving-div .move {
     display: inline-block;
     animation-name: move;
-    animation-duration: 9s;
+    animation-duration: 15s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 
 #moving-div .move img {
-    height: 1vw;
+    height: 1.3vw;
     margin: 0 1.2vw;
 }
 
@@ -240,7 +240,7 @@ nav button svg {
 }
 
 #page2-left p {
-    font-size: 0.8vw;
+    font-size: 0.85vw;
 }
 
 #page2-left h5 {
