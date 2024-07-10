@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+
+<body>
+    <script>
+        // Simple Return
+        var add = (a, b) => a + b;
+
+        var result = add(3, 4);
+        document.write(result + "<br>");
+
+    </script>
+    <script>
+        var hello = user => "Hello " + user;
+        document.write(hello("john") + "<br>");
+    </script>
+    <!-- <script>
+        fetch("https://fakestoreapi.com/products/categories")
+            .then(response => response.json())
+            .then(categories => {
+                categories.map(category => document.write(`<li>${category}</li>`));
+            })
+    </script> -->
+</body>
+
+</html>
