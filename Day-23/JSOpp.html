@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import Login, { PrintTitle } from "./CustomerModule.js";
+        import CreditCardPayment from "./CreditCardModule.js";
+
+        document.getElementById("lblTitle").innerHTML = PrintTitle();
+        document.getElementById("container").innerHTML = Login();
+        document.querySelector("section").innerHTML = CreditCardPayment();
+    </script>
+</head>
+
+<body>
+    <h2 id="lblTitle"></h2>
+    <div id="container">
+
+    </div>
+    <section>
+
+    </section>
+</body>
+
+</html>
