@@ -1,0 +1,13 @@
+<!-- 1. Print the numbers until given variable N in the console -->
+
+<script>
+    function printNumber(num) {
+        if (num <= 1) {
+            return num;
+        }
+        else {
+            return num + '<br>' + printNumber(num - 1);
+        }
+    }
+    document.write(printNumber(10));
+</script>

@@ -1,0 +1,19 @@
+<script>
+    function fib(n) {
+        if (n <= 0) {
+            return `value shoud be Greater than 1`;
+        }
+        if (n === 1) {
+            return [0];
+        }
+        if (n === 2) {
+            return [0, 1];
+        }
+        var s = fib(n - 1);
+        s.push(s[s.length - 1] + s[s.length - 2]);
+        return s;
+    }
+    var num = parseInt(prompt("Enter the number"));
+    var result = fib(num);
+    document.write(`Fibonacci series = ${result}`);
+</script>
