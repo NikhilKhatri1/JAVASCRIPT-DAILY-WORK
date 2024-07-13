@@ -1,0 +1,26 @@
+<!-- 3. Multiplication of element of Array. -->
+<!-- 
+<script>
+    function multiplyOfArray(myArray) {
+        if (myArray.length === 0) {
+            return 1;
+        }
+        return myArray[0] * multiplyOfArray(myArray.slice(1));
+    }
+    document.write(multiplyOfArray([1, 2, 3, 5]));
+</script> -->
+
+
+<!-- original array = [1,2,3,4,5] -->
+<!-- new array = [2,4,6,8,10] -->
+
+<script>
+    function multiplyOfArray(myArray) {
+        const newArray = [];
+        for (let i = 0; i < myArray.length; i++) {
+            newArray.push(myArray[i] * 2);
+        }
+        return newArray;
+    }
+    document.write(multiplyOfArray([1, 2, 3, 4, 5]));
+</script>
