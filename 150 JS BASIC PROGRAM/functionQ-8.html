@@ -1,0 +1,11 @@
+<!-- 2. Sum of the elements of Array -->
+
+<script>
+    function sumOfarray(myArray) {
+        if (myArray.length === 1) {
+            return myArray[0];
+        }
+        return myArray[0] + sumOfarray(myArray.slice(1));
+    }
+    document.write(sumOfarray([1, 2, 3, 4, 5, 6]));
+</script>
