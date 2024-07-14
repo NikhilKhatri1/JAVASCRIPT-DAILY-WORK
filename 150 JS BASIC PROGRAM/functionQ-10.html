@@ -1,0 +1,23 @@
+<!-- Corrected code to reverse an array using recursion -->
+<script>
+    function revArray(myArray) {
+        var reversed = [];
+
+        // Base case: if the array is empty, return an empty array
+        if (myArray.length === 0) {
+            return reversed;
+        }
+
+        // Recursive case: push the last element of myArray into reversed
+        reversed.push(myArray[myArray.length - 1]);
+
+        // Recursively call revArray with the rest of the array (excluding the last element)
+        return reversed.concat(revArray(myArray.slice(0, myArray.length - 1)));
+    }
+
+    // Example usage:
+    var originalArray = [1, 2, 3, 4, 5];
+    var reversedArray = revArray(originalArray);
+    document.write("Original Array: " + originalArray + "<br>");
+    document.write("Reversed Array: " + reversedArray);
+</script>
