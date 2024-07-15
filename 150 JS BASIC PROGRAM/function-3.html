@@ -1,0 +1,25 @@
+<!-- 3. Write a JavaScript function that generates all combinations of a string.
+Example string : 'dog'
+Expected Output : d,do,dog,o,og,g -->
+
+<script>
+    function generateCombinations(str) {
+        let result = [];
+
+        // Generate combinations of length 1 to str.length
+        for (let len = 1; len <= str.length; len++) {
+            // Generate combinations of current length
+            for (let start = 0; start <= str.length - len; start++) {
+                let combination = str.substr(start, len);
+                result.push(combination);
+            }
+        }
+
+        return result.join(',');
+    }
+
+    // Example usage:
+    let inputString = 'dog';
+    document.write(generateCombinations(inputString)); // Output: d,o,g,do,dog,og
+
+</script>
