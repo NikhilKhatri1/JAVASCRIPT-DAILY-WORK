@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Subtract using Module</title>
+    <!-- Importing the module -->
+    <script type="module" src="./math.js"></script>
+
+    <script type="module">
+        // Importing functions from math.js
+        import { add, subtract, multiply } from './math.js';
+
+        // Using the imported functions
+        const sum = add(5, 3);
+        const difference = subtract(5, 3);
+        const mul = multiply(5, 3);
+
+        // Outputting the results to a div instead of using document.write()
+        document.getElementById('output').innerHTML = `
+            <p>Sum: ${sum}</p>
+            <p>Difference: ${difference}</p>
+            <p> Multiply: ${mul}</p>
+        `;
+    </script>
+</head>
+
+<body>
+    <div id="output"></div>
+</body>
+
+</html>
