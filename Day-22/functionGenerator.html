@@ -1,0 +1,12 @@
+<script>
+    function* generatorFunction() {
+        yield 10;
+        yield 'Sam';
+        yield ["delhi", "hyd"];
+    }
+    const iterator = generatorFunction();
+    document.write(iterator.next().value + "<br>");     // 10
+    document.write(iterator.next().value + "<br>");     // sam
+    document.write(iterator.next().value + "<br>");   // delhi,hyd
+    document.write(iterator.next().done);  // true
+</script>
