@@ -1,0 +1,51 @@
+<script>
+    class Employee {
+        FirstName;
+        LastName;
+        Designation;
+        Print() {
+            document.write(`${this.FirstName} ${this.LastName} - ${this.Designation}<br>`);
+        }
+    }
+    class Developer extends Employee {
+        FirstName = "Rakesh";
+        LastName = "Kumar";
+        Designation = "Developer";
+        Role = "Developer Role : Build, Debug, Test & Deploy<br>";
+        Print() {
+            super.Print();
+            document.write(`${this.Role}`);
+        }
+    }
+    class Admin extends Employee {
+        FirstName = "Kiran";
+        LastName = "Rao";
+        Designation = "Admin";
+        Role = "Admin Role : Authorizations and Authentication<br>";
+        Print() {
+            super.Print();
+            document.write(`${this.Role}`);
+        }
+    }
+    class Manager extends Employee {
+        FirstName = "Tom";
+        LastName = "Hanks";
+        Designation = "Manager";
+        Role = "Manager Role : Approvals<br>";
+        Print() {
+            super.Print();
+            document.write(`${this.Role}`);
+        }
+    }
+
+    let employees = new Array(new Developer(), new Admin(), new Manager());
+    var designation = prompt("Enter Designation");
+
+    for (var employee of employees) {
+        if (designation === employee.Designation) {
+            employee.Print();
+        }
+    }
+
+
+</script>
