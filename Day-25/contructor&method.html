@@ -1,0 +1,21 @@
+<script>
+    class person {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        //method to display about information
+        displayinfo() {
+            document.write(`Name = ${this.name} <br> Age = ${this.age}<br>`);
+        }
+    }
+    // Creating instances of the Person class
+
+    let person1 = new person("Alice", 30);
+    let person2 = new person("bob", 20);
+
+    // Using methods to display information
+    person1.displayinfo();
+    person2.displayinfo();
+
+</script>

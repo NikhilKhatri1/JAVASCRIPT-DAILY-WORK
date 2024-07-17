@@ -1,0 +1,46 @@
+<!-- No Adjacent number
+n=1
+[1,0,0,0,1] true;
+n=2
+[1,0,0,0,1] false; -->
+
+<script>
+    function checkNoAdjacentOnes(myArray, n) {
+        // Check for adjacent 1s
+        for (let i = 1; i < myArray.length; i++) {
+            if (myArray[i] === 1 && myArray[i - 1] === 1) {
+                return false;
+            }
+        }
+
+        // If n > 1, check if adding n consecutive 1s will violate the condition
+        if (n > 1) {
+            for (let i = 0; i <= myArray.length - n; i++) {
+                let isValid = true;
+                for (let j = i; j < i + n; j++) {
+                    if (myArray[j] !== 0) {
+                        isValid = false;
+                        break;
+                    }
+                }
+                if (isValid) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        return true;
+    }
+
+    // Example usage:
+    let array1 = [1, 0, 0, 0, 1];
+    let array2 = [1, 1, 0, 0, 1];
+    let array3 = [1, 0, 0, 0, 0, 0, 1];
+    let array4 = [1, 0, 0, 0, 0, 1, 0, 0, 0, 1];
+
+    document.write(checkNoAdjacentOnes(array1, 2) + "<br>"); // Output: false (adding two 1s would create adjacent 1s)
+    document.write(checkNoAdjacentOnes(array2, 2) + "<br>"); // Output: false (adjacent 1s present)
+    document.write(checkNoAdjacentOnes(array3, 3) + "<br>"); // Output: true (no adjacent 1s and adding three 1s is allowed)
+    document.write(checkNoAdjacentOnes(array4, 3) + "<br>"); // Output: false (adding three 1s would create adjacent 0s)
+</script>

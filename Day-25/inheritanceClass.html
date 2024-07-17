@@ -1,0 +1,31 @@
+<script>
+    // super class
+    class person {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        displayinfo() {
+            document.write(`Name = ${this.name}<br>Age = ${this.age}<br>`);
+        }
+    }
+    // Student class inherits from person
+    class student extends person {
+        constructor(name, age, grade) {
+            super(name, age); //call to superclass costructor
+            this.grade = grade;
+        }
+        // Method specific to student class
+        displayinfo() {
+            super.displayinfo();   // call superclass method
+            document.write(`Grade = ${this.grade}<br>`)
+        }
+    }
+    // Creating instances of the Student class
+    let student1 = new student("Eve", 18, "A");
+    let student2 = new student("Frank", 15, "B");
+
+    // Using methods from both Person and Student classes
+    student1.displayinfo();
+    student2.displayinfo();
+</script>

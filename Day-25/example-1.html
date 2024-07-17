@@ -1,0 +1,36 @@
+<script>
+    class book {
+        constructor(title, author) {
+            this.title = title;
+            this.author = author;
+        }
+        displayinfo() {
+            document.write(`Title = ${this.title}<br> Author = ${this.author}<br>`);
+        }
+    }
+    class Library {
+        constructor(name) {
+            this.name = name;
+            this.books = [];  // Array to store Book objects
+        }
+        addbook(book) {
+            this.books.push(book);
+        }
+        displaybooks() {
+            document.write(`Books in ${this.name} Library: <br>`);
+            this.books.forEach(book => {
+                book.displayinfo();
+            });
+        }
+    }
+    // Creating instances and demonstrating aggregation
+    let book1 = new book("Tarzan", "xyz");
+    let book2 = new book("lion's King", "abc");
+
+    let library = new Library("The Central Library");
+
+    library.addbook(book1);
+    library.addbook(book2);
+
+    library.displaybooks();
+</script>

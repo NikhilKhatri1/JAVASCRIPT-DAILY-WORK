@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example-2</title>
+    <script>
+        class Hdfc_bank_version1 {
+            personcalBanking = "Personal Banking Service for Customer <br>";
+            print() {
+                document.write(this.personcalBanking);
+            }
+        }
+        class Hdfc_bank_version2 {
+            NriBanking = "NRI Banking Services for NRI's<br>";
+            print() {
+                let obj = new Hdfc_bank_version1();
+                obj.print();
+                document.write(this.NriBanking);
+            }
+        }
+        class Hdfc_bank_version3 {
+            cc = "Credit Card Services<br>";
+            print() {
+                let obj = new Hdfc_bank_version2();
+                obj.print();
+                document.write(this.cc);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Install HDFC Bank App</legend>
+        <dl>
+            <dt>Select Version</dt>
+            <dd>
+                <select>
+                    <option value="-1">Choose Version</option>
+                    <option value="ver1">2022 Version-1</option>
+                    <option value="ver2">2023 Version-2</option>
+                    <option value="ver3">2024 Version-3</option>
+                </select>
+            </dd>
+        </dl>
+    </fieldset>
+</body>
+
+</html>
