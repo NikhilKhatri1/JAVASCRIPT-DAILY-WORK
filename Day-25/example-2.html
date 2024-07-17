@@ -29,6 +29,31 @@
             }
         }
 
+        function installClick() {
+            var ver = document.querySelector("select").value;
+            switch (ver) {
+
+                case "ver1":
+                    document.write("<h2>Version-1 Installed</h2>");
+                    let obj1 = new Hdfc_bank_version1();
+                    obj1.print();
+                    break;
+                case "ver2":
+                    document.write("<h2>Version-2 Installed</h2>");
+                    let obj2 = new Hdfc_bank_version2();
+                    obj2.print();
+                    break;
+                case "ver3":
+                    document.write("<h2>Version-3 Installed</h2>");
+                    let obj3 = new Hdfc_bank_version3();
+                    obj3.print();
+                    break;
+                default:
+                    document.write("Please Select a Version to Install");
+                    break;
+            }
+        }
+
     </script>
 </head>
 
@@ -44,6 +69,7 @@
                     <option value="ver2">2023 Version-2</option>
                     <option value="ver3">2024 Version-3</option>
                 </select>
+                <button onclick="installClick()">Install</button>
             </dd>
         </dl>
     </fieldset>
