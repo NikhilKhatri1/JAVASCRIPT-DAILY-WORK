@@ -24,6 +24,79 @@
     specific data and behaviors, making your code easier to understand and maintain.
     </pre>
     </h2>
+
+    <h3>
+        <pre>
+            Accessors (Getter and Setter):
+            
+            Getter: Retrieves the value of a property.
+            Setter: Sets the value of a property.
+            
+            javascript
+            
+            class Product {
+            constructor(name, price) {
+            this._name = name; // Private property convention
+            this._price = price;
+            }
+            
+            get name() {
+            return this._name;
+            }
+            
+            set name(newName) {
+            if (typeof newName === 'string') {
+            this._name = newName;
+            } else {
+            console.error('Name should be a string');
+            }
+            }
+            }
+            
+            let product1 = new Product("Tablet", 500);
+            console.log(product1.name); // Output: Tablet
+            
+            product1.name = "New Tablet";
+            console.log(product1.name); // Output: New Tablet
+            
+            Functions in Classes:
+            
+            Method: A function defined within a class.
+            
+            javascript
+            
+            class Product {
+            constructor(name, price) {
+            this.name = name;
+            this.price = price;
+            }
+            
+            calculateDiscount(percent) {
+            return this.price * (1 - percent / 100);
+            }
+            }
+            
+            let product1 = new Product("Camera", 300);
+            console.log(product1.calculateDiscount(10)); // Output: 270 (discounted price)
+            
+            Explanation in Simple Terms:
+            
+            Class Declaration: Defines a blueprint for creating objects with shared properties and methods.
+            
+            Property: Stores data related to each object created from the class.
+            
+            Accessors: Provide controlled access to class properties.
+            Getter: Retrieves property values.
+            Setter: Sets property values, with optional validation or logic.
+            
+            Functions in Classes (Methods): Perform actions or calculations related to the class's purpose.
+            
+            In essence, classes in JavaScript are like blueprints for creating objects that encapsulate both data (properties) and
+            behavior (methods). They allow you to create reusable code structures, making it easier to manage and organize your
+            application's logic.
+
+        </pre>
+    </h3>
 </body>
 
 </html>

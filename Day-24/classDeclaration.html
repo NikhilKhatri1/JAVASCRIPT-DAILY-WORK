@@ -1,0 +1,16 @@
+<!-- class declaration -->
+
+<script>
+    class product {
+        constructor(name, price) {
+            this.name = name;
+            this.price = price;
+
+        }
+        getinfo() {
+            return `Product: ${this.name}, <br> Price: ${this.price}`;
+        }
+    }
+    let product1 = new product("Laptop", 1200);
+    document.write(product1.getinfo());
+</script>
