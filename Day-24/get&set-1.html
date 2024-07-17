@@ -1,0 +1,39 @@
+<script>
+    // Define a class with getters and setters
+    class Counter {
+        constructor() {
+            this._count = 0; // Private property conventionally marked with _
+        }
+
+        // Getter method for count
+        get count() {
+            return this._count;
+        }
+
+        // Setter method for count
+        set count(value) {
+            if (value >= 0) {
+                this._count = value;
+            } else {
+                console.log("Count cannot be negative.");
+            }
+        }
+    }
+
+    // Create an instance of the Counter class
+    let counter = new Counter();
+
+    // Get the current count using the getter
+    console.log(`Current Count: ${counter.count}`); // Output: Current Count: 0
+
+    // Set a new count using the setter
+    counter.count = 5;
+    console.log(`New Count: ${counter.count}`); // Output: New Count: 5
+
+    // Try to set a negative count (should log an error message)
+    counter.count = -1; // Output: Count cannot be negative.
+
+    // Display the count again (should remain unchanged)
+    console.log(`Current Count: ${counter.count}`); // Output: Current Count: 5
+
+</script>

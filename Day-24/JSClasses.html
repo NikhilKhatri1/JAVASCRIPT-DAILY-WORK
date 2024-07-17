@@ -1,0 +1,14 @@
+<script>
+    class product {
+        Name = "Samsung TV";
+        price = 5600.44;
+        stock = true;
+        cities = ["Delhi", "hyd"];
+        rating = { Rate: 4.5, Review: 2340 }
+    }
+    let tv = new product;
+    tv.price = prompt("Enter Price");
+    document.write(`Name = ${tv.Name} <br> Price = ${tv.price} 
+    <br> Stock = ${tv.stock} <br> Cities = ${tv.cities.toString()}
+    <br>Rating = ${tv.rating.rate}[${tv.rating.Review}]`);
+</script>

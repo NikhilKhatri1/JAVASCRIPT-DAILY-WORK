@@ -1,0 +1,32 @@
+<script>
+
+    class Product {
+        Name = "Samsung TV";
+        Rating = {
+            "Hyd": {
+                "Customer": { Rate: 4.2 },
+                "Vendor": { Rate: 4.1 }
+            },
+            "Delhi": {
+                "Customer": { Rate: 4.6 },
+                "Vendor": { Rate: 4.4 }
+            }
+        };
+
+        get HydCustRating() {
+            return this.Rating.Hyd.Customer.Rate;
+        }
+
+        set HydCustRating(newRating) {
+            this.Rating.Hyd.Customer.Rate = newRating;
+        }
+
+    }
+    let obj = new Product;
+
+    obj.HydCustRating = prompt("Enter New Rating for Hyd Customer");;
+
+    document.write(`Hyd Customer Rating : ${obj.HydCustRating}`);
+
+
+</script>
