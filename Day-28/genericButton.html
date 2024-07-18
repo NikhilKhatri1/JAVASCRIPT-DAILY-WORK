@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function SubmitClick(e) {
+        function submitClick(e) {
             e.preventDefault();
-            alert("Form Submitted");
+            alert("Form Submitted!");
         }
     </script>
 </head>
 
 <body>
-    <form onsubmit="SubmitClick(event)">
-        User Name : <input type="text" name="UserName"> <button type="submit">Submit</button>
+    <form onsubmit="submitClick(event)">
+        UserName: <input type="text" name="UserName"> <button type="submit">Submit</button>
     </form>
 </body>
 

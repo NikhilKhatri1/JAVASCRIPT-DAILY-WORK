@@ -5,21 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        function NavClick() {
-            alert("Navbar Clicked");
+    <style>
+        nav {
+            background-color: #222;
+            height: 150px;
+            color: white;
         }
-        function SearchClick(e) {
+
+        nav button {
+            margin-top: 40px;
+            margin-left: 20px;
+            width: 100px;
+            height: 40px;
+        }
+    </style>
+    <script>
+        function navClick() {
+            alert("Navbar Clicked!");
+        }
+        function SubmitClick(e) {
             e.stopPropagation();
-            alert("Search Clicked");
+            alert("Button clicked!");
         }
     </script>
+
 </head>
 
 <body>
-    <nav onclick="NavClick()" style="background-color: black; color:white; padding: 20px;">
+    <nav onclick="navClick()">
         <h2>Amazon</h2>
-        <button onclick="SearchClick(event)">Search</button>
+        <button onclick="SubmitClick(event)">Submit</button>
     </nav>
 </body>
 
