@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Comprehensive Example</title>
+    <script>
+        function details(element, ...product) {
+            var [name, price, stock, cities] = product;
+            document.write(`Name: ${name}<br>Price: ${price}<br>Stock: ${stock}<br>Cities: ${cities}<br>Button ID: ${element.id}`);
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btnDetails" onclick="details(this, 'TV', 45000.44, true, ['Delhi', 'Hyd'])">Details</button>
+</body>
+
+</html>

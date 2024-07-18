@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function databaseOperation(element, event, extraData) {
+            document.write("Button ID: " + element.id + "<br>");
+            document.write("X Position: " + event.clientX + "<br>");
+            document.write("Extra Data: " + extraData + "<br>");
+        }
+
+    </script>
+</head>
+
+<body>
+    <button onclick="databaseOperation(this, event, 'Extra Data')" id="Click">Click Me</button>
+
+</body>
+
+</html>
