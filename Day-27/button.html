@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Features Example</title>
+    <style>
+        .button {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 100px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .signin {
+            background-color: aqua;
+            color: #111;
+        }
+
+        .signin:hover {
+            background-color: #41d3f0;
+        }
+
+        .signin.clicked {
+            background-color: #4c9bb0;
+        }
+
+        .signup {
+            background-color: rgb(248, 36, 47);
+            color: #111;
+        }
+
+        .signup:hover {
+            background-color: #ec233a;
+        }
+
+        .signup.clicked {
+            background-color: #fa404f;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var buttons = document.querySelectorAll(".button");
+
+            buttons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    // Remove 'clicked' class from all buttons
+                    buttons.forEach(function (btn) {
+                        btn.classList.remove("clicked");
+                    });
+
+                    // Add 'clicked' class to the clicked button
+                    button.classList.add("clicked");
+
+                    // Reset 'clicked' class after 300ms (0.3s)
+                    setTimeout(function () {
+                        button.classList.remove("clicked");
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button class="button signin">Sign In</button>
+    <button class="button signup">Sign Up</button>
+</body>
+
+</html>

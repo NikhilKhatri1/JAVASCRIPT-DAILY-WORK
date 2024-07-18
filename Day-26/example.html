@@ -1,0 +1,25 @@
+<script>
+    class Employee {
+        constructor(Name, Designation) {
+            this.Name = Name;
+            this.Designation = Designation;
+        }
+        displayInfo() {
+            document.write(`Name = ${this.Name}<br>Designation = ${this.Designation}<br>`);
+        }
+    }
+    class position extends Employee {
+        constructor(Name, Designation, Role) {
+            super(Name, Designation);
+            this.Role = Role;
+        }
+        displayInfo() {
+            super.displayInfo();
+            document.write(`Role = ${this.Role}<br>`);
+        }
+    }
+    let Employee1 = new position("Ak", "dev", "employee");
+    let Employee2 = new position("Jk", "UiDev", "Manager");
+    Employee1.displayInfo();
+    Employee2.displayInfo();
+</script>

@@ -1,0 +1,61 @@
+<script>
+    class Employee {
+        FirstName;
+        LastName;
+        Designation;
+        Print() {
+            document.write(`${this.FirstName} ${this.LastName} - ${this.Designation}<br>`);
+        }
+    }
+
+    class Developer extends Employee {
+        constructor() {
+            super();
+            this.FirstName = "Rakesh";
+            this.LastName = "Kumar";
+            this.Designation = "Developer";
+            this.Role = "Developer Role : Build, Debug, Test & Deploy<br>";
+        }
+        Print() {
+            super.Print();
+            document.write(`${this.Role}`);
+        }
+    }
+
+    class Admin extends Employee {
+        constructor() {
+            super();
+            this.FirstName = "Kiran";
+            this.LastName = "Rao";
+            this.Designation = "Admin";
+            this.Role = "Admin Role : Authorizations and Authentication<br>";
+        }
+        Print() {
+            super.Print();
+            document.write(`${this.Role}`);
+        }
+    }
+
+    class Manager extends Employee {
+        constructor() {
+            super();
+            this.FirstName = "Tom";
+            this.LastName = "Hanks";
+            this.Designation = "Manager";
+            this.Role = "Manager Role : Approvals<br>";
+        }
+        Print() {
+            super.Print();
+            document.write(`${this.Role}`);
+        }
+    }
+
+    let employees = [new Developer(), new Admin(), new Manager()];
+    var designation = prompt("Enter your Designation");
+
+    for (var employee of employees) {
+        if (designation === employee.Designation) {
+            employee.Print(); // Corrected capitalization
+        }
+    }
+</script>

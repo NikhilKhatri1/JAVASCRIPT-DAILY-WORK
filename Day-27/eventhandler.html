@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler Example</title>
+    <style>
+        button {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 100px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9);
+        }
+
+        .signin {
+            background-color: aqua;
+            color: #111;
+        }
+
+        .signin:hover {
+            background-color: #41d3f0;
+        }
+
+        .signin.clicked {
+            background-color: #4c9bb0;
+        }
+
+        .signup {
+            background-color: rgb(248, 36, 47);
+            color: #111;
+        }
+
+        .signup:hover {
+            background-color: #ec233a;
+        }
+
+        .signup.clicked {
+            background-color: #fa404f;
+        }
+    </style>
+    <script>
+        function BodyLoad() {
+            document.querySelector(".signin").addEventListener("click", function () {
+                alert("Sign in have Clicked!");
+            })
+            document.querySelector(".signup").addEventListener("click", function () {
+                alert("Sign Up have Clicked!")
+            })
+        }
+    </script>
+</head>
+
+<body onload="BodyLoad()">
+    <button onclick="SignInClick()" class="signin">Sign In</button>
+    <button onclick="SignUpClick()" class="signup">Sign Up</button>
+</body>
+
+</html>
