@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Move</title>
+    <script>
+        function getPosition(e) {
+            var img = document.querySelector("img");
+            img.style.position = fixed;
+            img.style.top = e.clientY + "px";
+            img.style.left = e.clientX + "px";
+        }
+    </script>
+</head>
+
+<body onmousemove="getPosition(event)">
+    <div style="height: 1000px;">Move mouse point to test</div>
+    <img src="../images/flag.gif" width="50" height="50">
+</body>
+
+</html>
