@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+}
+
+nav {
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    cursor: pointer;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3rem 0;
+}
+
+#search-btn:active {
+    background-color: #333;
+}
+
+#search-input {
+    max-width: 400px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+.card {
+    width: 22%;
+    margin: 1%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    height: 100px;
+    overflow: auto;
+}
+
+.news-title {
+    font-size: 15px;
+    font-weight: 600;
+}
