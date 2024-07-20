@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #Container {
+            border: 1px solid black;
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            transition: background-color 0.2s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Container"></div>
+    <script>
+        var rect = document.querySelector("#Container");
+        rect.addEventListener("mousemove", function (details) {
+            var rectanglelocation = rect.getBoundingClientRect();
+            var insiderectval = details.clientX - rectanglelocation.left;
+            var halfWidth = rectanglelocation.width / 2;
+
+            if (insiderectval < halfWidth) {
+                var redcolor = Math.floor(255 * (1 - insiderectval / halfWidth));
+                rect.style.backgroundColor = `rgb(${redcolor}, 0, 0)`;
+            } else {
+                var bluecolor = Math.floor(255 * ((insiderectval - halfWidth) / halfWidth));
+                rect.style.backgroundColor = `rgb(0, 0, ${bluecolor})`;
+            }
+        });
+
+        rect.addEventListener("mouseleave", function () {
+            rect.style.backgroundColor = "white";
+        });
+    </script>
+</body>
+
+</html>

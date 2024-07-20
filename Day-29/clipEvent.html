@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clipboard Event</title>
+    <script>
+        function copy() {
+            document.getElementById("lbl").innerHTML = "Number Copied";
+        }
+    </script>
+</head>
+
+<body>
+    <dl>
+        <dt>Account Number</dt>
+        <dd><input type="text" oncopy="copy()"><span id="lbl"></span></dd>
+        <dt>Verify Account Number</dt>
+        <dd><input type="text" onpaste="return false"></dd>
+    </dl>
+</body>
+
+</html>

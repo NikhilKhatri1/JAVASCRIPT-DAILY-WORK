@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Event</title>
+    <script>
+        function OpenImage() {
+            window.open("../images/profile-1.jpg", "fashion", "width=300 height=100");
+        }
+        document.oncontextmenu = function () {
+            alert("Right Click not Allowed");
+            return false;
+        }
+        document.onselectstart = function () {
+            alert("not Allowed");
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <img src="../images/profile-1.jpg" ondblclick="OpenImage()" width="100" height="100">
+    <p>Double Click to view large</p>
+</body>
+
+</html>
