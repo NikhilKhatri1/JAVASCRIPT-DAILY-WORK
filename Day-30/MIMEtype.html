@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIME Type Example</title>
+</head>
+
+<body>
+    <h1>MIME Type Example</h1>
+    <script>
+        for (var item of navigator.mimeTypes) {
+            document.write(item.type + "<br>");
+        }
+    </script>
+
+    <h4>
+        <pre>
+        Explanation of MIME Type in JavaScript
+        
+        MIME type (Multipurpose Internet Mail Extensions type) is a standard way to indicate the nature and format of a file. It
+        helps the browser understand how to process or display the file. For example, text/html indicates an HTML file,
+        image/png indicates a PNG image, and application/json indicates a JSON file.
+        
+        In JavaScript, when creating a Blob object, you can specify the MIME type to tell the browser how to handle the content.
+        Here’s a simple example:
+        
+        javascript
+        
+        const myBlob = new Blob(['Hello, world!'], { type: 'text/plain' });
+        
+        In this example:
+        
+        ['Hello, world!'] is the content of the blob.
+        { type: 'text/plain' } specifies that the content is plain text.
+        
+        By setting the MIME type, you ensure that when the content is used (e.g., downloaded or displayed), the browser or other
+        tools know how to properly handle it.
+    </pre>
+    </h4>
+</body>
+
+</html>

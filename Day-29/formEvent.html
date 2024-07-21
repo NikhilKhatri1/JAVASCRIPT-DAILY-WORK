@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Event</title>
+
+    <script>
+        function resetForm() {
+            document.getElementById("myForm").reset();
+            // Remove username from the address bar
+            var url = window.location.href;
+            var index = url.indexOf('?'); // Find the index of '?'
+            if (index !== -1) {
+                var cleanUrl = url.slice(0, index); // Slice off everything after '?'
+                window.history.replaceState({}, document.title, cleanUrl);
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <form id="myForm" onsubmit="alert('Form Submitted')" onreset="alert('Form will reset')">
+        User Name: <input type="text" name="UserName"> <button type="submit">Submit</button>
+        <button type="button" onclick="resetForm()">Cancel</button>
+    </form>
+</body>
+
+</html>

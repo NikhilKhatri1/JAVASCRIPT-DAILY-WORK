@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generic form function</title>
+    <script>
+        function cityChange() {
+            frmRegister.submit();
+        }
+    </script>
+</head>
+
+<body>
+    <form name="frmRegister" onsubmit="alert('Form submitted')" onreset="alert('Form will reset')">
+        UserName:
+        <input type="text" name="UserName">
+        <select name="city" onchange="cityChange()">
+            <option>Select City</option>
+            <option>Delhi</option>
+            <option>Hyd</option>
+        </select>
+
+        <h4>Note: can Submit without clicking on button</h4>
+        <!-- <button type="submit">Submit</button>
+        <button type="reset">Cancel</button> -->
+    </form>
+</body>
+
+</html>

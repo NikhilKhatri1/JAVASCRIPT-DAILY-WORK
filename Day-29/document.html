@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Title Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        function setPageTitle(newTitle) {
+            document.title = newTitle;
+        }
+
+        function submitForm() {
+            setPageTitle("Submitting...");
+            // Simulate form submission process
+            setTimeout(function () {
+                setPageTitle("Form Submitted");
+            }, 2000); // Simulating a 2-second delay for submission
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Dynamic Title Example</h1>
+    <p>This example demonstrates how to dynamically update the document title.</p>
+
+    <button onclick="setPageTitle('Home')">Set Home Title</button>
+    <button onclick="setPageTitle('About')">Set About Title</button>
+    <button onclick="submitForm()">Submit Form</button>
+
+    <p>Current Document Title: <strong id="currentTitleDisplay"></strong></p>
+
+    <script>
+        // Display current title on page load
+        document.getElementById("currentTitleDisplay").textContent = document.title;
+    </script>
+</body>
+
+</html>

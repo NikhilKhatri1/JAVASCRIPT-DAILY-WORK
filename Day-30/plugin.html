@@ -1,0 +1,10 @@
+<script>
+    for (var item of navigator.plugins) {
+        document.write(item.name + "<br>");
+    }
+    if (navigator.plugins['PDF Viewer'] === undefined) {
+        alert("Please Install PDF plugins one your browser");
+    } else {
+        alert("You Can Watch PDF document");
+    }
+</script>
