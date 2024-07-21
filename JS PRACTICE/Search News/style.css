@@ -6,6 +6,7 @@
 
 body {
     position: relative;
+    font-family: 'poppins', sans-serif;
 }
 
 nav {
@@ -15,6 +16,44 @@ nav {
 .navbar-brand {
     cursor: pointer;
 }
+
+.search-input {
+    width: 25vw;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 2px solid white;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+
+.search-input:focus {
+    color: #fff;
+    font-weight: 600;
+    background-color: transparent;
+}
+
+.search-input::placeholder {
+    color: #fff;
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+/* 
+#search-input {
+    width: 20vw;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid #ccc !important;
+
+    box-shadow: none !important;
+
+    outline: none !important;
+} */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -26,14 +65,6 @@ nav {
     background-color: #333;
 }
 
-#search-input {
-    max-width: 400px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    color: #333;
-}
 
 .card {
     width: 22%;
@@ -54,4 +85,26 @@ nav {
 .news-title {
     font-size: 15px;
     font-weight: 600;
+}
+
+@media (max-width:450px) and (max-height:800px) {
+    #search-input {
+        width: 40vw;
+    }
+
+    .card {
+        width: 80vw;
+        margin-top: 4vh;
+    }
+}
+
+@media (max-width:850px) and (min-width:450px) {
+    #search-input {
+        width: 40vw;
+    }
+
+    .card {
+        width: 40vw;
+        margin-top: 4vh;
+    }
 }
