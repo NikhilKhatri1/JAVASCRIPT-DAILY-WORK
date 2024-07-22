@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <script>
+        function checkPageCount() {
+            // Check if 'pageCount' exists in sessionStorage
+            if (sessionStorage.getItem('pageCount')) {
+                // Get the current count from sessionStorage and convert it to a number
+                var count = parseInt(sessionStorage.getItem('pageCount'));
+
+                // Increment the count for each page load
+                count++;
+
+                // Update sessionStorage with the incremented count
+                sessionStorage.setItem('pageCount', count.toString());
+
+                // Example: Redirect if the count exceeds 2
+                if (count > 2) {
+                    alert("Please register for more..");
+                    window.location.href = "form.html";
+                }
+            } else {
+                // If 'pageCount' doesn't exist, initialize it to 1
+                sessionStorage.setItem('pageCount', '1');
+            }
+        }
+
+
+    </script>
+</head>
+
+<body onload="checkPageCount()">
+    <header>
+        <h1>Your Website Name</h1>
+        <nav>
+            <ul>
+                <li><a href="history.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="form.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Content of your pages -->
+        <section>
+            <h2>Page Title</h2>
+            <p>Your content goes here.</p>
+        </section>
+
+        <!-- Additional pages and content -->
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

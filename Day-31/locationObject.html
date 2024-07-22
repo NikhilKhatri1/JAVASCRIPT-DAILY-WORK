@@ -1,0 +1,14 @@
+<script>
+    document.write(`
+        <dl>
+            <dt>Server IP</dt>
+            <dd>${location.hostname}</dd>
+            <dt>Protocol</dt>
+            <dd>${(location.protocol == "http:") ? "You are using Live Server" : "Please run the page oon Live Server"}</dd>
+            <dt>Path</dt>
+            <dd>${location.pathname}</dd>
+            <dt>URL</dt>
+            <dd>${location.href}</dd> 
+        </dl>   
+    `);
+</script>

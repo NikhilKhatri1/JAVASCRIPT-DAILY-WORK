@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result file</title>
+    <script>
+        var data = [
+            { title: "HTML", topics: ["Semantics", "Images", "Links", "Forms"] },
+            { title: "JAVASCRIPT", topics: ["Variables", "Operator", "Function"] }
+        ];
+        function bodyload() {
+            var searchString = location.search.substring(location.search.indexOf("=") + 1);
+
+            document.querySelector("h2").innerHTML = `${searchString} Topic`;
+            var topic = data.find(item => item.title === searchString);
+
+            if (topic) {
+                topic.topics.map(item => {
+                    var li = document.createElement("li");
+                    li.innerHTML = item;
+                    document.querySelector("ol").appendChild(li);
+                })
+            } else {
+                document.write(`${searchString}  is not found <br> <br>
+
+                <a href="./search.html">Back to Search</a>
+                
+                `);
+
+            }
+        }
+    </script>
+</head>
+
+<body onload="bodyload()">
+    <h2></h2>
+    <ol>
+
+    </ol>
+    <a href="./search.html">Back to Search</a>
+</body>
+
+</html>

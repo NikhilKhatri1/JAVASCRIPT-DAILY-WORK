@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopper</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid gray;
+            padding: 10px;
+            font-family: Arial;
+            font-size: 20px;
+            align-items: center;
+        }
+
+        nav span {
+            margin-right: 20px;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: 2fr 10fr;
+        }
+
+        .main {
+            height: 450px;
+            overflow: auto;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: -30px;
+        }
+
+        li {
+            font-size: 20px;
+            font-family: Arial;
+            margin-bottom: 20px;
+            border: 1px solid black;
+            width: 100px;
+            padding: 10px;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        header a {
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function RecentClick() {
+            switch (location.hash) {
+                case "#men":
+                    var now = new Date();
+                    document.getElementById("topics").innerHTML = "Mens Fashion<br>" + now.toLocaleTimeString();
+                    break;
+                case "#women":
+                    document.getElementById("topics").innerHTML = "Womens Fashion";
+                    break;
+                case "#kids":
+                    document.getElementById("topics").innerHTML = "Kids Fashion";
+                    break;
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h2>Shopper.</h2>
+        <nav>
+            <span><a href="#home">Home</a></span>
+            <span><a href="#women">Women Fashion</a></span>
+            <span><a href="#kids">Kids Fashion</a></span>
+            <span><a href="#men">Men Fashion</a></span>
+
+        </nav>
+        <div>
+            <span class="bi bi-person"></span>
+            <span class="bi bi-heart"></span>
+            <span class="bi bi-cart3"></span>
+        </div>
+    </header>
+    <section>
+        <div role="navigation" class="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#men">Men</a></li>
+                <li><a href="#women">Women</a></li>
+                <li><a href="#kids">Kids</a></li>
+            </ul>
+            <br><br>
+            <button onclick="RecentClick()">Recently Viewed</button>
+            <p id="topics"></p>
+        </div>
+        <div role="main" class="main">
+            <h1 id="home">Home</h1>
+            <p>Lorem ipsum dolor sit <span><a href="#iphone">Iphone Offers</a></span> amet consectetur adipisicing elit.
+                Aliquid ducimus sapiente aliquam cupiditate tempore. Culpa inventore veniam temporibus saepe debitis, at
+                quasi! Voluptatibus, commodi debitis corrupti modi placeat ad repellat!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ducimus sapiente aliquam cupiditate
+                tempore. Culpa inventore veniam temporibus saepe debitis, at quasi! Voluptatibus, commodi debitis
+                corrupti modi placeat ad repellat!</p>
+            <h1 id="women">Women Fashion</h1>
+            <img src="./images/woman-fashion.jpg" width="300" height="300">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ducimus sapiente aliquam cupiditate
+                tempore. Culpa inventore veniam temporibus saepe debitis, at quasi! Voluptatibus, commodi debitis
+                corrupti modi placeat ad repellat!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ducimus sapiente aliquam cupiditate
+                tempore. Culpa inventore veniam temporibus saepe debitis, at quasi! Voluptatibus, commodi debitis
+                corrupti modi placeat ad repellat!</p>
+            <h1 id="men">Men Fashion</h1>
+            <img src="./images/men-fashion.jpg" width="300" height="300">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ducimus sapiente aliquam cupiditate
+                tempore. Culpa inventore veniam temporibus saepe debitis, at quasi! Voluptatibus, commodi debitis
+                corrupti modi placeat ad repellat!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ducimus sapiente aliquam cupiditate
+                tempore. Culpa inventore veniam temporibus saepe debitis, at quasi! Voluptatibus, commodi debitis
+                corrupti modi placeat ad repellat!</p>
+            <figure id="iphone">
+                <img src="./images/iphone-black.jpg" width="200" height="300">
+                <figcaption>5% OFF on 15 Pro max</figcaption>
+            </figure>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ducimus sapiente aliquam cupiditate
+                tempore. Culpa inventore veniam temporibus saepe debitis, at quasi! Voluptatibus, commodi debitis
+                corrupti modi placeat ad repellat!</p>
+            <h1 id="kids">Kids Fashion</h1>
+            <img src="./images/kid-fashion.jpg" width="300" height="300">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ducimus sapiente aliquam cupiditate
+                tempore. Culpa inventore veniam temporibus saepe debitis, at quasi! Voluptatibus, commodi debitis
+                corrupti modi placeat ad repellat!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ducimus sapiente aliquam cupiditate
+                tempore. Culpa inventore veniam temporibus saepe debitis, at quasi! Voluptatibus, commodi debitis
+                corrupti modi placeat ad repellat!</p>
+        </div>
+    </section>
+</body>
+
+</html>
