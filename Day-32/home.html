@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sass implement</title>
+    <link rel="stylesheet" href="./home.css">
+</head>
+
+<body>
+    <div class="alert">
+        <h2>Record Deleted</h2>
+        <p>Record deleted Successfully</p>
+        <a href="#">Help?</a>
+    </div>
+
+    <br> <br> <br>
+    <hr>
+    <h3>
+        <pre>
+            - Variables can bind with string dynamically using data binding expression.
+            - Binding express of sass is defined using "#{ }"
+            
+            ' string #{ dynamicValue } '
+            
+            Syntax:
+            $i : 2;
+            
+            .box-#{$i} => .box-2 { }
+            {
+            }
+        </pre>
+    </h3>
+    <br><br><br>
+    <hr>
+    <div class="container">
+        <div class="box box-1">box-1</div>
+        <div class="box box-2">box-2</div>
+        <div class="box box-3">box-3</div>
+        <div class="box box-4">box-4</div>
+        <div class="box box-5">box-5</div>
+        <div class="box box-6">box-6</div>
+    </div>
+</body>
+
+</html>

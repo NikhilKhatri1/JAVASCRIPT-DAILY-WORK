@@ -1,0 +1,54 @@
+.alert {
+    // variable Creation
+    $radius: 10px;
+    $borderDot: 2px dotted rgb(118, 9, 9);
+    $borderDbl: 4px double rgb(118, 9, 9);
+    $width_auto: auto;
+    $width_50: 50%;
+
+    // alert property
+    background-color: rgb(247, 91, 91);
+    padding: 20px;
+    border: $borderDbl;
+    border-radius: $radius;
+    font-family: 'segoe UI';
+
+    h2 {
+        color: lightgreen;
+        border: $borderDot;
+        border-radius: $radius;
+        width: $width_50;
+    }
+
+    p {
+        color: lightsalmon;
+    }
+
+    a {
+        text-decoration: none;
+        color: aqua;
+        border: $borderDot;
+    }
+}
+
+.container {
+    // selected style
+    $i: 3;
+
+    .box-#{$i} {
+        background-color: aqua;
+    }
+
+    // using Loop
+    @for $i from 1 through 6 {
+        .box-#{$i} {
+            //styles
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid rgb(250, 103, 103);
+            border-radius: 10px;
+            width: 20%;
+        }
+    }
+
+}

@@ -1,0 +1,69 @@
+.alert {
+  background-color: rgb(247, 91, 91);
+  padding: 20px;
+  border: 4px double rgb(118, 9, 9);
+  border-radius: 10px;
+  font-family: "segoe UI";
+}
+.alert h2 {
+  color: lightgreen;
+  border: 2px dotted rgb(118, 9, 9);
+  border-radius: 10px;
+  width: 50%;
+}
+.alert p {
+  color: lightsalmon;
+}
+.alert a {
+  text-decoration: none;
+  color: aqua;
+  border: 2px dotted rgb(118, 9, 9);
+}
+
+.container .box-3 {
+  background-color: aqua;
+}
+.container .box-1 {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid rgb(250, 103, 103);
+  border-radius: 10px;
+  width: 20%;
+}
+.container .box-2 {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid rgb(250, 103, 103);
+  border-radius: 10px;
+  width: 20%;
+}
+.container .box-3 {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid rgb(250, 103, 103);
+  border-radius: 10px;
+  width: 20%;
+}
+.container .box-4 {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid rgb(250, 103, 103);
+  border-radius: 10px;
+  width: 20%;
+}
+.container .box-5 {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid rgb(250, 103, 103);
+  border-radius: 10px;
+  width: 20%;
+}
+.container .box-6 {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid rgb(250, 103, 103);
+  border-radius: 10px;
+  width: 20%;
+}
+
+/*# sourceMappingURL=home.css.map */
