@@ -1,0 +1,19 @@
+.alert {
+  background-color: rgb(246, 188, 188);
+  padding: 20px;
+  border-radius: 20px;
+}
+.alert h2 {
+  color: rgb(159, 1, 1);
+}
+.alert p {
+  color: rgb(232, 47, 47);
+}
+.alert button {
+  background-color: rgb(81, 21, 21);
+  color: white;
+  border: none;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=mixin.css.map */

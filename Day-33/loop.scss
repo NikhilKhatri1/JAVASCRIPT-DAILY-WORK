@@ -1,0 +1,13 @@
+@for $i from 1 through 4 {
+    .box-#{$i} {
+        border: 2px solid black;
+        background-color: rgb(236, 82, 82);
+        padding: 5px 10px;
+        margin-left: $i*100px;
+        margin-top: $i*10px;
+        width: 50px;
+        box-shadow: $i*1px $i*2px $i*1px rgba(0, 0, 0, 0.5);
+        height: 50px;
+        border-radius: $i*20px;
+    }
+}

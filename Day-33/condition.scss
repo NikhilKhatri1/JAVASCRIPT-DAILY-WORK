@@ -1,0 +1,65 @@
+$theme: "danger";
+
+@if($theme=="danger") {
+    .container {
+        background-color: rgb(247, 129, 129);
+        border: none;
+        border-radius: 10px;
+        padding: 10px 15px;
+
+        h2 {
+            color: rgb(161, 6, 6);
+            font-size: 35px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+        p {
+            color: rgb(184, 5, 35);
+            font-size: 20px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        button {
+            background-color: rgb(97, 13, 13);
+            padding: 15px;
+            border: none;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+            width: 100px;
+            color: white;
+        }
+    }
+}
+
+@else if($theme=="success") {
+    .container {
+        background-color: rgb(129, 247, 129);
+        border: none;
+        border-radius: 10px;
+        padding: 10px 15px;
+
+        h2 {
+            color: rgb(6, 161, 6);
+            font-size: 35px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+        p {
+            color: rgb(92, 184, 5);
+            font-size: 20px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        button {
+            background-color: rgb(13, 97, 45);
+            padding: 15px;
+            border: none;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+            width: 100px;
+            color: white;
+        }
+    }
+}

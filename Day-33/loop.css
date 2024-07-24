@@ -1,0 +1,49 @@
+.box-1 {
+  border: 2px solid black;
+  background-color: rgb(236, 82, 82);
+  padding: 5px 10px;
+  margin-left: 100px;
+  margin-top: 10px;
+  width: 50px;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+  height: 50px;
+  border-radius: 20px;
+}
+
+.box-2 {
+  border: 2px solid black;
+  background-color: rgb(236, 82, 82);
+  padding: 5px 10px;
+  margin-left: 200px;
+  margin-top: 20px;
+  width: 50px;
+  box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.5);
+  height: 50px;
+  border-radius: 40px;
+}
+
+.box-3 {
+  border: 2px solid black;
+  background-color: rgb(236, 82, 82);
+  padding: 5px 10px;
+  margin-left: 300px;
+  margin-top: 30px;
+  width: 50px;
+  box-shadow: 3px 6px 3px rgba(0, 0, 0, 0.5);
+  height: 50px;
+  border-radius: 60px;
+}
+
+.box-4 {
+  border: 2px solid black;
+  background-color: rgb(236, 82, 82);
+  padding: 5px 10px;
+  margin-left: 400px;
+  margin-top: 40px;
+  width: 50px;
+  box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.5);
+  height: 50px;
+  border-radius: 80px;
+}
+
+/*# sourceMappingURL=loop.css.map */

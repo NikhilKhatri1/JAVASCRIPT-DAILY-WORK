@@ -1,0 +1,31 @@
+$theme: 'danger';
+
+@mixin ApplyTheme($containerBg, $headColor, $paraColor, $btnBg)
+{
+    .alert {
+        background-color: $containerBg;
+        padding: 20px;
+        border-radius: 20px;
+        h2 {
+            color: $headColor;
+        }
+        p {
+            color:$paraColor;
+        }
+        button {
+            background-color: $btnBg;
+            color:white;
+            border: none;
+            padding: 10px;
+        }
+    }
+}
+
+@if($theme=='danger')
+{
+    @include ApplyTheme(rgb(246, 188, 188) , rgb(159, 1, 1) , rgb(232, 47, 47), rgb(81, 21, 21) )
+
+} @else if($theme=='success') {
+   
+    @include ApplyTheme(rgb(198, 246, 188) , rgb(1, 159, 56) , rgb(47, 232, 72), rgb(27, 81, 21) )
+}
