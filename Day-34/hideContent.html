@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide content on Click</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                $("p").toggle();
+            });
+            // $("h4").mouseenter(function () {
+            //     alert("you have entered h4");
+            // });
+            // $("h4").mouseleave(function () {
+            //     alert("you Move out!");
+            // });
+
+            // click over the heading fire alert...
+            // $("h4").mousedown(function () {
+            //     alert("mouse down over h4!");
+            // });
+            // $("h4").mouseup(function () {
+            //     alert("mouse up over h4!");
+            // });
+
+            $(function () {
+                // when click inside focus() will activate.....
+                $("input").focus(function () {
+                    $("h5").text("Typing.....").css("color", "green");
+                });
+                // when click outside blur() wil activate....
+                $("input").blur(function () {
+                    $("h5").text("");
+                });
+            });
+
+
+            $("h3").on({
+                mouseenter: function () {
+                    $(this).css("background-color", "pink");
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "lightblue");
+                },
+                click: function () {
+                    $(this).css("background-color", "yellow");
+                }
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Heading Content</h1>
+    <p>This paragraph will hide</p>
+    <p>This will too</p>
+    <button>Hide Para</button>
+    <h4>This is heading4</h4>
+    <input type="text">
+    <h5 class="lblinput"></h5>
+    <h3>This is on function</h3>
+</body>
+
+</html>
