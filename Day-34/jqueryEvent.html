@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Event</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <style>
+        .container {
+            background-color: rgb(245, 83, 110);
+            border-radius: 20px;
+            padding: 10px 5px;
+            z-index: 100;
+            cursor: default;
+        }
+
+        .para {
+            font-family: sans-serif;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            font-size: 22px;
+        }
+
+        .content {
+            background-color: pink;
+            position: absolute;
+            width: 98%;
+            left: 14px;
+            z-index: 0;
+            top: 100px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .boxcontainer {
+            background-color: palevioletred;
+            margin: 150px 20px 0px 20px;
+            height: 250px;
+            padding: 10px;
+        }
+
+        h2 {
+            color: #cc3a3a;
+            background-color: lightblue;
+            width: 300px;
+            text-align: center;
+            margin: 0px auto 20px auto;
+            border: 1px solid black;
+            cursor: default;
+            border-radius: 20px;
+        }
+
+        .box-content {
+            display: flex;
+            justify-content: center;
+        }
+
+        .box {
+            width: 150px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .Box-1 {
+            display: none;
+            background-color: lightgreen;
+        }
+
+        .Box-2 {
+            display: none;
+            background-color: aqua;
+        }
+
+        .Box-3 {
+            display: none;
+            background-color: aquamarine;
+        }
+
+        .Box-4 {
+            display: none;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        $(function () {
+            $(".container").click(function () {
+                $(".content").toggle(1000);
+            });
+        });
+        $(function () {
+            // $("h2").click(function () {
+            //     $(".Box-1").fadeIn();
+            //     $(".Box-2").fadeIn("slow");
+            //     $(".Box-3").fadeIn(1000);
+            //     $(".Box-4").fadeIn(2000);
+            // });
+            // $("h2").click(function () {
+            //     $(".Box-1").fadeOut();
+            //     $(".Box-2").fadeOut("slow");
+            //     $(".Box-3").fadeOut(1000);
+            //     $(".Box-4").fadeOut(2000);
+            // });
+            // $("h2").click(function () {
+            //     $(".Box-1").fadeTo("slow",0.1);
+            //     $(".Box-2").fadeTo("slow", 0.15);
+            //     $(".Box-3").fadeTo("slow", 0.4);
+            //     $(".Box-4").fadeTo("slow", 0.7);
+            // });
+            $("h2").click(function () {
+                $(".Box-1").fadeToggle();
+                $(".Box-2").fadeToggle("slow");
+                $(".Box-3").fadeToggle(1000);
+                $(".Box-4").fadeToggle(2000);
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <p class="para">This is show/hide method</p>
+    </div>
+    <div class="content">
+        <h1>This is heading content</h1>
+
+        <p>To display and hide content</p>
+    </div>
+    <div class="boxcontainer">
+        <h2>This is fade method</h2>
+        <div class="box-content">
+            <div class="box Box-1">Box-1</div>
+            <div class="box Box-2">Box-2</div>
+            <div class="box Box-3">Box-3</div>
+            <div class="box Box-4">Box-4</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
