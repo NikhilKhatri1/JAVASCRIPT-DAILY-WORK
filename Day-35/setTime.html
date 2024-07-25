@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <title>Set Time out in ajax</title>
+    <script>
+        $(function () {
+            // Set up global AJAX event handlers
+            $(document).ajaxStart(function () {
+                setTimeout(() => {
+                    $("p").html("Your Request Initiated");
+                }, 2000);
+            });
+
+            $(document).ajaxSuccess(function () {
+                setTimeout(() => {
+                    $("p").html("Your request is Sent Successfully....");
+                }, 4000);
+            });
+
+            $(document).ajaxComplete(function () {
+                setTimeout(() => {
+                    $("p").html("Your request Processed Successfully...");
+                }, 6000);
+            });
+
+            $(document).ajaxStop(function () {
+                setTimeout(() => {
+                    $("p").html("Your Request Completed. You can view Data");
+                }, 8000);
+            });
+
+            // Button click event
+            $("#btnClick").click(function () {
+                // Simulate an AJAX request
+                $.ajax({
+                    url: "example.php",
+                    success: function (response) {
+                        // Handle response if needed
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="btnClick">Click me</button>
+    <br><br>
+    <p></p>
+</body>
+
+</html> 
