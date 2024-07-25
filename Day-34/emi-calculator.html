@@ -17,40 +17,34 @@
         }
     </style>
     <script>
-        $(document).ready(function () {
+        $(function () {
 
-            // on range value change input value also change
+            // fetch range value to input
             $("#rangeAmount").change(function () {
                 $("#txtAmount").val($(this).val());
-            });
-
+            })
             $("#rangeYear").change(function () {
                 $("#txtYears").val($(this).val());
-            });
-
+            })
             $("#rangeRate").change(function () {
                 $("#txtRate").val($(this).val());
-            });
+            })
 
-
-            // Function to calculate EMI
+            // function to calculate Emi
             function CalculateClick() {
-                // Fetch values from inputs
+                // fetch value from inputs
                 var amount = parseFloat($("#txtAmount").val());
                 var years = parseInt($("#txtYears").val());
                 var rate = parseFloat($("#txtRate").val());
-
-                // Validate input values
+                // validate input value
                 if (isNaN(amount) || isNaN(years) || isNaN(rate)) {
-                    $("#lblMsg").text("Please enter valid numeric values.");
+                    $("#lblMsg").text("Please Enter the value");
                     return;
                 }
-
-                // Perform EMI calculation
+                //perform emi function
                 var emi = calculateEMI(amount, years, rate);
-
-                // Display result
-                $("#lblMsg").text("EMI: " + emi.toFixed(2));
+                // display Result
+                $("#lblMsg").text("Emi: " + emi.toFixed(2));
             }
 
             // Example of EMI calculation function (to be implemented)
