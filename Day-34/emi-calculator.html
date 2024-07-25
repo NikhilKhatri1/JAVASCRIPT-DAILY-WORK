@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        input[type="range"] {
+            width: 100%;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            // on range value change input value also change
+            $("#rangeAmount").change(function () {
+                $("#txtAmount").val($(this).val());
+            });
+
+            $("#rangeYear").change(function () {
+                $("#txtYears").val($(this).val());
+            });
+
+            $("#rangeRate").change(function () {
+                $("#txtRate").val($(this).val());
+            });
+
+
+            // Function to calculate EMI
+            function CalculateClick() {
+                // Fetch values from inputs
+                var amount = parseFloat($("#txtAmount").val());
+                var years = parseInt($("#txtYears").val());
+                var rate = parseFloat($("#txtRate").val());
+
+                // Validate input values
+                if (isNaN(amount) || isNaN(years) || isNaN(rate)) {
+                    $("#lblMsg").text("Please enter valid numeric values.");
+                    return;
+                }
+
+                // Perform EMI calculation
+                var emi = calculateEMI(amount, years, rate);
+
+                // Display result
+                $("#lblMsg").text("EMI: " + emi.toFixed(2));
+            }
+
+            // Example of EMI calculation function (to be implemented)
+            function calculateEMI(amount, years, rate) {
+                // Implement your EMI calculation logic here
+                var monthlyInterest = rate / (12 * 100);
+                var totalMonths = years * 12;
+                var emi = amount * monthlyInterest * Math.pow(1 + monthlyInterest, totalMonths) / (Math.pow(1 + monthlyInterest, totalMonths) - 1);
+                return emi;
+            }
+
+            // Button click event handler
+            $(".btn-primary").click(function () {
+                CalculateClick();
+            });
+        });
+    </script>
+</head>
+
+<body class="container-fluid bg-secondary">
+    <div class="bg-light text-dark p-4 m-2">
+        <h3 class="text-center">Personal Loan EMI Calculator</h3>
+        <div class="row p-3 my-4">
+            <div class="col">
+                Amount you need <input type="text" id="txtAmount" size="15">
+            </div>
+            <div class="col">
+                for <input type="text" size="4" id="txtYears"> years
+            </div>
+            <div class="col">
+                Interest rate <input type="text" size="4" id="txtRate"> %
+            </div>
+        </div>
+        <div class="row p-3 mt-4">
+            <div class="col">
+                <input type="range" id="rangeAmount" value="200000" min="100000" max="1000000">
+            </div>
+            <div class="col">
+                <input type="range" id="rangeYear" value="1" min="1" max="5">
+            </div>
+            <div class="col">
+                <input type="range" id="rangeRate" value="10.45" min="10.45" max="18.45" step="0.01">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-between">
+                <span>&#8377; 100000</span>
+                <span>&#8377; 1000000</span>
+            </div>
+            <div class="col d-flex justify-content-between">
+                <span>1</span>
+                <span>5</span>
+            </div>
+            <div class="col d-flex justify-content-between">
+                <span>10.45%</span>
+                <span>18.45%</span>
+            </div>
+        </div>
+        <div class="row p-3 my-4">
+            <div class="col text-end">
+                <button class="btn btn-primary">Calculate</button>
+            </div>
+        </div>
+        <div class="row p3 my-4">
+            <div id="lblMsg" class="text-center"></div>
+        </div>
+    </div>
+</body>
+
+</html>
