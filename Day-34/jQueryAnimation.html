@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Animation</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <style>
+        .container {
+            position: absolute;
+            height: 70px;
+            width: 70px;
+            background-color: pink;
+            margin: 20px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                $("div").animate({
+                    left: '550px',
+                    opacity: '0.4',
+                    //relative value on multiple click value will increase
+                    // height: '+=150px',
+                    // width: '+=150px'
+                    height: '150px',
+                    width: '150px'
+                    // predefined method like toggle,hide, etc...
+                    // height: 'toggle'
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>JQuery Animation</h1>
+    <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember
+        to
+        first set the CSS position property of the element to relative, fixed, or absolute!
+    </p>
+    <p>We can mainpulate multiple properties</p>
+    <button>Start animation</button>
+    <div class="container">
+    </div>
+</body>
+
+</html>
