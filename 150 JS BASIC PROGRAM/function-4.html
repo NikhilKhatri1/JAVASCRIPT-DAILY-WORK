@@ -5,10 +5,11 @@ Assume punctuation and numbers symbols are not included in the passed string. --
 
 <script>
     function alphaOrder(myString) {
-        var sortedString = myString.split('').sort().join('');
+        const letterOnly = myString.replace(/[^a-z,A-z]/g, '');
+        var sortedString = letterOnly.split('').sort().join('');
         return sortedString;
     }
-    var myString = "webmaster";
+    var myString = "we$b5m@aster";
     var result = alphaOrder(myString);
     document.write(`Input String: ${myString} <br> <br> Output String: ${result}`);
 </script>
