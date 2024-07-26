@@ -1,0 +1,14 @@
+<!-- 4. Write a JavaScript function that returns a string that has letters in alphabetical order.
+Example string : 'webmaster'
+Expected Output : 'abeemrstw'
+Assume punctuation and numbers symbols are not included in the passed string. -->
+
+<script>
+    function alphaOrder(myString) {
+        var sortedString = myString.split('').sort().join('');
+        return sortedString;
+    }
+    var myString = "webmaster";
+    var result = alphaOrder(myString);
+    document.write(`Input String: ${myString} <br> <br> Output String: ${result}`);
+</script>
