@@ -1,0 +1,22 @@
+<script>
+    var arr = new Array(3);
+    // Array(3) means length of Array....
+    console.log(arr);
+    arr[0] = 2;
+    arr[1] = 3;
+    arr[2] = 4;
+    console.log(arr);
+    document.write(arr);
+</script>
+<br> <br>
+<script>
+    var arr = [1, 2, 'ram', true];
+    var ol = document.createElement("ol");
+    for (i = 0; i < arr.length; i++) {
+        var myArr = arr[i];
+        var li = document.createElement("li");
+        li.innerHTML = `${myArr}`;
+        ol.appendChild(li);
+    }
+    document.body.appendChild(ol);
+</script>
