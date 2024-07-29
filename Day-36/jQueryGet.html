@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <title>Dom in jQuery</title>
+    <style>
+        .container {
+            height: 200px;
+            background-color: pink;
+            color: #fff;
+            text-align: center;
+            align-content: center;
+        }
+
+        a {
+            font-size: 30px;
+            color: #fff;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                alert($("#link").attr("href"));
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <a href="https://www.google.com" id="link">google</a>
+        <br><br>
+        <button>Get Url</button>
+    </div>
+</body>
+
+</html>

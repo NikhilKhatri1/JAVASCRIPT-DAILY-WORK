@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // Toggle mobile menu visibility on click
     $(".mobile-nav i").click(function () {
-        $(".site-nav-menu").toggleClass("mobile-menu");
+        $(".site-nav-menu").toggleClass("primary-menu");
     });
 
     // Function to load products based on URL

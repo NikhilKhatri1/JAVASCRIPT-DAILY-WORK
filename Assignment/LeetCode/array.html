@@ -20,3 +20,24 @@
     }
     document.body.appendChild(ol);
 </script>
+
+<script>
+    var arr = [1, 2, 3, 4];
+    var newArr = arr.map(fun);
+    function fun(n) {
+        return n + 1;
+    }
+    document.write(newArr + "<br>");
+    document.write(arr);
+</script>
+
+<h4>Using Arrow Function</h4>
+
+<script>
+    var arr = [1, 2, 3, 4];
+    var newArr = arr.map((n) => {
+        return n + 1;
+    });
+    document.write(newArr + "<br>");
+    document.write(arr);
+</script>

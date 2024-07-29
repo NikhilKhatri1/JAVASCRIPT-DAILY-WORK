@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/jqueryUI/jquery-ui.js"></script>
+    <title>Document</title>
+    <script>
+        $(function () {
+            $("#stop").click(function () {
+                $("#panel").stop();
+            });
+            $("#flip").click(function () {
+                $("#panel").slideToggle(5000);
+            });
+            // callback function in jquery is used to run function one after another after completion of one function
+            $("#callbackfun").click(function () {
+                $(" p").hide(4000, function () {
+                    alert("Paragrapgh is Hiding");
+                });
+            });
+            $("#not").click(function () {
+                $("p").hide("slow");
+                alert("This is Hiding");
+            });
+        });
+    </script>
+    <style>
+        #flip,
+        #panel {
+            padding: 5px;
+            font-size: 19px;
+            background-color: #999;
+            border-radius: 10px;
+            color: #fff;
+            border: 1px solid #666;
+            text-align: center;
+        }
+
+        #panel {
+            height: 200px;
+            align-content: center;
+            display: none;
+        }
+
+        .container-2 {
+            background-color: #666;
+            padding: 10px 20px;
+            margin: 20px;
+            border-radius: 20px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container-2 p {
+            text-align: center;
+            background-color: pink;
+            color: #fff;
+            padding: 10px;
+            border-radius: 20px;
+            height: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-1">
+        <button id="stop">Stop Sliding</button>
+        <div id="flip">Click to Slide the panel</div>
+        <div id="panel">Hello world!</div>
+    </div>
+    <div class="container-2">
+        <button id="callbackfun">Callback</button>
+        <p> This is Hiding...</p>
+        <button id="not">Not a Callback</button>
+    </div>
+</body>
+
+</html>

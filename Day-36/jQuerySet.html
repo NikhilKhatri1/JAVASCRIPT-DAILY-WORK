@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Set</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                $("#text").text("This is Text Method");
+            });
+            $("#btn2").click(function () {
+                $("#html").html("This is html Method");
+            });
+            $("#btn3").click(function () {
+                $("#val").val();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="btn-container">
+            <button id="btn1">Text method</button>
+            <button id="btn2">html method</button>
+            <button id="btn3">val method</button>
+        </div>
+        <div class="content">
+            <h3 id="text"></h3>
+            <h3 id="html"></h3>
+            <h3 id="val">This is val method</h3>
+        </div>
+    </div>
+</body>
+
+</html>
