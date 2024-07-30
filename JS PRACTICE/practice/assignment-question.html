@@ -4,31 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stopwatch</title>
+    <title>Stop Watch</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            text-align: center;
         }
 
         #stopwatch {
-            font-size: 2em;
-            margin-bottom: 20px;
+            padding: 20px;
+            font-size: 30px;
         }
 
         button {
-            font-size: 1em;
-            margin: 5px;
+            width: 100px;
+            height: 50px;
         }
     </style>
 </head>
 
 <body>
     <div id="stopwatch">00:00:00</div>
-    <button id="start">Start</button>
-    <button id="stop">Stop</button>
-    <button id="reset">Reset</button>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="reset()">Reset</button>
 
-    <script src="stopwatch.js"></script>
+    <script>
+
+        let timer;
+        let seconds = 0;
+        let running = false;
+        // Update Time
+        function updateTime() {
+            let hrs = Math.floor(seconds / 3600);
+            let mins = Math.floor((seconds % 3600) / 60);
+            let secs = seconds % 60;
+            document.getElementById("stopwatch").innerHTML =
+                (hrs < 10 ? "0" + hrs : hrs) + ":" +
+                (mins < 10 ? "0" + mins : mins) + ":" +
+                (secs < 10 ? "0" + secs : secs);
+        }
+        
+        function start() {
+            if (running) return;
+            running = true;
+            timer = setInterval(() => {
+                seconds++;
+                updateTime();
+            }, 1000);
+        }
+
+        function stop() {
+            if (!running) return;
+            running = false;
+            clearInterval(timer);
+        }
+
+        function reset() {
+            stop();
+            seconds = 0;
+            updateTime();
+        }
+
+    </script>
 </body>
 
 </html>
