@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQueryAdd</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#text").click(function () {
+                $("p").append("<b> Append in Para</b>");
+            });
+            $("#list").click(function () {
+                $("ol").append("<li>item-append</li>");
+            });
+            $("#listpre").click(function () {
+                $("ol").prepend("<li>item-prepend</li>");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p>This is a paragraph</p>
+    <ol>
+        <li>item-1</li>
+        <li>item-2</li>
+    </ol>
+    <button id="text">append Text</button>
+    <button id="list">append List</button>
+    <button id="listpre">Prepend list</button>
+</body>
+
+</html>

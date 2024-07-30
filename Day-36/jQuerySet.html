@@ -17,6 +17,11 @@
             $("#btn3").click(function () {
                 $("#val").val("Dolly Duck");
             });
+            $("#btn1").click(function () {
+                $("#test1").text(function (i, origText) {
+                    return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
+                });
+            });
         });
     </script>
 </head>
@@ -28,10 +33,22 @@
             <button id="btn2">html method</button>
             <button id="btn3">val method</button>
         </div>
+        <br>
+        <hr>
+        <br>
         <div class="content">
             <h3 id="text"></h3>
             <h3 id="html"></h3>
             Input Text: <input type="text" value="Mickey" id="val">
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="content-1">
+            <p id="test1">This is a <b>Bold</b> paragraph.</p>
+            <p id="test2">This is another <b>Bold</b> paragraph.</p>
+            <button id="btn1">Show old/new Text</button>
+            <button id="btn2">Show old/new HTML</button>
         </div>
     </div>
 </body>

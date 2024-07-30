@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Set</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                $("#test1").text(function (i, origText) {
+                    return "Old Text: " + origText + " New text: Hello world! (index: " + i + ")";
+                });
+            });
+            $("#btn2").click(function () {
+                $("#test2").html(function (i, origHtml) {
+                    return "Old Text: " + origHtml + "New text: Hello <b>World!</b>(index:" + i + ")";
+                });
+            });
+            // set attribute
+            $("#btn3").click(function () {
+                $("#link").attr("href", "https://www.youtube.com");
+            });
+            // set multiple attribute
+            $("#btn4").click(function () {
+                $("#link1").attr({
+                    "href": "https://www.youtube.com/",
+                    "title": "Youtube Link"
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h4>
+            All of the three jQuery methods above: text(), html(), and val(), also come with a callback function. The
+            callback
+            function has two parameters: the index of the current element in the list of elements selected and the
+            original (old)
+            value. You then return the string you wish to use as the new value from the function.
+        </h4>
+        <div class="content">
+            <p id="test1">This is a <b>Bold</b> paragraph.</p>
+            <p id="test2">This is another <b>Bold</b> paragraph.</p>
+            <button id="btn1">Show old/new Text</button>
+            <button id="btn2">Show old/new HTML</button>
+        </div>
+        <br><br>
+        <hr><br>
+        <div class="content-1">
+            <h3>The attr() method </h3>
+            <a id="link" href="https://www.google.com">Google</a>
+            <br>
+            <br>
+            <button id="btn3">set attr</button>
+        </div>
+        <br> <br>
+        <hr> <br>
+        <div class="content-2">
+            <h3>The attr() method also allows you to set multiple attributes at the same time.</h3>
+            <a href="https://www.google.com" id="link1" title="some title">Google Link</a>
+            <br> <br>
+            <button id="btn4">set Attr</button>
+            <br>
+            <h4>Mouse over the link to see that the href attribute has changed and a title attribute is set.</h4>
+        </div>
+        <br> <br>
+        <hr> <br>
+        
+    </div>
+</body>
+
+</html>
