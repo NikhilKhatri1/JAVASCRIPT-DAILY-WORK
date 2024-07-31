@@ -1,0 +1,33 @@
+<script>
+    function findSecondLargest(arr) {
+        if (arr.length < 2) {
+            throw new Error("Array should contain at least two elements.");
+        }
+
+        // Initialize largest and secondLargest as null
+        let largest = null;
+        let secondLargest = null;
+
+        for (const num of arr) {
+            if (largest === null || num > largest) {
+                // Update secondLargest before updating largest
+                secondLargest = largest;
+                largest = num;
+            } else if (num !== largest && (secondLargest === null || num > secondLargest)) {
+                // Update secondLargest if num is not equal to largest and greater than secondLargest
+                secondLargest = num;
+            }
+        }
+
+        if (secondLargest === null) {
+            throw new Error("No second largest element found.");
+        }
+
+        return secondLargest;
+    }
+
+    // Example usage:
+    const arr = [12, 34, 20, 43, 2];
+    console.log(findSecondLargest(arr));  // Output: 34
+
+</script>

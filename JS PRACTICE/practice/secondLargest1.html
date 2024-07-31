@@ -1,0 +1,26 @@
+<script>
+    function findSecondLargest(arr) {
+        if (arr.length < 2) {
+            alert("Enter the value more then two");
+        }
+        let largest = null;
+        let secondLargest = null;
+        for (const num of arr) {
+            if (largest === null || num > largest) {
+                secondLargest = largest;
+                largest = num;
+            }
+            else if (num !== largest && (secondLargest === null || num > secondLargest)) {
+                secondLargest = num;
+            }
+        }
+        if (secondLargest === null) {
+            alert("No Second value is Found");
+        }
+        return secondLargest
+
+    }
+
+    const arr = [12, 42, 20, 43, 2];
+    document.write(findSecondLargest(arr));
+</script>

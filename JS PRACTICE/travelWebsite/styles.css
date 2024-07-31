@@ -1099,8 +1099,6 @@ li:not(:last-child)::after {
         right: auto;
     }
 
-
-
     /**
    * FOOTER
    */
