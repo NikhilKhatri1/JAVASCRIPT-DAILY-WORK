@@ -1,0 +1,38 @@
+<!-- write a funcction which take string as parameter and return the total number of vowel in it...  -->
+
+<script>
+    function string(myString) {
+        var result = "";
+        for (var i = 0; i < myString.length; i++) {
+            result += myString[i];
+        }
+        return result;
+    }
+    var myString = "Vowel";
+    document.write(string(myString));
+</script>
+
+<pre>
+    var result = '';
+    for (var char of myString) {
+    result += char;
+    }
+    return result;
+</pre>
+
+<h2>Write a program</h2>
+
+<script>
+    function vowel(myString) {
+        var vowel = "aeiou";
+        var count = 0;
+        for (var i = 0; i < myString.length; i++) {
+            if (vowel.indexOf(myString[i]) !== -1) {
+                count++;
+            }
+        }
+        return count;
+    }
+    var myString = "david";
+    document.write(vowel(myString));
+</script>
