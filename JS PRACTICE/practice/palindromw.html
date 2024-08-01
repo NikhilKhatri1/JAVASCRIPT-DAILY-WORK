@@ -1,0 +1,136 @@
+<!-- <script>
+    function palindrome(mystring) {
+        revString = mystring.split('').reverse().join('');
+        if (revString === mystring) {
+            return `It is palindrome`;
+        }
+        else {
+            return `Not`;
+        }
+    }
+    var mystring = 232;
+    document.write(palindrome(mystring));
+</script> -->
+
+<h3>
+    <pre>
+        5. Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word into
+        upper case.
+        Example string : 'the quick brown fox'
+        Expected Output : 'The Quick Brown Fox '
+    </pre>
+</h3>
+
+<script>
+    function FirstUpperCase(mystring) {
+        var word = mystring.split(" ");
+        var newword = [];
+        for (var i = 0; i < word.length; i++) {
+            newword.push(word[i].charAt(0).toUpperCase() + word[i].slice(1));
+        }
+        return newword.join(" ");
+    }
+    var mystring = 'the quick brown fox';
+    document.write(FirstUpperCase(mystring));
+</script>
+
+<h3>
+    <pre>
+        7. Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string.
+        Note : As the letter 'y' can be regarded as both a vowel and a consonant, we do not count 'y' as vowel here.
+        Example string : 'The quick brown fox'
+        Expected Output : 5
+    </pre>
+</h3>
+
+<script>
+    function vowel(myString) {
+        const vowel = "aeiou";
+        var count = 0;
+        for (var i = 0; i < mystring.length; i++) {
+            if (vowel.indexOf(myString[i]) !== -1) {
+                count++
+            }
+        }
+        return count;
+
+    }
+    var string = 'quick';
+    document.write(vowel(string));
+</script>
+<h3>factorial</h3>
+<script>
+    function fact(num) {
+        var result = 1;
+        for (var i = num; i > 1; i--) {
+            result *= i;
+        }
+        return result;
+    }
+    document.write(fact(4));
+</script>
+
+<script>
+    function fact(num) {
+        if (num === 0 || num === 1) {
+            return 1;
+        }
+        return num * fact(num - 1);
+    }
+    document.write(fact(4));
+</script>
+
+<!-- fibonacci  -->
+<br><br>
+<hr>
+<h2>Fibonacci</h2>
+
+<script>
+    function fib(num) {
+        if (num === 0) {
+            return [];
+        }
+        else if (num === 1) {
+            return [0];
+        }
+        var fiboSeries = [0, 1];
+        for (var i = 2; i < num; i++) {
+            fiboSeries.push(fiboSeries[i - 1] + fiboSeries[i - 2]);
+        }
+        return fiboSeries;
+    }
+
+    const num = 10;
+    document.write(fib(num));
+</script>
+<br> <br>
+<hr>
+
+<h3>Second Largest</h3>
+
+<script>
+    function secondLargest(arr) {
+        if (arr.length < 2) {
+            alert("Provide Two or more value");
+        }
+        let largest = null;
+        let secLargest = null;
+        for (let num of arr) {
+            if (largest === null || num > largest) {
+                secLargest = largest;
+                largest = num;
+            }
+            else if (num !== largest && (secLargest === null || num > secLargest)) {
+                secLargest = num;
+            }
+        }
+        if (secLargest === null) {
+            alert("no Second largest Number found");
+        }
+        return secLargest;
+
+    }
+    let arr = [35, 23, 78, 9, 90];
+    document.write(secondLargest(arr));
+
+</script>

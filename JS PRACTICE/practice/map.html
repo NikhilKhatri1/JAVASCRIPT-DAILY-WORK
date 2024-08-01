@@ -1,0 +1,38 @@
+<script>
+    var map = new Map();
+    map.set("name", "John");
+    map.set("Age", 50);
+    document.write(map.get("name"));
+</script>
+
+<br>
+<hr>
+<!-- to access all key value pair -->
+
+<script>
+    var obj = {
+        "Name": "John",
+        "Age": 50,
+        "city": "India"
+    };
+    for (let key in obj) {
+        document.write(`Key : ${key} <br> Value : ${obj[key]} <br>`);
+    }
+
+</script>
+
+<!-- Using map  -->
+<!-- first convert to array -->
+<!-- map applies only in array  -->
+<br>
+<hr>
+<script>
+    var obj = {
+        "Name": "John",
+        "Age": 20,
+        "City": "NY"
+    }
+    Object.entries(obj).map(function ([key, value]) {
+        document.write(`Key : ${key} <br> Value : ${value} <br>`);
+    })
+</script>

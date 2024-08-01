@@ -1,0 +1,15 @@
+<script>
+    // js Object
+    var obj = { "Name": "Alice", "Age": 20, "City": "New York" };
+    // convert to json string
+    myJson = JSON.stringify(obj);
+    console.log(myJson);
+    // console.log(typeof (myJson));
+    // storing to localString
+    localStorage.setItem("testJSON", myJson);
+
+    // retrieving data 
+    text = localStorage.getItem("testJSON");
+    obj = JSON.parse(text);
+    document.write(obj.Name);
+</script>
