@@ -4,27 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetch API</title>
-    <script>
-        function bodyLoad() {
-            fetch("https://fakestoreapi.com/products/categories")
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function(categories){
-                    categories.map(function(category){
-                        
-                    })
-                })
-
-        }
-    </script>
+    <title>Fetch API Example</title>
 </head>
 
-<body onload="bodyLoad()">
-    <div class="container">
+<body>
+    <h1>Fetch API Example</h1>
+    <ul id="product-list"></ul>
 
-    </div>
+    <script>
+        // URL of the API endpoint
+        const apiUrl = 'https://fakestoreapi.com/products';
+
+        // Fetch data from the API
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json(); // Parse JSON data
+            })
+            .then(data => {
+                // Log the data to the console
+                console.log(data);
+
+                // Get the product list element
+                const productList = document.getElementById('product-list');
+
+                // Create list items for each product
+                data.forEach(product => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${product.title} - $${product.price}`;
+                    productList.appendChild(listItem);
+                });
+            })
+            .catch(error => {
+                // Handle errors
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    </script>
 </body>
 
 </html>
