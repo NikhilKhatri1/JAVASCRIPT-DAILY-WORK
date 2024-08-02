@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker Example</title>
+</head>
+
+<body>
+    <h1>Calculate Sum with Web Worker</h1>
+    <button id="calculate">Calculate Sum</button>
+    <div id="result"></div>
+
+    <script>
+        // Main script
+        document.getElementById('calculate').addEventListener('click', () => {
+            // Create a new worker instance
+            const worker = new Worker('worker.js');
+
+            // Send a message to the worker with the input number
+            const inputNumber = 100000000; // Example number
+            worker.postMessage(inputNumber);
+
+            // Receive the result from the worker
+            worker.onmessage = function (event) {
+                const result = event.data;
+                document.getElementById('result').textContent = `Sum Result: ${result}`;
+                worker.terminate(); // Terminate the worker after computation
+            };
+
+            // Handle worker errors
+            worker.onerror = function (error) {
+                console.error('Worker error:', error);
+            };
+        });
+    </script>
+</body>
+
+</html>

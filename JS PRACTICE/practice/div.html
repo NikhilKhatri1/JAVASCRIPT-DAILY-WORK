@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            width: 10%;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        span {
+            margin-right: 10px;
+        }
+
+        .btn {
+            margin: 0px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="control">
+            <input type="text" id="inputTxt">
+            <button onclick="add()">Add</button>
+        </div>
+        <div class="list">
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+    <script>
+        var ul = document.querySelector("ul");
+        function add() {
+            var text = document.getElementById("inputTxt").value.trim();
+            if (text === "") {
+                alert("Add Something");
+            }
+            else {
+                var li = document.createElement("li");
+                li.innerHTML = `<span>${text}</span><button onclick="edit(this)" class="btn">Edit</button><button onclick="remove(this)" class="btn">Remove</button>`;
+                ul.appendChild(li);
+                document.getElementById("inputTxt").value = '';
+            }
+        }
+        window.edit = function (button) {
+            var span = button.previousElementSibling;
+            var newText = prompt("Edit Item: ", span.textContent);
+            if (newText !== null) {
+                span.textContent = newText;
+            }
+        }
+        window.remove = function (button) {
+            var li = button.parentElement;
+            ul.removeChild(li);
+        }
+
+    </script>
+</body>
+
+</html>

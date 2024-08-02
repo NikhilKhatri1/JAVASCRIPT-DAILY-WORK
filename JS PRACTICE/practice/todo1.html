@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        .list-item {
+            flex: 1;
+        }
+
+        .list-btn button {
+            margin-left: 5px;
+        }
+
+        .remove {
+            color: red;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to add a new item to the list
+            function add() {
+                var text = document.getElementById("inputtxt").value.trim();
+                var ul = document.querySelector("ul");
+
+                if (text === '') {
+                    alert("Add Something");
+                } else {
+                    var li = document.createElement("li");
+                    li.style.display = "flex";
+                    li.style.justifyContent = "space-between";
+
+                    li.innerHTML = `<div class="list-item">${text}</div>
+                                    <div class="list-btn">
+                                        <button onclick="edit(this)">Edit</button>
+                                        <button class="remove" onclick="remove(this)">Remove</button>
+                                    </div>`;
+
+                    ul.appendChild(li);
+
+                    // Clear the input field after adding the item
+                    document.getElementById("inputtxt").value = '';
+                }
+            }
+
+            // Function to edit an item
+            window.edit = function (button) {
+                var listItem = button.parentElement.previousElementSibling;
+                var newText = prompt("Edit item:", listItem.textContent);
+                if (newText !== null) {
+                    listItem.textContent = newText;
+                }
+            }
+
+            // Function to remove an item
+            window.remove = function (button) {
+                var li = button.parentElement.parentElement;
+                li.remove();
+            }
+
+            // Attach event listener to the "Add" button
+            document.querySelector("button[type='button']").addEventListener('click', add);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container" style="display: flex; justify-content: center; text-align: center;padding:20px;">
+        <div class="container-wrapper" style="border: 1px solid black; width: 30%;">
+            <div class="Control">
+                <input type="text" id="inputtxt" placeholder="Enter task">
+                <button type="button">Add</button>
+            </div>
+            <div id="listContainer">
+                <ul style="padding: 0; list-style: none;">
+                    <!-- List items will be appended here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

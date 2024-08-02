@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable List</title>
+</head>
+<style>
+    ul li {
+        background-color: blueviolet;
+        color: white;
+        padding: 5px;
+        margin-top: 3px;
+        width: 10%;
+    }
+
+    ul li span {
+        cursor: pointer;
+        margin-left: 10px;
+    }
+</style>
+
+<body>
+    <div>
+        <div>
+            <input type="text" name="" id="input">
+            <button onclick="BtnClick()">Add</button>
+        </div>
+        <ul>
+
+        </ul>
+    </div>
+    <script>
+        var input = document.getElementById('input');
+        var ul = document.querySelector('ul');
+
+        function BtnClick() {
+            if (input.value == '') {
+                alert('Add something');
+            } else {
+                var li = document.createElement('li');
+                li.innerHTML = ` ${input.value}<span onclick="editItem(this)">&#9998;</span><span onclick="removeItem(this)">&times;</span>`;
+                ul.appendChild(li);
+                input.focus();
+                input.value = '';
+
+                Sh();
+            }
+        }
+
+        function editItem(span) {
+            var li = span.parentElement;
+            input.value = li.firstChild.textContent;
+            var btn = document.querySelector('button');
+            btn.innerHTML = 'Save';
+            input.focus();
+
+
+            btn.onclick = function () {
+                li.firstChild.textContent = input.value;
+                btn.innerHTML = "Add"
+                input.value = '';
+                Sh()
+            }
+
+
+        }
+
+        function removeItem(span) {
+            var li = span.parentElement;
+            ul.removeChild(li);
+            input.focus();
+            Sh();
+        }
+
+
+        function Sh() {
+            localStorage.setItem('data', ul.innerHTML);
+        }
+
+        function Vh() {
+            ul.innerHTML = localStorage.getItem('data');
+        }
+
+        Vh();
+    </script>
+</body>
+
+</html>
