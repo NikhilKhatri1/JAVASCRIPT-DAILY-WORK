@@ -1,0 +1,39 @@
+<script>
+    // Function that returns a promise that resolves after 1 second
+    function waitOneSecond() {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve("wait! 1 second");
+            }, 1000)
+        });
+    }
+    waitOneSecond().then(function (message) {
+        document.write(message);
+    });
+
+</script>
+
+<br> <br>
+<hr>
+<h3>Asyn/await</h3>
+<br> <br>
+<!-- 
+<script>
+    // Function that returns a promise
+    function waitOneSecond() {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve('1 second passed!');
+            }, 1000);
+        });
+    }
+
+    // Async function to use the promise
+    async function run() {
+        const message = await waitOneSecond();
+        document.write(message); // Logs '1 second passed!' after 1 second
+    }
+
+    run();
+
+</script> -->
