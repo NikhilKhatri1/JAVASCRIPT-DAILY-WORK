@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After and Before in jQuery</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#before").click(function () {
+
+                $("img").before("<b>Before</b>");
+            })
+            $("#after").click(function () {
+
+                $("img").after("<i>After</i>");
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <img src="../images/profile-1.jpg" alt="image" width="100" height="100">
+    <br> <br>
+    <button id="before">Before</button>
+    <button id="after">After</button>
+</body>
+
+</html>
