@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Prepend in Element</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                $("p").prepend("<b>Para Prepend</b>");
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <p>This is Paragraph</p>
+    <ul>
+        <li>item-1</li>
+        <li>item-2</li>
+    </ul>
+    <button id="btn1">Add Para</button>
+</body>
+
+</html>
