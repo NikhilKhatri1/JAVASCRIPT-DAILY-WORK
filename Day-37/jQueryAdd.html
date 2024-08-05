@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Add Element</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#Para").click(function () {
+                $("p").append("<b>Para Appended..</b>");
+            })
+            $("#lst").click(function () {
+                $("ul").append("<li>Append-item</li>");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p>This is Paragraph</p>
+    <ul>
+        <li>item-1</li>
+        <li>item-2</li>
+        <li>item-3</li>
+    </ul>
+    <button id="Para">Add Para</button>
+    <button id="lst">Add List</button>
+</body>
+
+</html>
