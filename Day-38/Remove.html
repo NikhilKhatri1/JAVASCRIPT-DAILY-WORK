@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove element</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#button").click(function () {
+                $("#div1").remove()
+            })
+            $("#button1").click(function () {
+                $("#div1").empty()
+            })
+            $("#button2").click(function () {
+                $(".text").remove();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="div1" style="border: 1px solid black; width: 300px; margin-top: 20px; height: 200px;">
+        <h2>This is Heading</h2>
+        <p>This para</p>
+        <p class="text">This is Specific Remove option.</p>
+    </div>
+    <button id="button" style="margin-top: 20px;">Remove div element</button>
+    <button id="button1" style="margin-top: 20px;">Empty div element</button>
+    <button id="button2" style="margin-top: 20px;">Remove Specific element</button>
+</body>
+
+</html>

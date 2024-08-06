@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove List Items on Click</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Attach a click event handler to <li> elements inside the <ul>
+            $('#myList').on('click', 'li', function () {
+                $(this).fadeOut(300, function () {
+                    $(this).remove(); // Remove the <li> element after fadeOut animation
+                });
+            });
+        });
+    </script>
+    <style>
+        #myList li {
+            cursor: pointer;
+            padding: 5px;
+            width: 300px;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+        }
+
+        #myList li:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+    <h2>
+        <pre>
+            jQuery Script:
+            
+            $(document).ready(function() { ... });: Ensures the jQuery code runs after the DOM is fully loaded.
+            $('#myList').on('click', 'li', function() { ... });: Sets up an event handler for click events on <li> elements inside
+                the <ul> with ID myList. Using event delegation (on method), the handler is attached to the <ul>, but it listens for
+                        clicks on <li> elements within it.
+                            $(this).fadeOut(300, function() { ... });: Applies a fade-out effect to the clicked
+                        <li> element over 300 milliseconds. The callback function inside fadeOut removes the
+                        <li> from the DOM after the animation completes.
+        </pre>
+    </h2>
+</body>
+
+</html>
