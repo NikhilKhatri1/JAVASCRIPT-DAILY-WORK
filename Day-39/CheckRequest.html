@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Request Of data </title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                $("#div1").load("data-demo.txt", function (responseTxt, statusTxt, xhr) {
+                    if (statusTxt == "success") {
+                        alert("External Content Loaded Successfully..");
+                    }
+                    else if (statusTxt == "error") {
+                        alert("Error: " + xhr.status + ": " + xhr.statusText);
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="div1">This is To load Data</div>
+    <!-- <p id="txtStatus"></p> -->
+    <button>Load data</button>
+</body>
+
+</html>
