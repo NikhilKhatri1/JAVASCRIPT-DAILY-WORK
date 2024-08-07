@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Dimension Methods</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                var txt = "";
+                txt += "Width is " + $("#div1").width() + "<br>";
+                txt += "Height is " + $("#div1").height() + "<br>";
+                var border = $("#div1").css("border");
+                txt += `border is ${border}`;
+                $("#div1").html(txt);
+            })
+        })
+    </script>
+    <style>
+        #div1 {
+            height: 200px;
+            width: 300px;
+            background-color: aqua;
+            margin: 3px;
+            padding: 10px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <br>
+    <button id="btn">Display Dimension of div</button>
+    <p>Width() - return width value...</p>
+    <p>Height() - return Height value...</p>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing Ajax Data to the Element</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                $("#div1").load("data-demo.txt");
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="div1">This is Jquery.</div>
+    <br>
+    <button id="btn">To Add AJAX DATA</button>
+</body>
+
+</html>
