@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Id and Password</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <h2>User Login</h2>
+        </div>
+        <div class="login-container">
+            <dl>
+                <dt>User Name: </dt>
+                <dd><input type="text" placeholder="Username" id="username" oninput="uname()"></dd>
+                <p id="status"></p>
+                <dt>Password</dt>
+                <dd><input type="text" placeholder="Password" id="password"></dd>
+                <p id="status1"></p>
+            </dl>
+            <br>
+            <button onclick="loginClick()">Login</button>
+        </div>
+    </div>
+    <script>
+        function uname() {
+            const username = document.getElementById("username").value;
+            if (username.length > 3) {
+                document.getElementById("status").innerHTML = "Valid Username".fontcolor("green");
+            }
+            else {
+                document.getElementById("status").innerHTML = "";
+                document.getElementById("status").innerHTML = "Invalid Username".fontcolor("red");
+            }
+        }
+
+        function loginClick() {
+            const username = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+
+        }
+
+    </script>
+</body>
+
+</html>
