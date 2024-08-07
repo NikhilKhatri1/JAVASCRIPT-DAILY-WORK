@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Css Method</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                alert("Backgroung-color = " + $("p").css("background-color"));
+            });
+            $("#btn2").click(function () {
+                $("#color").css("background-color", "yellow");
+            });
+            $("#btn3").click(function () {
+                $("#multi").css({ "background-color": "blue", "font-size": "30px" });
+            });
+
+        });
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p style="background-color: #ff0000;">This is Red Paragraph</p>
+    <p style="background-color: green;">This is another Paragraph</p>
+    <p id="color">This is no-color paragraph</p>
+    <p id="multi">This is Multiple Property Para</p>
+    <button id="btn1">Return css property</button>
+    <button id="btn2">Set Css Property</button>
+    <button id="btn3">Set Multiple Property</button>
+</body>
+
+</html>
