@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>POST Request Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                $.post("demo-post.asp", {
+                    name: "Mickey",
+                    city: "NY"
+                })
+                    .done(function (data) {
+                        alert("Data: " + data);
+                    })
+                    .fail(function (xhr, status, error) {
+                        alert("Error: " + xhr.status + " " + xhr.statusText);
+                    });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>POST Request Example</h1>
+    <button id="postButton">Post Data</button>
+</body>
+
+</html>
