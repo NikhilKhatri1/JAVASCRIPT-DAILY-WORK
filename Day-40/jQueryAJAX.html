@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AJAX Methods</title>
+    <Script src="../node_modules/jquery/dist/jquery.js"></Script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                $.get("demo_test.txt", function (data, status) {
+                    alert("Data: " + data + "\nStatus: " + status);
+                });
+
+            });
+        });
+    </script>
 </head>
+
 <body>
-    
+    <h2>The jQuery get() and post() methods are used to request data from the server with an HTTP GET or POST request.
+    </h2>
+    <button>Send HTTP Get request to a page</button>
 </body>
+
 </html>
