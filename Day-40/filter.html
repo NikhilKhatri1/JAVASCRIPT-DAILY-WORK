@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Method</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <style>
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 600px;
+            height: 300px;
+            font-family: arial, sans-serif;
+        }
+
+        thead {
+            background-color: #ddd;
+        }
+
+        td,
+        th {
+            border: 1px solid #9c9c9c;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#input").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                })
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1 align="center">Filter Method</h1>
+        <input type="text" id="input" placeholder="Search" size="30" style="height: 30px;">
+        <br>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                </tr>
+                <tr>
+                    <td>Mary</td>
+                    <td>Don</td>
+                    <td>Don@example.com</td>
+                </tr>
+                <tr>
+                    <td>mickey</td>
+                    <td>Boi</td>
+                    <td>MKC@example.com</td>
+                </tr>
+                <tr>
+                    <td>July</td>
+                    <td>Dooley</td>
+                    <td>july@greatstuff.com</td>
+                </tr>
+                <tr>
+                    <td>Anja</td>
+                    <td>Ravendale</td>
+                    <td>a_r@test.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Note that we start the Search from tBody bcz to Avoid including table Headers.</p>
+    </div>
+
+    <h2>
+        <pre>
+            Explanation
+            
+            $(function () { ... });
+            This is shorthand for $(document).ready(function() { ... });.
+            It ensures that the code inside it runs only after the DOM is fully loaded. This is important for ensuring that jQuery
+            can find and manipulate the HTML elements correctly.
+            
+            $("#input").on("keyup", function () { ... });
+            This attaches an event handler to the HTML element with the ID input (typically an input field).
+            The event handler listens for the keyup event, which occurs every time the user releases a key while the input field is
+            focused.
+            When the keyup event is triggered, the function inside it is executed.
+            
+            var value = $(this).val().toLowerCase();
+            $(this) refers to the HTML element that triggered the event, which in this case is the #input field.
+            .val() gets the current value of the input field.
+            .toLowerCase() converts this value to lowercase to perform a case-insensitive search.
+            value now holds the lowercase text that the user has entered into the input field.
+            
+            $("#myTable tr").filter(function () { ... });
+            $("#myTable tr") selects all <tr> elements (table rows) within the table with the ID myTable.
+                .filter(function () { ... }); filters these selected rows based on a condition provided in the function.
+            
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                $(this) within the filter function refers to the current row (
+            <tr>) being processed.
+                .text() gets the text content of the current row.
+                .toLowerCase() converts this text to lowercase for a case-insensitive comparison.
+                .indexOf(value) checks if the lowercase value is found within the lowercase text of the row. If value is found,
+                indexOf returns a position index (which is >= 0); otherwise, it returns -1.
+                > -1 checks if indexOf returned a position index, meaning value was found in the row text.
+                .toggle() shows the row if the condition is true (meaning the row contains the search term) or hides it if false.
+            
+                Summary
+            
+                This script creates a dynamic search filter for a table:
+            
+                When the user types into an input field (#input), the script captures each keystroke (keyup event).
+                It then compares the entered text (converted to lowercase) with the text in each row of the table (#myTable tr).
+                Rows containing the search term are shown, while those that don’t match are hidden.
+            
+                This provides a live search functionality, allowing users to filter table rows as they type into the search field.
+
+        </pre>
+    </h2>
+</body>
+
+</html>
