@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Conflict</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $.noConflict();
+        jQuery(function () {
+            jQuery("button").click(function () {
+                jQuery("p").text("This Method provide no Issue for other LangugeThe noConflict() method releases the hold on the $ shortcut identifier, so that other scripts can use it.")
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h1>This is jquery noConflict Method</h1>
+    <p></p>
+    <button>Click</button>
+</body>
+
+</html>
