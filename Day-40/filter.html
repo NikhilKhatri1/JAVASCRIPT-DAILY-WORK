@@ -94,53 +94,6 @@
         <p>Note that we start the Search from tBody bcz to Avoid including table Headers.</p>
     </div>
 
-    <h2>
-        <pre>
-            Explanation
-            
-            $(function () { ... });
-            This is shorthand for $(document).ready(function() { ... });.
-            It ensures that the code inside it runs only after the DOM is fully loaded. This is important for ensuring that jQuery
-            can find and manipulate the HTML elements correctly.
-            
-            $("#input").on("keyup", function () { ... });
-            This attaches an event handler to the HTML element with the ID input (typically an input field).
-            The event handler listens for the keyup event, which occurs every time the user releases a key while the input field is
-            focused.
-            When the keyup event is triggered, the function inside it is executed.
-            
-            var value = $(this).val().toLowerCase();
-            $(this) refers to the HTML element that triggered the event, which in this case is the #input field.
-            .val() gets the current value of the input field.
-            .toLowerCase() converts this value to lowercase to perform a case-insensitive search.
-            value now holds the lowercase text that the user has entered into the input field.
-            
-            $("#myTable tr").filter(function () { ... });
-            $("#myTable tr") selects all <tr> elements (table rows) within the table with the ID myTable.
-                .filter(function () { ... }); filters these selected rows based on a condition provided in the function.
-            
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                $(this) within the filter function refers to the current row (
-            <tr>) being processed.
-                .text() gets the text content of the current row.
-                .toLowerCase() converts this text to lowercase for a case-insensitive comparison.
-                .indexOf(value) checks if the lowercase value is found within the lowercase text of the row. If value is found,
-                indexOf returns a position index (which is >= 0); otherwise, it returns -1.
-                > -1 checks if indexOf returned a position index, meaning value was found in the row text.
-                .toggle() shows the row if the condition is true (meaning the row contains the search term) or hides it if false.
-            
-                Summary
-            
-                This script creates a dynamic search filter for a table:
-            
-                When the user types into an input field (#input), the script captures each keystroke (keyup event).
-                It then compares the entered text (converted to lowercase) with the text in each row of the table (#myTable tr).
-                Rows containing the search term are shown, while those that don’t match are hidden.
-            
-                This provides a live search functionality, allowing users to filter table rows as they type into the search field.
-
-        </pre>
-    </h2>
 </body>
 
 </html>
