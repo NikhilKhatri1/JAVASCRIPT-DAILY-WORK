@@ -7,13 +7,13 @@
     <title>No Conflict</title>
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script>
-        $.noConflict();
-        jQuery(function () {
+        var jq = $.noConflict();
+        jq(function () {
             jQuery("#btn1").click(function () {
-                jQuery("p").text("This Method provide no Issue for other LangugeThe noConflict() method releases the hold on the $ shortcut identifier, so that other scripts can use it.")
+                jQuery("#para1").text("This Method provide no Issue for other LangugeThe noConflict() method releases the hold on the $ shortcut identifier, so that other scripts can use it.")
             });
-            var jq = $.noConflict();
-            jq("#btn2").click(function(){
+
+            jq("#btn2").click(function () {
                 jq("#para").text("Created Own Shortcut in jQuery...");
             })
         })
@@ -22,15 +22,17 @@
 
 <body>
     <h1>This is jquery noConflict Method</h1>
-    <p></p>
+    <p id="para1"></p>
     <button id="btn1">Click</button>
 
     <h3>You can also create your own shortcut very easily. The noConflict() method returns a reference to jQuery, that
         you can
         save in a variable, for later use. Here is an example:</h3>
-    
+
     <p id="para"></p>
     <button id="btn2">Click</button>
+
+    <h2>Note: It will work on writting jQuery and jq both </h2>
 </body>
 
 </html>
