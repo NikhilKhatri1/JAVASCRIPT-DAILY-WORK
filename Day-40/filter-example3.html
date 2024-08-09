@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filer To Search Anything</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#intSearch").on('keyup', function () {
+                var text = $(this).val().toLowerCase();
+                $(".items .item").each(function () {
+                    if ($(this).text().toLowerCase().indexOf(text) !== -1) {
+                        $(this).show();
+                    }
+                    else {
+                        $(this).hide();
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <input type="text" placeholder="Search" id="intSearch">
+    <div class="items">
+        <p class="item">This is Paragraph</p>
+        <h2 class="item">This is Heading</h2>
+        <div class="item">This is Div</div>
+        <button class="item">This is Button </button>
+    </div>
+</body>
+
+</html>

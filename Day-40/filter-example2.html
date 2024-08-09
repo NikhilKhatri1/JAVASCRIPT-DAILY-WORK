@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Option</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#Value").on('change', function () {
+                var SelectedCategory = $(this).val();
+                $(".items .item").each(function () {
+                    if (SelectedCategory === 'all') {
+                        $(this).show();
+                    }
+                    else if ($(this).hasClass(SelectedCategory)) {
+                        $(this).show();
+                    }
+                    else {
+                        $(this).hide();
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h3>Search Category</h3>
+    <select id="Value">
+        <option value="all">All</option>
+        <option value="fruit">Fruits</option>
+        <option value="veg">Vegatables</option>
+    </select>
+    <div class="items">
+        <div class="item veg">Potato</div>
+        <div class="item fruit">Mango</div>
+        <div class="item veg">Carrot</div>
+        <div class="item fruit">Orange</div>
+        <div class="item fruit">Apple</div>
+        <div class="item veg">Tomato</div>
+    </div>
+</body>
+
+</html>

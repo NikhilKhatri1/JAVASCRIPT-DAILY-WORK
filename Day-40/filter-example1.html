@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter the list</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#intSearch").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("ul li").each(function () {
+                    var filter = $(this).text().toLowerCase();
+                    if (filter.indexOf(value) > -1) {
+                        $(this).show();
+                    }
+                    else {
+                        $(this).hide();
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="text" placeholder="Search" id="intSearch">
+        <ul>
+            <li>First Item</li>
+            <li>Second Item</li>
+            <li>Third Item</li>
+            <li>Fourth Item</li>
+        </ul>
+    </div>
+</body>
+
+</html>
