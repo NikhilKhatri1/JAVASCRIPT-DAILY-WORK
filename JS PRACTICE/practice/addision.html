@@ -3,4 +3,22 @@
     let y = new String("Object");
     document.write(typeof (x) + "<br>");
     document.write(typeof (y));
+    document.write(`Never Compare Object and string <br>`);
+    // Compare x and y
+    if (x == y) {
+        document.write("x is equal to y <br>");
+    } else {
+        document.write("x is not equal to y <br>");
+    }
+</script>
+<br>
+<br>
+<hr>
+<h2>Comparing String and Object</h2>
+<script>
+    let a = "Jhon";
+    let b = new String("Jhon");
+    document.write(a == b);
+    document.write("<br>");
+    document.write(a === b);
 </script>
