@@ -14,13 +14,38 @@
             }
             const em1 = new Person("John", 20, "NY");
             const em2 = new Person("Kelly", 24, "JAPAN");
-            document.getElementById("demo").innerHTML += `${em1.name} is ${em1.age} Year Old and ${em2.name} is ${em2.age}`;
+            document.getElementById("demo").innerHTML = `${em1.name} is ${em1.age} Year Old and ${em2.name} is ${em2.age}`;
+
+            // // Get the entries of the object
+            // // const emDetail1 = ;
+
+            // // Use map to create an array of HTML strings
+            // const htmlStrings = Object.entries(em1).map(([key, value]) => `${key}: ${value}`);
+
+            // // Join the HTML strings with <br> and update the innerHTML
+            // document.getElementById("demo1").innerHTML = htmlStrings.join("<br>");
+
+
+            //Add Property to object
+            em1.hobby = "Football";
+            // add property in cunstructor function
+
+            Person.prototype.number = 22;
+            em1.number = 24;
+            document.getElementById("demo2").innerHTML = em1.number;
+            // iterate using map
+            var emDetail1 = Object.entries(em1);
+            emDetail1.map(([key, value]) => {
+                document.getElementById("demo1").innerHTML += `${key}:${value} <br>`;
+            })
         })
     </script>
 </head>
 
 <body>
     <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo1"></p>
 </body>
 
 </html>
