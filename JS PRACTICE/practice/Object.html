@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object Constructor</title>
     <script>
-        
+        document.addEventListener("DOMContentLoaded", function () {
+            function Person(name, age, city) {
+                this.name = name;
+                this.age = age;
+                this.city = city;
+            }
+            const em1 = new Person("John", 20, "NY");
+            const em2 = new Person("Kelly", 24, "JAPAN");
+            document.getElementById("demo").innerHTML += `${em1.name} is ${em1.age} Year Old and ${em2.name} is ${em2.age}`;
+        })
     </script>
 </head>
+
 <body>
-    
+    <p id="demo"></p>
 </body>
+
 </html>
