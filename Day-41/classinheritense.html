@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Inheritence</title>
+    <script>
+        class Car {
+            constructor(name) {
+                this.name = name;
+            }
+            present() {
+                return `ihave a ${this.name}`;
+            }
+        }
+        class Model extends Car {
+            constructor(name, year) {
+                super(name);
+                this.year = year;
+            }
+            show() {
+                return `${this.present()}, it is a ${this.year}`
+            }
+        }
+        const myCar = new Model("Ford", 2014);
+        document.write(myCar.show());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

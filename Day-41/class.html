@@ -11,3 +11,22 @@
 
     document.write(`My car is <b>${myCar1.name}</b> and friend car is <b>${myCar2.name}</b>`);
 </script>
+<br> <br>
+<hr>
+
+<script>
+    class Car1 {
+        constructor(name, year) {
+            this.name = name;
+            this.year = year;
+        }
+
+        age() {
+            const date = new Date();
+            return date.getFullYear() - this.year;
+        }
+    }
+
+    const myCar = new Car1("TATA", 2014);
+    document.write(`My car is ${myCar.age()} years old.`);
+</script>
