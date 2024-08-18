@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <p id="demo"></p>
+    <button id="btn">Click me</button>
+    <script>
+        class Header {
+            constructor() {
+                this.color = "Red";
+            }
+            colorChange = function () {
+                document.getElementById("demo").innerHTML += this + "<br>";
+            }
+        }
+        const myHeader = new Header();
+        // Window Object call the function 
+        window.addEventListener("load", myHeader.colorChange);
+
+        document.getElementById("btn").addEventListener("click", myHeader.colorChange);
+
+    </script>
+</body>
+
+</html>
