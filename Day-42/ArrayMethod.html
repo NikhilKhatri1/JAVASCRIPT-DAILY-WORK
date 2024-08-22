@@ -30,8 +30,41 @@
 <br>
 <hr>
 <h1>tostring can convert array to string</h1>
-
 <script>
     document.write(iceCream.toString() + "<br>");
     document.write(typeof iceCream);
+</script>
+<br>
+<hr>
+<h1>Looping through Array Elements</h1>
+<div id="lstItem"></div>
+<script>
+    const fruits = ["Banana", "Mango", "Apple", "Orange"];
+    var div = document.getElementById("lstItem");
+    var ul = document.createElement("ul");
+    for (var i = 0; i < fruits.length; i++) {
+        var li = document.createElement("li");
+        li.innerHTML = fruits[i];
+        ul.appendChild(li);
+    }
+    div.appendChild(ul);
+</script>
+
+<br>
+<hr>
+<h1>Adding element in array</h1>
+<script>
+    const person = ["Alice", "John", "Singh"];
+    person.push("David");
+    document.write(person);
+</script>
+
+<br>
+<hr>
+<h1>pop and shift</h1>
+<script>
+    var pop = person.pop();
+    document.write(pop + "<br>");
+    var shift = person.shift();
+    document.write(shift);
 </script>

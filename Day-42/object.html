@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bodyLoad() {
+            var person = { "name": "jhon", "class": 10, "roll": 15, "school": "bisss11d"}
+            var ul = document.querySelector("ul");
+            for (var key in person) {
+                var value = person[key];
+                var li = document.createElement("li");
+                li.innerHTML = `${key}: ${value}`;
+                ul.appendChild(li);
+            }
+        }
+
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <div>
+        <ul>
+
+        </ul>
+    </div>
+</body>
+
+</html>
