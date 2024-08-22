@@ -73,3 +73,47 @@
     var shift = person.shift();
     document.write(shift);
 </script>
+
+<br>
+<hr>
+<h1>Adding two Array</h1>
+<script>
+    var myArray1 = ["A", "B", "C", "D"];
+    var myArray2 = ["E", "F", "G"];
+    var concatArr = myArray1.concat(myArray2);
+    document.write(concatArr);
+</script>
+
+<br>
+<hr>
+<h1>Splice used to add and remove element</h1>
+<script>
+    var Arr = ["Banana", "Mango", "Orange", "Peach"];
+    // 0 to not remove anything
+    // var remove = Arr.splice(2,0,"a","b");
+    var remove = Arr.splice(2, 2, "Kiwi", "Lechy");
+    document.write(Arr + "<br>");
+    document.write(remove);
+</script>
+
+<br>
+<hr>
+<h1>toSplice() new splice method</h1>
+<script>
+    const myArr = ["A", "B", "C"];
+    const newMyArr = myArr.toSpliced(0, 1, "D");
+    document.write(myArr + "<br>");
+    document.write(newMyArr);
+</script>
+
+<br>
+<hr>
+<h1>Slice()</h1>
+<script>
+    var Arr = ["A", "B", "C", "D"];
+    var newArr = Arr.slice(3);
+    document.write(newArr);
+</script>
+
+<br>
+<hr>
