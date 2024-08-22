@@ -56,6 +56,8 @@
 <script>
     const person = ["Alice", "John", "Singh"];
     person.push("David");
+    document.write(person + "<br><br>");
+    person.unshift("Fan");
     document.write(person);
 </script>
 
@@ -64,7 +66,10 @@
 <h1>pop and shift</h1>
 <script>
     var pop = person.pop();
+    // remove from end
     document.write(pop + "<br>");
+
+    // remove from start
     var shift = person.shift();
     document.write(shift);
 </script>
