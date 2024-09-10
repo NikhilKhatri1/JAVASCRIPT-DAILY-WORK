@@ -1,0 +1,25 @@
+<script>
+    var userName = prompt("Enter the User name");
+    var role = prompt("Enter Role : Admin|Customer");
+    class product {
+        _productName;
+        get ProductName() {
+            return this._productName;
+        }
+
+        set ProductName(newValue) {
+            if (role.toLocaleLowerCase() === 'admin') {
+                this._productName = newValue;
+            }
+            else {
+                document.write(`${userName} have no Authorization`);
+            }
+        }
+    }
+
+    var obj = new product;
+    obj.ProductName = prompt("Enter Product name")
+    if (obj.ProductName) {
+        document.write(`product Name = ${obj.ProductName}`)
+    }
+</script>
