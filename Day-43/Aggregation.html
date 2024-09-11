@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Ver1 {
+            personalBanking = "Personal Loan<br>";
+            print() {
+                document.write(this.personalBanking);
+            }
+        }
+        class Ver2 {
+            HomeBanking = "Home Loan<br>";
+            print() {
+                const obj = new Ver1;
+                obj.print();
+                document.write(this.HomeBanking);
+            }
+        }
+        class Ver3 {
+            StudentBanking = "Student Loan";
+            print() {
+                const obj = new Ver2;
+                obj.print();
+                document.write(this.StudentBanking);
+            }
+        }
+
+        function InstallClick() {
+            var ver = document.querySelector("select").value;
+            switch (ver) {
+                case "ver1":
+                    document.write("<h1>Version-1 Installed</h1>");
+                    var obj = new Ver1;
+                    obj.print();
+                    break;
+                case "ver2":
+                    document.write("<h1>Version-2 Installed</h1>");
+                    var obj = new Ver2;
+                    obj.print();
+                    break;
+                case "ver3":
+                    document.write("<h1>Version-3 Installed</h1>");
+                    var obj = new Ver3;
+                    obj.print();
+                    break;
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Install HDFC Bank App</legend>
+        <dl>
+            <dt>Select Version</dt>
+            <dd>
+                <select>
+                    <option value="-1">Choose Version</option>
+                    <option value="ver1">2022-Version-1</option>
+                    <option value="ver2">2023-Version-2</option>
+                    <option value="ver3">2024-Version-3</option>
+                </select>
+                <button onclick="InstallClick()">Install</button>
+            </dd>
+        </dl>
+    </fieldset>
+</body>
+
+</html>

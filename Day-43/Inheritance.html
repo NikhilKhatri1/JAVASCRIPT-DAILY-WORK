@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Install HDFC Bank App</legend>
+        <dl>
+            <dt>Select Version</dt>
+            <dd>
+                <select id="versionSelect">
+                    <option value="-1">Choose Version</option>
+                    <option value="ver1">2022-Version-1</option>
+                    <option value="ver2">2023-Version-2</option>
+                    <option value="ver3">2024-Version-3</option>
+                </select>
+                <button onclick="InstallClick()">Install</button>
+            </dd>
+        </dl>
+    </fieldset>
+    <div id="output"></div>
+
+    <script>
+        class Ver1 {
+            personalBanking = "Personal Loan<br>";
+            print() {
+                return this.personalBanking;
+            }
+        }
+
+        class Ver2 extends Ver1 {
+            HomeBanking = "Home Loan<br>";
+            print() {
+                return super.print() + this.HomeBanking;
+            }
+        }
+
+        class Ver3 extends Ver2 {
+            StudentBanking = "Student Loan";
+            print() {
+                return super.print() + this.StudentBanking;
+            }
+        }
+
+        function InstallClick() {
+            const versionSelect = document.getElementById("versionSelect");
+            const outputDiv = document.getElementById("output");
+            const ver = versionSelect.value;
+
+            let obj;
+            let header;
+
+            switch (ver) {
+                case "ver1":
+                    header = "Version-1 Installed";
+                    obj = new Ver1();
+                    break;
+                case "ver2":
+                    header = "Version-2 Installed";
+                    obj = new Ver2();
+                    break;
+                case "ver3":
+                    header = "Version-3 Installed";
+                    obj = new Ver3();
+                    break;
+                default:
+                    header = "Please select a version.";
+                    outputDiv.innerHTML = `<h1>${header}</h1>`;
+                    return;
+            }
+
+            outputDiv.innerHTML = `<h1>${header}</h1>${obj.print()}`;
+        }
+    </script>
+</body>
+
+</html>
