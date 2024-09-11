@@ -1,3 +1,5 @@
+<h1>Access Date and perform Operation</h1>
+
 <script>
     class car {
         constructor(name, year) {
@@ -11,4 +13,23 @@
     }
     const myCar = new car("ford", 2014)
     document.write(`Age = ${myCar.age()}`);
+</script>
+
+<h1>Calculate Total and display</h1>
+
+<script>
+    class Product {
+        name = "Samsung TV";
+        price = 5400.55;
+        qty = 2;
+        total() {
+            return this.price * this.qty;
+        }
+        print() {
+            document.write(`Name = ${this.name} <br> Price = ${this.price} <br> Qty = ${this.qty} <br> Total = ${this.total()}`)
+        }
+    }
+
+    const obj = new Product;
+    obj.print();
 </script>

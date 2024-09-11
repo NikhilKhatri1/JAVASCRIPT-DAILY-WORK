@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Database {
+            constructor() {
+                document.write("Connected with Database <br>");
+            }
+            Insert() {
+                document.write("Record Inserted");
+            }
+            Delete() {
+                document.write("Record Deleted");
+            }
+
+        }
+
+        function Insert() {
+            var obj = new Database;
+            obj.Insert();
+        }
+
+        function Delete() {
+            var obj = new Database;
+            obj.Delete();
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="Insert()">Insert</button>
+    <button onclick="Delete()">Delete</button>
+
+</body>
+
+</html>
