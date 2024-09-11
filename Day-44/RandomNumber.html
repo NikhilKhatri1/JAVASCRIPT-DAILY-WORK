@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function RandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function generateRandom() {
+            var result = RandomNumber(0, 9);
+            document.getElementById("demo").innerHTML = result;
+        }
+    </script>
+</head>
+
+<body>
+    <p>Random number always generates a number between min and max</p>
+    <button onclick="generateRandom()">Generate Random</button>
+    <p id="demo"></p>
+</body>
+
+</html>
