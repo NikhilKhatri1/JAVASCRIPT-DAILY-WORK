@@ -1,0 +1,38 @@
+<script>
+    let day;
+    switch (new Date().getDay()) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case 6:
+            day = "Saturday";
+            break;
+    }
+    document.write("Today is " + day + "<br>");
+</script>
+
+<h1>Practise</h1>
+<script>
+    var str = "this is my string";
+    var Chars = str.split(" ");
+    var Capitalize = Chars.map(char => {
+        return char[0].toUpperCase() + char.slice(1)
+    })
+    var result = Capitalize.join(" ");
+    document.write(result);
+</script>
