@@ -17,3 +17,33 @@
         }
     }
 </script>
+
+<h1>Type of Loop</h1>
+
+<script>
+    const cars = ["Saab", "Volvo", "BMW", ["Volvo", "BMW"]];
+
+    cars.forEach(car => {
+
+        if (Array.isArray(car)) {
+            car.forEach(item => {
+                document.write("Inner = " + item + "<br>");
+            })
+        }
+        else {
+            document.write("Outer= " + car + "<br>");
+        }
+    })
+</script>
+
+<h2>check Array is (isArray)</h2>
+
+<script>
+    const car = ["A", "B", "C"];
+    if (Array.isArray(car)) {
+        document.write(true);
+    }
+    else {
+        document.write(false);
+    }
+</script>
