@@ -11,11 +11,16 @@
 <script>
     var arr = [1, [2, 3], [4, [5, 6]]];
 
-    for (i = 0; i < arr.length; i++) {
-        for (j = i; j <= i; j++) {
-            document.write(arr[j] + "<br>")
+    arr.forEach(items => {
+        if (Array.isArray(items)) {
+            items.forEach(item => {
+                document.write("Inner = " + item + "<br>");
+            })
         }
-    }
+        else {
+            document.write("Outer = " + items + "<br>");
+        }
+    })
 </script>
 
 <h1>Type of Loop</h1>
@@ -47,3 +52,4 @@
         document.write(false);
     }
 </script>
+
