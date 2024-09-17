@@ -53,16 +53,24 @@
     }
 </script>
 
-<h1>for..in</h1>
+<h1>for..in(Array)</h1>
 <script>
     var car1 = ["A", "B", "C"];
     // return index of array items
+
     for (let car in car1) {
         document.write(car + "<br>")
     }
 
 </script>
-
+<h1>for..in(object)</h1>
+<script>
+    var obj = { fname: 'John', lname: 'Doe', age: 25 };
+    for (let item in obj) {
+        // Accessing Properties
+        document.write(item + "<br>");
+    }
+</script>
 <h1>for.. of</h1>
 <script>
     var arr = ["A", "B", "C"];
