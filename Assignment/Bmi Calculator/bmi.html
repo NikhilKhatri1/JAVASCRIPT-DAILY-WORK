@@ -57,8 +57,10 @@
                 document.getElementById("msg").innerHTML = "<b>Provide valid value</b>";
                 return;
             }
-            var height_m = height / 100;
 
+            // height in meter
+            var height_m = height / 100;
+            //weight in kg
             var bmi = weight / (Math.pow(height_m, 2));
 
             document.getElementById("msg").innerHTML = "Your BMI value is <b>" + bmi.toFixed(2) + "</b> kg/m<sup>2";
