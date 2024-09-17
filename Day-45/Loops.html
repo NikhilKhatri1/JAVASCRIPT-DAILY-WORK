@@ -78,3 +78,24 @@
         document.write(item + "<br>")
     }
 </script>
+
+<h1>for..of(Object)</h1>
+<script>
+    // Access value
+
+    var obj = { fname: "john", lname: "Doe", age: 25 }
+    for (let value of Object.values(obj)) {
+        document.write(value + "<br>");
+    }
+</script>
+
+<h1>Accessing Key</h1>
+<script>
+    // Access Object
+
+    var obj = { fname: "john", lname: "doe", age: 25 };
+    for (let key of Object.keys(obj)) {
+        document.write(key + "<br>");
+    }
+
+</script>
