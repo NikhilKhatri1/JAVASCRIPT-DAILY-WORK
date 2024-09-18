@@ -1,0 +1,34 @@
+<h1>Data Encapsulation</h1>
+
+<p>
+
+</p>
+
+
+<script>
+    function BankAccount(initialBalance) {
+            let balance = initialBalance; // Private data
+
+            // Public method to deposit money
+            this.deposit = function (amount) {
+                if (amount > 0) {
+                    balance += amount; // Change the private data
+                    console.log(`Deposited: ${amount}. New Balance: ${balance}`);
+                }
+            };
+
+            // Public method to check the balance
+            this.getBalance = function () {
+                return balance; // Access private data safely
+            };
+        }
+
+        // Using the BankAccount
+        const myAccount = new BankAccount(100);
+        myAccount.deposit(50); // Deposited: 50. New Balance: 150
+        console.log(myAccount.getBalance()); // 150
+
+        // Trying to access private data directly won't work
+        // console.log(myAccount.balance); // undefined
+
+</script>

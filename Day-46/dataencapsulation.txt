@@ -1,0 +1,22 @@
+Data encapsulation in JavaScript refers to the practice of bundling data (variables) and methods (functions) that operate on the data within a single unit or object, while restricting access to some of the object's components. This helps to protect the internal state of the object and maintain its integrity.
+Key Concepts of Data Encapsulation
+
+    Private Variables: You can create variables that are not accessible from outside the object.
+    Public Methods: You can expose methods that allow controlled access to the private data.
+    Closure: JavaScript closures are often used to create private variables.
+
+
+
+Explanation of the Example
+
+    Private Variable: The balance variable is defined within the BankAccount function and is not accessible from outside the function.
+    Public Methods: The methods deposit, withdraw, and getBalance provide controlled access to the balance.
+    Closure: Each of the public methods forms a closure that captures the balance variable, allowing these methods to manipulate it while keeping it private.
+
+Benefits of Data Encapsulation
+
+    Data Integrity: Prevents external code from directly modifying internal state.
+    Improved Maintainability: Changes to internal implementation can be made without affecting external code that uses the object.
+    Code Organization: Grouping related data and functions together makes the code easier to understand and manage.
+
+Data encapsulation is a powerful concept that enhances the robustness and clarity of your JavaScript code!
