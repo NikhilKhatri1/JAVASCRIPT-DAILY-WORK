@@ -1,0 +1,30 @@
+<h1>Set- It is collection of unique values</h1>
+
+<script>
+    var setValue = new Set();
+    setValue.add("a");
+    setValue.add("b");
+    setValue.add("c");
+    for (let value of setValue) {
+        document.write(value + "<br>");
+    }
+</script>
+
+<h1>set with values</h1>
+<script>
+    var letters = new Set(["a", "b", "c"]);
+    letters.add("d");
+    letters.add("e");
+    document.write("Length of " + letters.size + "<br>");
+    // type of datatype
+    document.write(letters instanceof Set);  //true
+</script>
+
+<h1>Accessing value in Set</h1>
+
+<script>
+    var letters = new Set(["a", "b", "c"]);
+    Array.from(letters).map(Item => {
+        document.write(Item + "<br>");
+    })
+</script>
