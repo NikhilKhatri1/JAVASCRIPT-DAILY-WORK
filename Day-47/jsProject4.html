@@ -1,0 +1,37 @@
+<h1>Function</h1>
+
+<h4>Find the sum of array</h4>
+<script>
+    function sumArray(arr) {
+        var result = arr.reduce((acc, num) => acc + num, 0)
+        return document.write(result);
+    }
+    var arr = [10, 20, 30, 40];
+    sumArray(arr)
+</script>
+
+<h4>Find the maximum number in array</h4>
+
+<script>
+    function maxNumber(arr) {
+        var max = arr[0];
+        for (var i = 0; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i]
+            }
+        }
+        return max
+    }
+    var arr = [20, 1, 90, 34, 9];
+    var result = maxNumber(arr)
+    document.write(result);
+</script>
+
+<h4></h4>
+
+<script>
+    var str = "hello"
+    var btr = str
+    str = "Hello"
+    document.write(`New value ${str} original value = ${btr}`)
+</script>
