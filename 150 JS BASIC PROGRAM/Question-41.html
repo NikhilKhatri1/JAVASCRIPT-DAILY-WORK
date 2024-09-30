@@ -1,0 +1,35 @@
+<!-- reverse the Number -->
+<!-- 
+<script>
+    var num = prompt("Enter the number")
+    const revNum = (num) => {
+        let numStr = num.toString()
+        let reverseString = numStr.split('').reverse().join('')
+        return reverseString
+    }
+    document.write(revNum(num))
+</script> -->
+
+
+<script>
+    const processArray = (arr) => {
+        // Reverse the last number
+        var RevLastNum = arr.pop().toString().split('').reverse().join('');
+        console.log("Reversed Last Number:", RevLastNum);
+
+        // Sum the remaining numbers
+        var newArr = arr.reduce((sum, num) => sum + num, 0);
+        console.log("Sum of Remaining Numbers:", newArr);
+
+        // Combine the sum with the reversed last number
+        var result = newArr + parseInt(RevLastNum);
+
+        return result;
+    };
+
+    var arr = [12, 3, 40, 51, 20];
+    var finalResult = processArray(arr);
+
+    // Output the result
+    document.write("Final Result: " + finalResult);
+</script>
