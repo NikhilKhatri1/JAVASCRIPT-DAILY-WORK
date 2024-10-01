@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     function fact(n) {
         if (n === 0) {
             return 1;
@@ -8,4 +8,11 @@
         }
     }
     document.write(fact(5));
+</script> -->
+
+<script>
+    var input = prompt("Enter the array")
+    console.log(input);
+    var arr = input.split(",").map(num => parseInt(num.trim()));
+    console.log(typeof arr[0]);
 </script>

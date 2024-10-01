@@ -10,7 +10,7 @@
     document.write(revNum(num))
 </script> -->
 
-
+<!-- 
 <script>
     const processArray = (arr) => {
         // Reverse the last number
@@ -32,4 +32,31 @@
 
     // Output the result
     document.write("Final Result: " + finalResult);
+</script> -->
+<script>
+    function RevSum(arr) {
+        if (arr.length === 0) {
+            alert("Invalid Input value...");
+            return null;
+        }
+
+        var RevLastNum = parseInt(arr.pop().toString().split('').reverse().join(''));
+        var sumArr = arr.reduce((sum, num) => sum + num, 0);
+        return sumArr + RevLastNum;
+    }
+
+    // Take array input from the user
+    var input = prompt("Enter numbers separated by commas (e.g., 12, 23, 34, 56):");
+
+    // Check if input is provided
+    if (input) {
+        // Create an array of integers directly
+        var arr = input.split(',').map(Number);
+        var result = RevSum(arr);
+
+        // Display the result
+        document.write("Final Result: " + result);
+    } else {
+        alert("No input provided.");
+    }
 </script>
