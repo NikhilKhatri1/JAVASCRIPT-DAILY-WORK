@@ -1,0 +1,40 @@
+<script>
+    // declaration and Set and Get
+
+    let fruits = new Map([
+        ["apple", 500],
+        ["Banana", 600],
+        ["orange", 400]
+    ]);
+    // to Access value use "fruits.get("keyname")"
+
+    document.write("Apple : " + fruits.get("apple") + "<br>");
+
+    // to Add new value use "fruits.set("keyname","value")"
+    fruits.set("grape", 400)
+    console.log(fruits);
+    document.write("grape : " + fruits.get("grape"));
+
+    // instanceof used to check dataType return true/false....
+</script>
+<h1>Object keys are not well Order</h1>
+<script>
+    var obj = {
+        2: 'two',
+        1: 'One',
+        "b": "apple",
+        'c': 'banana'
+    }
+    document.write('keys Order : ' + Object.keys(obj));
+</script>
+
+<h1>Map key are base on insertion</h1>
+
+<script>
+    var map = new Map();
+    map.set(2, "two");
+    map.set(1, "one");
+    map.set("b", "apple");
+    map.set('a', "bob");
+    document.write(Array.from(map.keys()));
+</script>
