@@ -1,0 +1,26 @@
+<h1>typeOf method to identify type</h1>
+<h2>Primitive</h2>
+<script>
+    var str = "john";
+    var num = 123;
+    document.write("1. " + typeof str + "<br>");
+    document.write("2. " + typeof num + "<br>");
+</script>
+
+<h2>Object type(array,objects,maps,sets)</h2>
+
+<script>
+    var array = ["Apple", "Banana", "Orange"];
+    document.write(Array.isArray(array) + "<br>");
+
+    var time = new Date();
+    document.write((time instanceof Date) + "<br>");
+</script>
+
+<h1>Constructor property</h1>
+
+<script>
+    document.write("jhon".constructor + "<br>");
+    document.write({}.constructor + "<br>");
+    document.write(new Date().constructor)
+</script>
