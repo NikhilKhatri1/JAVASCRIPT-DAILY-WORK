@@ -1,0 +1,39 @@
+<h1>Destructuring</h1>
+
+<h2>destructuring in Array</h2>
+
+<script>
+    var arr = ["Apple", "banana", "Orange"];
+    //destructuring
+    const [first, second] = arr;
+    document.write(first + "," + second);
+</script>
+
+<h2>Destructuring from Object</h2>
+<script>
+    var obj = {
+        name: "john",
+        age: 24,
+        stock: true
+    }
+    // destructuring
+    const { name, age, stock } = obj
+    document.write(`My name is <b>${name}</b> and my Age is <b>${age}</b> this is <b> ${stock}</b>`);
+</script>
+
+<h1>rest property</h1>
+
+<script>
+    var arr = [10, 20, 30, 40, 50, 60, 70];
+    const [a, b, ...rest] = arr;
+    document.write(`rest values are ${rest}`);
+</script>
+<h1>Swapping in js</h1>
+<script>
+    var one = "john";
+    var two = "Alice";
+    // destructuring
+
+    [one, two] = [two, one]
+    document.write(`one = ${one} <br> two = ${two}`)
+</script>
