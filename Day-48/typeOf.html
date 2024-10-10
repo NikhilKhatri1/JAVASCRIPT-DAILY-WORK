@@ -24,3 +24,17 @@
     document.write({}.constructor + "<br>");
     document.write(new Date().constructor)
 </script>
+<br>
+<script>
+    var str = "hello";
+    document.write(str.constructor)
+</script>
+
+<br>
+<hr>
+
+<script>
+    const a = 2;
+    a = 1;
+    console.log(a);   //const error:  TypeError: Assignment to constant variable.
+</script>

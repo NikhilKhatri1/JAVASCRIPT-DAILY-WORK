@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<script>
+    var ArrObj = [
+        { name: "Aman", gender: "male" },
+        { name: "Manu", gender: "female" },
+        { name: "Raj", gender: "male" }
+    ]
+    for (i = 0; i < ArrObj.length; i++) {
+        if (ArrObj[i].gender === "male") {
+            console.log(ArrObj[i].name)
+        }
+    }
+</script>
+<h1>functio object</h1>
+
+<script>
+    let add = new Function ("num1","num2","return num1 + num2");
+    document.write(add(2,5));
+</script>
