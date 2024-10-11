@@ -1,0 +1,52 @@
+<h3>
+    Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the
+    number of
+    occurrences of the specified letter within the string.
+    Sample arguments : 'w3resource.com', 'o'
+    Expected output : 2
+</h3>
+
+<!-- <script>
+    function CharOccur(str, char) {
+        count = 0
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === char) {
+                count += 1;
+            }
+
+        }
+        return count
+    }
+    const str = "helloworld";
+    const char = "o";
+    const result = CharOccur(str, char);
+    console.log(result)
+</script> -->
+
+
+<h3>Write a JavaScript function to find the first not repeated character.
+    Sample arguments : 'abacddbec'
+    Expected output : 'e'</h3>
+
+<script>
+    function RepChar(str1) {
+        // Convert the string into an array of characters
+        let arr = str1.split('');
+        let char = '';
+
+        for (let i = 0; i < arr.length; i++) {
+            // Use filter to check if the character appears only once
+            if (arr.filter(c => c === arr[i]).length === 1) {
+                char = arr[i];
+                return char; // Return the first non-repeating character
+            }
+        }
+
+        return null; // Return null if no non-repeating character is found
+    }
+
+    // Sample usage
+    var str1 = 'abacddbec';
+    var result1 = RepChar(str1);
+    console.log(result1); // Output: 'e'
+</script>
