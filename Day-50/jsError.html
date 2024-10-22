@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function btwFunction() {
+            let msg = document.getElementById("msg");
+            msg.innerHTML = ""; // Clear previous messages
+            let inputValue = document.getElementById("demo").value;
+            try {
+                if (inputValue.trim() === '') throw "Input is empty.";
+                if (isNaN(inputValue)) throw "Input is not a number.";
+
+                inputValue = Number(inputValue);
+
+                if (inputValue < 5) {
+                    msg.innerHTML = "Too low.";
+                } else if (inputValue > 5) {
+                    msg.innerHTML = "Too high.";
+                } else {
+                    msg.innerHTML = "Correct, you chose 5.";
+                }
+            }
+            catch (err) {
+                msg.innerHTML = err; // Display the error message
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>JS Error Handling (Try and Catch)</h2>
+    <h1>Choose a number between 5 and 10</h1>
+    <div>
+        <input type="text" id="demo">
+        <button onclick="btwFunction()">Submit</button>
+    </div>
+    <p id="msg"></p>
+</body>
+
+</html>
