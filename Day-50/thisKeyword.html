@@ -1,0 +1,35 @@
+<h1>This keyword</h1>
+
+<p>This keyword is an object</p>
+
+<script>
+    const fullName = {
+        firstName: "John",
+        lastName: "Doe",
+        myFun: function () {
+            return document.write(`firstName = ${this.firstName}, lastName = ${this.lastName} <br> FullName = ${this.firstName} ${this.lastName}`)
+        }
+    }
+    fullName.myFun()
+</script>
+
+<h2>Bind Method</h2>
+
+<p>the bind() method, an object can borrow a method from another object.</p>
+
+<script>
+    const person = {
+        firstName: "John",
+        lastName: "Doe",
+        fullName: function () {
+            return `${this.firstName} ${this.lastName}`
+        }
+    }
+    const member = {
+        firstName: "Bob",
+        lastName: "Willey",
+    }
+
+    let fullName1 = person.fullName.bind(member);   //fullName is function
+    document.write(fullName1())
+</script>

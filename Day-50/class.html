@@ -1,0 +1,37 @@
+<h1>Classes in js </h1>
+
+<script>
+    class Car {
+        // construtor
+        constructor(make, model) {
+            this.make = make;
+            this.model = model;
+        }
+        // method
+
+        myInfo() {
+            document.write(`name = ${this.make} and model = ${this.model}`)
+
+        }
+    }
+    let myCar = new Car("Honda", "gt")
+    myCar.myInfo()
+</script>
+
+<h1>2. class method</h1>
+
+<script>
+    class Bike {
+        constructor(name, year) {
+            this.name = name;
+            this.year = year;
+        }
+        bikeYear() {
+            const date = new Date();
+            return date.getFullYear() - this.year
+        }
+
+    }
+    let bike = new Bike("Honda", "2014")
+    document.write(`My Bike is ${bike.bikeYear()} Year Old`)
+</script>
