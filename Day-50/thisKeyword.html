@@ -33,3 +33,52 @@
     let fullName1 = person.fullName.bind(member);   //fullName is function
     document.write(fullName1())
 </script>
+
+<br>
+
+<script>
+    function countRepeatletter(string) {
+        const arr = string.split(""); // Convert string into array of characters
+        const newArr = {}; // Object to hold character counts
+
+        arr.forEach((char) => {
+
+            if (newArr[char]) { // If the character is already in the object
+                newArr[char] += 1; // Increment its count
+            } else {
+                newArr[char] = 1; // If it's the first time the character appears, set its count to 1
+            }
+            // document.write(char)
+        });
+
+        return newArr; // Return the object with the counts
+    }
+    const str = "hrithik";
+    const result = countRepeatletter(str);
+    console.log(result); // Output the result
+    Object.entries(result).map(([char, count]) => {
+        document.write(`char = ${char} count = ${count} <br>`)
+    })
+
+</script>
+
+
+<br>
+
+<script>
+    const myStr = "johnny";
+
+    // Split the string into characters
+    const arr = myStr.split("");
+    const obj = {};
+
+    // Store each character in the object, counting its occurrences
+    arr.forEach((char) => {
+        obj[char] = (obj[char] || 0) + 1;
+    });
+
+    // Loop through the object entries and output the key-value pairs
+    Object.entries(obj).forEach(([key, value]) => {
+        document.write(`char = ${key} key = ${value}<br>`);
+    });
+</script>

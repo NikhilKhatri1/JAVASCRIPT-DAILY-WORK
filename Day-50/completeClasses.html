@@ -1,0 +1,211 @@
+<h4>
+    <pre>
+        In JavaScript, a class is a template for creating objects with shared properties and methods. It is a special type of
+        function, introduced in ES6 (ECMAScript 2015), that allows for easier and cleaner object-oriented programming (OOP).
+        
+        Here are some examples of how to define and use classes in JavaScript:
+        1. Basic Class Definition
+        
+        A basic class in JavaScript can be defined using the class keyword, followed by a constructor method for initializing
+        the object and other methods for behavior.
+        Example:
+        
+        // Define a Car class
+        class Car {
+        constructor(make, model, year) {
+        this.make = make; // Initialize the make of the car
+        this.model = model; // Initialize the model of the car
+        this.year = year; // Initialize the year of the car
+        }
+        
+        // Method to start the engine
+        startEngine() {
+        console.log(`The ${this.year} ${this.make} ${this.model}'s engine is now running.`);
+        }
+        
+        // Method to stop the engine
+        stopEngine() {
+        console.log(`The ${this.year} ${this.make} ${this.model}'s engine is now off.`);
+        }
+        }
+        
+        // Create an instance of the Car class
+        const myCar = new Car("Toyota", "Corolla", 2023);
+        
+        // Use the class methods
+        myCar.startEngine(); // The 2023 Toyota Corolla's engine is now running.
+        myCar.stopEngine(); // The 2023 Toyota Corolla's engine is now off.
+        
+        2. Class Inheritance
+        
+        JavaScript classes also support inheritance, allowing one class (child) to inherit properties and methods from another
+        class (parent).
+        Example:
+        
+        // Define a base class Vehicle
+        class Vehicle {
+        constructor(make, model) {
+        this.make = make;
+        this.model = model;
+        }
+        
+        displayInfo() {
+        console.log(`${this.make} ${this.model}`);
+        }
+        }
+        
+        // Define a subclass Car that extends Vehicle
+        class Car extends Vehicle {
+        constructor(make, model, year) {
+        super(make, model); // Call the parent class constructor
+        this.year = year;
+        }
+        
+        displayCarInfo() {
+        console.log(`${this.year} ${this.make} ${this.model}`);
+        }
+        }
+        
+        // Create an instance of Car
+        const myCar = new Car("Honda", "Civic", 2022);
+        
+        // Call methods from both the parent and the child class
+        myCar.displayInfo(); // Honda Civic
+        myCar.displayCarInfo(); // 2022 Honda Civic
+        
+        In the example above, Car inherits from Vehicle. The super() function is used to call the parent class constructor.
+        3. Getters and Setters
+        
+        JavaScript classes can also have getter and setter methods that allow you to access and modify an object's properties in
+        a controlled way.
+        Example:
+        
+        class Rectangle {
+        constructor(width, height) {
+        this._width = width; // Private property with an underscore convention
+        this._height = height;
+        }
+        
+        // Getter for width
+        get width() {
+        return this._width;
+        }
+        
+        // Setter for width
+        set width(value) {
+        if (value > 0) {
+        this._width = value;
+        } else {
+        console.log("Width must be positive!");
+        }
+        }
+        
+        // Getter for height
+        get height() {
+        return this._height;
+        }
+        
+        // Setter for height
+        set height(value) {
+        if (value > 0) {
+        this._height = value;
+        } else {
+        console.log("Height must be positive!");
+        }
+        }
+        
+        // Method to calculate area
+        calculateArea() {
+        return this._width * this._height;
+        }
+        }
+        
+        // Create a new Rectangle instance
+        const rect = new Rectangle(5, 10);
+        
+        console.log(rect.calculateArea()); // 50
+        
+        // Modify properties using setters
+        rect.width = 20;
+        rect.height = 15;
+        
+        console.log(rect.calculateArea()); // 300
+        
+        In this example, we define width and height as private properties with the _ prefix and use getter and setter methods to
+        safely access and modify them.
+        4. Static Methods
+        
+        Static methods are methods that belong to the class itself, rather than to instances of the class. They are called on
+        the class directly, not on an instance.
+        Example:
+        
+        class MathUtils {
+        // Static method to calculate the square of a number
+        static square(num) {
+        return num * num;
+        }
+        
+        // Static method to calculate the cube of a number
+        static cube(num) {
+        return num * num * num;
+        }
+        }
+        
+        // Call static methods without creating an instance
+        console.log(MathUtils.square(4)); // 16
+        console.log(MathUtils.cube(3)); // 27
+        
+        Here, the square and cube methods are static, so they can be called directly on the MathUtils class.
+        5. Private Fields and Methods (ES2022+)
+        
+        JavaScript now supports private fields and methods, denoted by a # prefix, making it possible to truly encapsulate data
+        within a class.
+        Example:
+        
+        class BankAccount {
+        // Private field for balance
+        #balance = 0;
+        
+        constructor(accountNumber) {
+        this.accountNumber = accountNumber;
+        }
+        
+        // Public method to deposit money
+        deposit(amount) {
+        if (amount > 0) {
+        this.#balance += amount;
+        console.log(`Deposited ${amount}. New balance: ${this.#balance}`);
+        } else {
+        console.log("Deposit amount must be positive.");
+        }
+        }
+        
+        // Public method to get the balance
+        getBalance() {
+        return this.#balance;
+        }
+        }
+        
+        // Create an instance of BankAccount
+        const myAccount = new BankAccount("123456789");
+        
+        // Access private field through public methods
+        myAccount.deposit(1000); // Deposited 1000. New balance: 1000
+        console.log(myAccount.getBalance()); // 1000
+        
+        // Uncommenting the following line will throw an error because #balance is private
+        // console.log(myAccount.#balance); // SyntaxError: Private field '#balance' must be declared in an enclosing class
+        
+        In this example, the #balance field is private and cannot be accessed directly outside the class. The only way to
+        interact with it is through public methods.
+        Summary of Key Concepts:
+        
+        Classes in JavaScript provide a clear syntax for creating objects.
+        Inheritance allows you to extend classes and reuse code.
+        Getters and Setters enable controlled access to object properties.
+        Static methods are called on the class itself, not on instances.
+        Private fields are variables that can only be accessed within the class.
+        
+        These features make JavaScript's class system powerful and flexible for object-oriented design.
+    </pre>
+</h4>
