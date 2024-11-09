@@ -1,0 +1,37 @@
+<h1>Closure</h1>
+<p>Closure remeber and acces the variable of the outer functer even after the function finished execution</p>
+<script>
+    function outer() {
+        let counter = 0;
+        function inner() {
+            counter++;
+            document.write(counter + "<br>")
+        }
+        return inner
+    }
+    let counterFunction = outer()
+    counterFunction();  //1
+    counterFunction();  //2
+    counterFunction();   //3
+</script>
+
+
+<p>it remember the previous value</p>
+
+<script>
+    function outer(greeting) {
+        let count = 0;
+        function inner(name) {
+            count++;
+            document.write(`${greeting},${name} you have count ${count} Times <br>`)
+        }
+        return inner;
+    }
+    let casualGreet = outer("Hi");          //initial count is 0 in both variable
+    let formalGreet = outer("Good day");   //initial count is 0 in both variable
+
+    casualGreet("Bob");
+    casualGreet("Alice");
+    formalGreet("John");
+</script>
+

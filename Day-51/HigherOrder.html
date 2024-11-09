@@ -1,0 +1,42 @@
+<h1>Higher Order function</h1>
+
+<h4>Higher Order funtion takes another function as an Argument</h4>
+
+
+<script>
+    function operate(x, y, operation) {
+        return operation(x, y)
+    }
+    const add = (a, b) => a + b;
+    const multiply = (a, b) => a * b;
+
+    const result = operate(2, 3, add)
+    document.write("add =", result + "<br>")
+    document.write("Multiply = ", operate(2, 3, multiply))
+</script>
+
+
+<br>
+<h4>Higher order function that return a function</h4>
+<script>
+    function createMultiplier(factor) {
+        return function (number) {
+            return factor * number
+        }
+    }
+    const double = createMultiplier(5);
+    document.write(double(3));
+</script>
+
+<br>
+<script>
+    function greeting(greet) {
+        return function (name) {
+            return `${greet}, I'm ${name}`;
+        }
+    }
+    const hello = greeting("Hello");
+    const hi = greeting("Hi")
+    document.write(hello("alice") + "<br>");
+    document.write(hi("John"))
+</script>
