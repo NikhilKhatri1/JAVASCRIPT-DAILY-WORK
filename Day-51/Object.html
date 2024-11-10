@@ -40,3 +40,20 @@
     person3.age = 28;
     document.write(person3.greet())
 </script>
+
+
+<h1>Es6 class object</h1>
+
+<script>
+    class personInfo {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        greet() {
+            document.write(`Hey, my name is ${this.name} and im ${this.age} old`)
+        }
+    }
+    const person4 = new personInfo("John", 32);
+    person4.greet()
+</script>
