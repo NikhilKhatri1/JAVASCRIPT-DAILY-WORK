@@ -1,0 +1,27 @@
+<h1>Difference between filter() and find()</h1>
+<p>filter return array of all matching value</p>
+<p>find return the first matching value or undefined</p>
+<p>filter check all the element of array for matching condition</p>
+<p>find check until first element matches the condition from array</p>
+
+<script>
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    const filterEven = numbers.filter(num => num % 2 === 0);
+    document.write(`filter even number = [${filterEven}] <br>`);
+
+    const findEven = numbers.find(num => num % 2 === 0);
+    document.write(`Find even Number = [${findEven}]`);
+</script>
+
+<br>
+<h4>Greater value using find() and filter()</h4>
+
+<script>
+    const numbers1 = [10, 20, 30, 40, 50];
+    const filterGreater = numbers1.filter(num => num > 20);
+    document.write(`Filter greater number =  ${filterGreater} <br>`);
+
+    const findGreater = numbers1.find(num => num > 20);
+    document.write(`Find greater number =  ${findGreater} <br>`)
+</script>

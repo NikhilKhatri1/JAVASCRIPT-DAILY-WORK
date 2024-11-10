@@ -1,0 +1,39 @@
+<h1>What are the different way to loop throught Array in JS</h1>
+
+<script>
+    const fruits = ["Apple", "Banana", "Orange"];
+    document.write("For loop <br>")
+    // for loop
+    for (i = 0; i < fruits.length; i++) {
+        document.write(`${i} --> ${fruits[i]} <br>`)
+    }
+
+    document.write("-------------------------- <br>")
+    document.write("forEach Loop <br>")
+
+    // forEach
+    fruits.forEach((fruit, index) => {
+        document.write(`Index = ${index} and Fruit = ${fruit} <br>`)
+    })
+    // for..of
+    document.write("-------------------------- <br>")
+    document.write("for..of Loop <br>")
+    for (fruit of fruits) {
+        document.write("values = " + fruit + "<br>")
+    }
+    // map 
+    document.write("-------------------------- <br>")
+    document.write("Map Loop <br>")
+    fruits.map((fruit, index) => {
+        document.write(`Index --> ${index}, fruit --> ${fruit} <br>`)
+    })
+
+    // for..in
+    document.write("-------------------------- <br>")
+    document.write("for..in Loop <br>")
+    fruits.color = "mixed"
+    // color is key 
+    for (index in fruits) {
+        document.write(`return index or key = ${index} <br>`)
+    }
+</script>
