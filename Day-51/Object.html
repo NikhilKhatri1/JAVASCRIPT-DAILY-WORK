@@ -7,10 +7,10 @@
         name: "Alice",
         age: 20,
         greet: function () {
-            return `Hi, ${this.name} You're ${this.age} old`
+            document.write(`Hi, ${this.name} You're ${this.age} old`);
         }
     }
-    document.write(person.greet())
+    person.greet()
 </script>
 
 <h1>constructor function</h1>
@@ -56,4 +56,18 @@
     }
     const person4 = new personInfo("John", 32);
     person4.greet()
+</script>
+
+
+<h1>How to add/remove properties from object</h1>
+
+<script>
+    const car = {
+        name: "Tata",
+        model: 1990,
+    }
+    car.year = 2024;  // dot notation
+    car["color"] = "blue";   // bracket notation
+    delete car.model;    // delete property 
+    console.log(car);
 </script>
