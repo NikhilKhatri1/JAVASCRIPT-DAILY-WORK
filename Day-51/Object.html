@@ -71,3 +71,38 @@
     delete car.model;    // delete property 
     console.log(car);
 </script>
+
+
+<h1>How to you check property present in object or not?</h1>
+
+<script>
+    let person5 = {
+        name: "Raju",
+        age: 28,
+        address: {
+            city: "Delhi"
+        }
+    }
+    // --------------------------------
+    //"in" property
+    console.log("name" in person5);
+    // ---------------------------------------
+
+
+    // hasownProperty to check prop. in object
+    console.log(person5.hasOwnProperty("city"))  // false
+
+    // if it is direct property if not you need to check you need
+    // to use "nested/chaining"
+    console.log(person5.address.hasOwnProperty("city"))   // true
+    // -------------------------------------
+
+    // undefined method
+    console.log(person5.name !== undefined)   // true
+    console.log(person.sallary !== undefined)   //false
+    // --------------------------------------------
+
+    // using optional chaining
+    console.log(person5?.age)   // 28
+    console.log(person5?.job)   // undefined
+</script>
