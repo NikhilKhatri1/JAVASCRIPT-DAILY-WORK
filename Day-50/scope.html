@@ -29,7 +29,7 @@
 <p>When you use var, JavaScript hoists the declaration to the top, but not the value. So if you try to use the variable
     before assigning a value, you'll get undefined.</p>
 <script>
-    console.log(a)
+    console.log(a)    // undefined
     var a = 2;
 </script>
 
@@ -46,7 +46,7 @@
 <p>Why?: JavaScript hoists the declaration, but you can't use it until the line let a = 5; is reached. This creates a "dead
 zone" where the variable exists but isn't accessible yet.</p>
 <script>
-    console.log(b)
+    console.log(b)    // ref error
     let b;
     // a = 5;
 </script>

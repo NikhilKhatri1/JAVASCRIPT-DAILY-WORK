@@ -1,0 +1,42 @@
+<h1>how do you create an object in javascript ?</h1>
+
+<h1>Object literals</h1>
+
+<script>
+    const person = {
+        name: "Alice",
+        age: 20,
+        greet: function () {
+            return `Hi, ${this.name} You're ${this.age} old`
+        }
+    }
+    document.write(person.greet())
+</script>
+
+<h1>constructor function</h1>
+
+<script>
+    function Person(name, age) {
+        this.age = age;
+        this.name = name;
+        this.greet = function () {
+            document.write(`Hello, I'm ${this.name} and ${this.age} year old`);
+        }
+    }
+    const person2 = new Person("Bob", 22)
+    person2.greet()
+</script>
+
+<h1>Object.create() method</h1>
+
+<script>
+    let objectProto = {
+        greet: function () {
+            return `Hey, I'm ${this.name} and ${this.age} year old`
+        }
+    }
+    const person3 = Object.create(objectProto)
+    person3.name = "Charlie";
+    person3.age = 28;
+    document.write(person3.greet())
+</script>

@@ -1,0 +1,29 @@
+<h1>Pure function:it always returns the same output for same input and has no effects of external state meaning it does
+    not rely on external state,make code more prec=dcitable and easy.</h1>
+
+
+<script>
+    // pure function
+    function add(a, b) {
+        return a + b;
+    }
+    const a = 2
+    const b = 3
+    document.write(`Add ${a} and ${b} = ${add(a, b)}`)
+</script>
+
+<br>
+<script>
+    // impure function
+    let total = 0;
+    function add(value) {
+        total += value;
+        return total
+    }
+
+    console.log(add(100))
+
+    console.log(add(200))
+</script>
+
+<br>

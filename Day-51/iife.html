@@ -1,0 +1,26 @@
+<h1>IIFE</h1>
+
+<script>
+    (function () {
+        let privateVar = "I'm private";
+        console.log("IIFE is running")
+        console.log(privateVar);
+    })();
+    console.log(privateVar)   //ReferenceError: privateVar is not defined
+</script>
+
+<br>
+<h4>with Argument</h4>
+<script>
+        (function (name) {
+            console.log(`Hi , ${name}`)
+        })("Alice");
+</script>
+
+<br>
+<h4>Arrow function IIFE</h4>
+<script>
+    (() => {
+        console.log("Arrow function IIFE")
+    })();
+</script>
