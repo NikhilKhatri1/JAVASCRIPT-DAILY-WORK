@@ -1,0 +1,23 @@
+<h1>Destructuring in javascript</h1>
+
+<p>Destructuring is a way to extract the data from array and object</p>
+
+<script>
+    // object destructuring
+    document.write("Object Destructuring <br><br>")
+    const person = {
+        name: "Alice",
+        age: 22,
+        hobby: "cricket",
+    }
+    const { name, age, hobby } = person
+    document.write(`Hi, ${name} You are ${age} old your hobby is ${hobby} <br><br>`)
+    document.write("---------------------------------<br><br>")
+
+    document.write("Array destructuring <br> <br>")
+
+    const personArray = ["Bob", 28, "Football"];
+    const [name1, age1, hobby1] = personArray;
+    document.write(`Hi, ${name1} You are ${age1} old your hobby is ${hobby1} <br><br>`)
+    document.write("---------------------------------<br><br>")
+</script>

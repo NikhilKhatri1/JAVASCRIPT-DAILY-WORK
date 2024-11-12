@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // 1. [.removeChild()] method
+
+            /*
+
+            const parent = document.getElementById("parent");
+            const child = document.getElementById("child");
+            parent.removeChild(child);
+            
+            */
+
+            // 2. [.remove()] method
+
+            /*
+
+            const parent = document.getElementById("parent");
+            const child = document.getElementById("child")
+            parent.remove(child);
+
+            */
+
+            // 3. [.innerHTML] method
+
+            document.getElementById("parent").innerHTML = ""
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="parent">
+        <p id="child">Remove me</p>
+    </div>
+</body>
+
+</html>
