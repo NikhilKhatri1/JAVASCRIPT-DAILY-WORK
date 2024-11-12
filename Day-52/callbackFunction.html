@@ -1,0 +1,42 @@
+<h1>CallBack Functio and CallBack Hell</h1>
+
+<p>CallBack :- when you pass a function as an argument into another function called CallBack function </p>
+
+<p>callback</p>
+<script>
+    function person(name, callback) {
+        setTimeout(() => {
+            document.write("Hello, " + name + "<br><br>");
+            callback()
+        }, 1000)
+    }
+    // callback function ()=>{}
+    person("Alice", () => {
+        document.write("Finished" + "<br><br>")
+        document.write("---------------------------------- <br> <br>")
+    })
+</script>
+
+<p>callback Hell :- when you have multiple nested callback inside the function it create code harder to read and
+    maintain</p>
+<br>
+<script>
+    function step1(callback) {
+        setTimeout(() => {
+            document.write("Step-1" + "<br>");
+            callback();
+        }, 1000);
+    }
+    function step2(callback) {
+        setTimeout(() => {
+            document.write("step-2" + "<br>");
+            callback();
+        }, 2000);
+    }
+    // callbackhell
+    step1(() => {
+        step2(() => {
+            document.write("Done" + "<br>")
+        });
+    });
+</script>
