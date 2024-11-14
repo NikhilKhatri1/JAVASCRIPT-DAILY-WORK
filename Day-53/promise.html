@@ -1,0 +1,91 @@
+<h1>Promise </h1>
+
+<!-- <script>
+    function fetchData() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const success = true;
+                if (success) {
+                    resolve("Data is Fetched")
+                } else {
+                    reject("Not Fetched")
+                }
+            }, 1000)
+        })
+    }
+    fetchData()
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err))
+</script> -->
+
+
+<h2>Promise Chaining</h2>
+
+<!-- <script>
+    function fetchData() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const success = true;
+                if (success) {
+                    resolve("data is Fetched")
+                } else {
+                    reject("data is not fetched")
+                }
+            })
+        })
+    }
+    function processData() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve("Data is Proccessed")
+            }, 1000)
+        })
+    }
+    function saveData() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve("Data is Saved")
+            }, 1000)
+        })
+    }
+    fetchData()
+        .then((data) => {
+            console.log(data)
+            return processData(data)
+        })
+        .then((processData) => {
+            console.log(processData)
+            return saveData(processData)
+        })
+        .then((saveData) => console.log(saveData))
+        .catch((err) => console.log(err))
+        // loading state 
+        .finally(() => {
+            console.log("Operation Complete")
+        })
+</script> -->
+
+<h2>Async / await</h2>
+
+<script>
+    function fetchData() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const success = true;
+                if (success) {
+                    resolve("Data is Fetched")
+                } else {
+                    reject("Data is not Fetched")
+                }
+            }, 2000)
+        })
+    }
+    async function getData() {
+        console.log("Data is Proccessing")
+        const result = await fetchData();
+        console.log(result)
+        console.log("Data is Available");
+
+    }
+    getData()
+</script>
