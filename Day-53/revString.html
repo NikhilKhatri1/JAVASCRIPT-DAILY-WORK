@@ -1,0 +1,19 @@
+<h1>Reverse String</h1>
+
+<script>
+    let string = "Java is Easy";
+    // split makes array of string and use split(" ") space is mandatory bcz we are taking word
+    let myArr = string.split(" ")
+    console.log(myArr);
+    // contain array of reverse word
+    let revStr = []
+    for (var i = 0; i < myArr.length; i++) {
+        // word are again split to perform reverse bcz only used in array not string
+        // join used to make string
+
+        // and push the word after reversing the word 
+        
+        revStr.push(myArr[i].split("").reverse().join(""))
+    }
+    console.log(revStr.join(" "))
+</script>
