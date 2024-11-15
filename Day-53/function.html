@@ -1,0 +1,53 @@
+<h1>Function Question</h1>
+
+
+<!-- <script>
+    let myArr = prompt("Enter the  array").split(" ");
+    console.log("String Array on Split ", myArr)
+    const intArr = myArr.map((item) => parseInt(item))
+    console.log("Integer Array ", intArr)
+    let large = 0;
+    const LargeNum = (intArr) => {
+        intArr.map((num) => {
+            if (num > large) {
+                large = num
+            }
+        })
+        return large
+    }
+    const largestNumber = LargeNum(intArr);
+    document.write("Largest number is Array is ", largestNumber)
+</script> -->
+
+<h1>Second Largest Number</h1>
+
+<script>
+    let myArr = prompt("Enter the array").split(" ");
+    console.log("String Array on Split:", myArr);
+
+    const intArr = myArr.map((item) => parseInt(item));
+    console.log("Integer Array:", intArr);
+
+    let largest = null;  // Initialize to a very small number (or use -Infinity for better safety)
+    let secondLargest = null;
+
+    // Loop through the array to find both largest and second largest
+    const findSecondLargest = (arr) => {
+        arr.forEach((num) => {
+            if (num > largest) {
+                secondLargest = largest;  // Update second largest before largest
+                largest = num;            // Update largest
+            } else if (num > secondLargest && num !== largest) {
+                secondLargest = num;      // Update second largest
+            }
+        });
+        return secondLargest;
+    };
+
+    const secondLargestNumber = findSecondLargest(intArr);
+    if (secondLargest === null) {
+        document.write("There is no second largest number.");
+    } else {
+        document.write("The second largest number in the array is: " + secondLargestNumber);
+    }
+</script>
