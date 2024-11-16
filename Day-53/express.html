@@ -90,3 +90,34 @@
         choices for developing server-side applications in JavaScript.
     </pre>
 </h4>
+
+<h2>
+    <pre>
+        Summary of Key Differences:
+        
+        Schema Definition: MongoDB is schema-less; Mongoose adds a schema layer to enforce structure and validation.
+        Validation: MongoDB doesn't offer built-in validation; Mongoose allows you to define validation rules in the schema.
+        Middleware: MongoDB doesn't provide middleware or hooks, while Mongoose offers pre/post hooks for lifecycle management.
+        Populate: MongoDB doesn't support joins; Mongoose allows you to populate references between collections.
+        Querying: MongoDB queries require raw syntax; Mongoose provides a higher-level, more convenient API for queries.
+        
+        When Should You Use Mongoose?
+        
+        You should use Mongoose if:
+        
+        You want to enforce schemas and validate data before inserting it into MongoDB.
+        You need to manage relationships between documents and easily "join" data from multiple collections.
+        You want to use powerful features like middleware, pre/post hooks, or population.
+        You prefer a simplified, higher-level API for querying, data validation, and error handling.
+        
+        If you prefer more control and want to work directly with MongoDB's native driver (or you don't need schema
+        enforcement), you can skip Mongoose and use the MongoDB Node.js driver directly.
+
+    </pre>
+</h2>
+
+<h2>
+    <pre>
+        body-parser is used to help us read and access the data that is sent in the body of HTTP requests.
+    </pre>
+</h2>
