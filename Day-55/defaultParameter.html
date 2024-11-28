@@ -1,0 +1,23 @@
+<h1>Default parameter</h1>
+
+<script>
+    function name(name = "guest") {
+        console.log(`Hello,${name}`);
+    }
+    name("Alice");
+    name()
+</script>
+
+<h1>Scope chaining</h1>
+
+<script>
+    var a = "Global";
+    function first() {
+        var a = "first";
+        function second() {
+            console.log(a)
+        }
+        second()
+    }
+    first()
+</script>

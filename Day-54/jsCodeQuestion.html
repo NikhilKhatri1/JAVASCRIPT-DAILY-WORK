@@ -1,0 +1,61 @@
+<h1>find the largest element in array</h1>
+
+<script>
+    function largestElement(myArray) {
+        var largestElem = 0;
+        myArray.forEach((elem) => {
+            if (elem > largestElem) {
+                largestElem = elem;
+            }
+        })
+        return largestElem;
+    }
+    var myArray = [2, 63, 10, 49, 6];
+    document.write(largestElement(myArray));
+</script>
+
+<h1>Capitalize the first letter in string</h1>
+
+<script>
+    function CapFirstLetter(myStr) {
+
+        var myArray = myStr.split(" ");
+
+        var CapString = [];
+
+        myArray.map((word) => {
+
+            var CapWord = word.charAt(0).toUpperCase() + word.slice(1);
+
+            CapString.push(CapWord)
+        });
+
+        return CapString.join(" ");
+
+    }
+    var myStr = "im john doe";
+
+    document.write(CapFirstLetter(myStr));
+</script>
+
+<h1>Short method</h1>
+<script>
+    function FirstLetterCap(String) {
+        return string.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
+    }
+    var myString = "im john doe";
+    document.write(CapFirstLetter(myString));
+</script>
+
+
+<h1>Generate Random Number Between Given Range</h1>
+
+<script>
+    function generateRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Example usage:
+    var randomNum = generateRandomNumber(1, 100); // Generate a random number between 1 and 100
+    document.write("Random number between 1 and 100: " + randomNum);
+</script> 

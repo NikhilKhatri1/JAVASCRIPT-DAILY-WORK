@@ -1,0 +1,137 @@
+<h1>Reverse the String</h1>
+
+<script>
+    function revStr(str) {
+        newStr = str.split('').reverse().join('')
+        return newStr;
+    }
+    var str = 'string';
+    document.write('reverString = ', revStr(str));
+</script>
+
+
+<h1>String is Palindrome</h1>
+
+<p>replace(/\s+/g, '') to remove all space</p>
+
+<script>
+    function isPalindrome(str) {
+        str = str.replace(/\s+/g, '').toLowerCase();
+        let reverseString = str.split('').reverse().join('');
+        return str === reverseString;
+    }
+    let string = 'man nam';   //'A man a plan a canal Panama'
+    document.write(isPalindrome(string));
+</script>
+
+<h1>find the longest word in string</h1>
+
+<script>
+    function longestWord(str) {
+
+        words = str.split(' ')
+
+        let longWord = '';
+
+        words.map((word) => {
+            if (word.length > longWord.length) {
+                longWord = word;
+            }
+        })
+        return longWord
+    }
+    let string1 = 'my name is jhon';
+    document.write(longestWord(string1))
+</script>
+
+<h1>when having same length</h1>
+
+<script>
+    function longestWord(str) {
+        // Split the string into an array of words
+        let words = str.split(' ');
+
+        // Initialize an array to hold the longest words
+        let longestWords = [];
+        let maxLength = 0;
+
+        // Iterate over each word to find the longest ones
+        words.forEach((word) => {
+            if (word.length > maxLength) {
+                // If we find a longer word, update the maxLength and reset the longestWords array
+                maxLength = word.length;
+                longestWords = [word]; // Reset to the new longest word
+            } else if (word.length === maxLength) {
+                // If the word has the same length as the current longest, add it to the array
+                longestWords.push(word);
+            }
+        });
+
+        return longestWords;
+    }
+
+    let string2 = 'my name is jhonny play';
+    document.write(longestWord(string1));  // Output: ['jhonny']
+
+</script>
+
+<h1>Find the factorial of a number</h1>
+
+<script>
+    function factorial(number) {
+        let result = 1;
+        for (i = 1; i <= number; i++) {
+            result *= i;
+        }
+        return result
+    }
+    let num = 5;
+    document.write(factorial(num));
+</script>
+
+<h1>prime or not</h1>
+
+<script>
+    function isPrime(num) {
+        // Handle special cases for numbers less than 2
+        if (num <= 1) {
+            return 'Not Prime';
+        }
+        // Only check divisibility up to the square root of num
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return 'Not Prime';
+            }
+        }
+
+        return 'Prime';
+    }
+
+    let num1 = 2;
+    document.write(isPrime(num1));  // Output will be 'Prime'
+</script>
+<h1>Remove duplicate from string</h1>
+
+<script>
+    function RemoveDuplicate(str) {
+        // Remove spaces, convert to lowercase, and split the string into an array of characters
+        var string = str.replace(/\s+/g, '').toLowerCase().split('');
+
+        // Initialize an empty array to store unique characters
+        var newStr = [];
+
+        // Loop through the string array
+        string.forEach((letter) => {
+            // If the letter is not already in newStr, add it
+            if (!newStr.includes(letter)) {
+                newStr.push(letter);
+            }
+        });
+
+        // Join the array into a string and return the result
+        return newStr.join('');
+    }
+
+    let inputStr = "david of cool water";
+    console.log(RemoveDuplicate(inputStr)); // Output: "daviofclwter"
+</script>
