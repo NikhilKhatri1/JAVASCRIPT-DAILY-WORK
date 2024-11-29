@@ -5,3 +5,43 @@
     var result = arr.reduce((a, b) => a + b, 0)
     console.log(result)
 </script>
+
+<h1>Var,let,Const</h1>
+
+<script>
+    let a;
+    a = 10;
+    console.log('let of =', a);
+    let b = 20;
+    console.log('let of b =', b);
+</script>
+
+<h1>Varibble shadowing</h1>
+
+<script>
+    let x = 10;
+    function outer() {
+        let x = 20;
+        console.log("Outer function scope = ", x);
+        if (true) {
+            let x = 30;
+            console.log("If block scope = ", x)
+        }
+    }
+
+    console.log("Globle scope = ", x)
+    outer();
+</script>
+<h1>function</h1>
+<script>
+    function outer() {
+        let b = 10;
+        console.log("Outer function = ", b);
+        function inner() {
+            let b = 20;
+            console.log("Inner function = ", b);
+        }
+        inner()
+    }
+    outer()
+</script>
