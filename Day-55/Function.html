@@ -1,0 +1,92 @@
+<h1>way to define Function</h1>
+
+<script>
+    // function declaration
+    function greetDec(name) {
+        console.log(`Hello, ${name}`)
+    }
+    greetDec("Alice")
+    //function expression
+    const greetExp = function (name) {
+        console.log(`Hello, ${name}`)
+    }
+    greetExp("James")
+    //arrow function
+    const greetArr = (name) => {
+        console.log(`Hello, ${name}`)
+    }
+    greetArr("Bob");
+    // function constructor
+    const greetCon = new Function('name', 'console.log(`Hello, ${name}`)')
+    greetCon("John")
+</script>
+
+<h1>High order function</h1>
+
+<script>
+    function HOF(a, b, operation) {
+
+        return operation(a, b);
+
+    }
+
+    const add = (a, b) => {
+
+        return `Add = ${a + b}`
+
+    };
+    const multiply = (a, b) => `multiply = ${a * b}`;
+
+    console.log(HOF(2, 3, add));
+
+    console.log(HOF(2, 3, multiply));
+</script>
+
+<h1>Pure function</h1>
+<p>pure function is function which gives the same result on same input id does'nt depend on external variable</p>
+<script>
+    function pure(a, b) {
+        console.log(a + b)
+    }
+    pure(2, 3)
+</script>
+
+<h1>Impure function</h1>
+
+<script>
+    var total = 0;
+    function Impure(a) {
+        return total += a
+    }
+    console.log(Impure(100));
+    console.log(Impure(200));
+</script>
+
+<h1>IIFE()</h1>
+
+<script>
+    (function person(name) {
+        console.log(`Hello, ${name}`)
+    })("Alice")
+</script>
+
+<h1>Object Creation</h1>
+
+<script>
+    const personObj = {
+        name: "john",
+        age: 22,
+        greet: function () {
+            console.log(`Hello ${this.name} ,you are ${this.age} year Old`)
+        }
+    }
+    personObj.greet();
+
+    personObj.hobby = "Football";
+    console.log(personObj);
+    delete personObj.hobby;
+    console.log(personObj)
+    // check property exist in object 
+    console.log("hobby" in personObj);  // false 
+    console.log("name" in personObj);   // true
+</script>
