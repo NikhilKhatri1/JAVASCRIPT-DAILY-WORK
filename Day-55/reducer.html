@@ -45,3 +45,38 @@
     }
     outer()
 </script>
+
+
+<h1>Cap Letter</h1>
+
+<script>
+    function firstLetterCaps(str) {
+        var words = str.split(" ");
+        var CapWord = []
+        words.map((word) => {
+            word = word[0].toUpperCase() + word.slice(1)
+            CapWord.push(word)
+        })
+        return CapWord.join(" ");
+    }
+    var myStr = "this is javascript";
+    console.log(firstLetterCaps(myStr));
+</script>
+
+<h1>Reverse String</h1>
+
+<script>
+    function reverseString(str) {
+        var reverseString = str.split(" ");
+        var reverseWord = []
+        reverseString.map((Word) => {
+            reverseWord.push(Word.split("").reverse().join(""))
+        })
+
+        var result = reverseWord.reverse().join(" ");
+        console.log(result)
+
+    }
+    var myStr = "this is javascript";
+    reverseString(myStr)
+</script>
