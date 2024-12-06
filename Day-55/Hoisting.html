@@ -1,8 +1,35 @@
 <h1>Hoisting in js</h1>
 
 <script>
-    add(2, 3);
-    function add(a, b) {
-        console.log(a + b);
+
+    greet();
+    console.log(x);
+
+    var x = 10;
+
+    function greet() {
+        console.log("function executed");
     }
+
+    // console.log(greet)
+
+
+</script>
+<h1>variable shadowing</h1>
+<script>
+
+    var x = 10;
+    function shadowing() {
+        x = 20;
+
+        if (x) {
+            x = 30;
+            // console.log("If block x =", x)
+        }
+        console.log("function block x =", x)
+    }
+
+    // console.log("outer block x =", x)
+    shadowing()
+
 </script>
