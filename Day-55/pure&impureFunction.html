@@ -1,0 +1,54 @@
+<h1>Pure Function</h1>
+
+<script>
+    function pure(a, b) {
+        console.log("Sum of a & b = ", a + b);
+    }
+    pure(2, 3);
+    pure(2, 3)
+</script>
+
+<h1>Impure Function</h1>
+
+<script>
+    var total = 0
+    function impure(a) {
+        total += a;
+        console.log("Total of Value = ", total)
+    }
+    impure(100);
+    impure(100);
+</script>
+
+<script>
+    const obj = {
+        name: "Alice"
+    }
+    obj.age = 20;
+    obj["hobby"] = "Reading";
+    console.log(obj);
+    delete obj.name;
+    console.log(obj);
+    console.log("name" in obj);
+    console.log("age" in obj);
+    console.log(obj.hasOwnProperty("hobby"));
+    console.log(obj?.weight);
+</script>
+
+<h1>This keyword</h1>
+
+<p>This is keyword used to refer to the current object that is executing the current function.
+    <br>it used to access the value of object in function.
+</p>
+
+<script>
+    const car = {
+        name: "Nissan GTR",
+        model: 2020,
+        greet: function () {
+            console.log(`This men has ${this.name} Car & a new ${this.model} model`)
+        }
+    }
+    car.greet()
+</script>
+

@@ -22,10 +22,12 @@
     let x = 10;
     function outer() {
         let x = 20;
+        let y = 40
         console.log("Outer function scope = ", x);
-        if (true) {
+        if (x) {
             let x = 30;
             console.log("If block scope = ", x)
+            console.log("y = ", y);
         }
     }
 
