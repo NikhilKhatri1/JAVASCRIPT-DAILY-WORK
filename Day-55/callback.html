@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back function</title>
+    <script>
+        // -----------------------------------------------------------------//
+
+        function Solve(a, b, operation) {
+            return operation(a, b)
+        }
+        const add = (a, b) => a + b;
+        const subtract = (a, b) => Math.abs(a - b);
+        const multiply = (a, b) => a * b;
+        const result = Solve(2, 3, add);
+        console.log(result);
+
+        //-------------------------------------------------------------//
+
+        const newArr = []
+        function removeNegative(myArr) {
+            myArr.map((num) => {
+                if (num >= 0) {
+                    newArr.push(num)
+                }
+            })
+            return newArr;
+        }
+        const myArr = [4, 1, -20, -7, 5, 9, -6];
+        console.log(removeNegative(myArr));
+
+        // ------------------------------------------------------------------------- //
+
+        function BodyLoad() {
+            function myDisplayer(some) {
+
+                document.getElementById("demo").innerHTML = some;
+
+            }
+
+            function hello() {
+
+                myDisplayer("Hello");
+
+            }
+            function goodBye() {
+
+                myDisplayer("GoodBye");
+
+            }
+            hello();
+            goodBye();
+
+
+        }
+        // -----------------------------------------------------------//
+    </script>
+</head>
+
+<body onload="BodyLoad()">
+
+    <h1>function Sequence</h1>
+    <p>JavaScript functions are executed in the sequence they are called.</p>
+
+    <h3 id="demo"></h3>
+
+    <h3 id="demo1"></h3>
+    <button onclick="showMessage()">show Message</button>
+    <!-- ======================================================== -->
+    <script>
+        function showMessage() {
+            function m1() {
+                document.getElementById('demo1').innerHTML = "Hello Javascript";
+            }
+            function m2() {
+                document.getElementById('demo1').innerHTML = "Welcome to Javascript";
+            }
+            function m3() {
+                document.getElementById('demo1').innerHTML = "Good bye User";
+            }
+            setTimeout(() => {
+                m1()
+            }, 1000);
+            setTimeout(() => {
+                m2()
+            }, 2000);
+            setTimeout(() => {
+                m3()
+            }, 3000);
+        }
+    </script>
+    <!-- ================================================================ -->
+
+</body>
+
+</html>
