@@ -1,0 +1,205 @@
+<!-- <h1>Class in js</h1>
+<script>
+    class Car {
+        constructor(name, price) {
+            this.name = name
+            this.price = price
+        }
+        displayCarInfo() {
+            document.write(`This is [${this.name}] Car <br>`);
+            document.write(`This [${this.name}] Car Price is [${this.price}]`);
+        }
+        totalWithTax(salesTax) {
+            return this.price + (this.price * salesTax);
+        }
+    }
+    const salesTax = 0.2;
+    const Car1 = new Car("VolksWagen", 200.99);
+    Car1.displayCarInfo()
+    const total1 = Car1.totalWithTax(salesTax);
+    console.log('The Total price will be ', total1.toFixed(2));
+</script> -->
+
+
+<h1>Inheritance in class</h1>
+
+<p>Inheritance = allow a new class to inherit properties and methods from existing class(parent->child)</p>
+<p>helps code reusability</p>
+
+<!-- <script>
+    class Car {
+        latest = true;
+        speed() {
+            console.log(`This Car runs at ${this.getSpeed()} km/hr`);
+        }
+        price() {
+            console.log(`This Car price is ${this.getPrice()}`);
+        }
+    }
+    class Tata extends Car {
+        getSpeed() {
+            return 200;
+        }
+        getPrice() {
+            return 10;
+        }
+    }
+    class Nissan extends Car {
+        getSpeed() {
+            return 300;
+        }
+        getPrice() {
+            return 20;
+        }
+    }
+    class Ferrari extends Car {
+        latest = false;
+        getSpeed() {
+            return 400;
+        }
+        getPrice() {
+            return 100;
+        }
+    }
+
+    const tata = new Tata();
+    console.log(tata.latest); // This will log: true
+    tata.speed();  // This will log: "This Car runs at 200 km/hr"
+    tata.price();  // This will log: "This Car price is 10"
+</script> -->
+
+<script>
+    class Animal {
+        alive = true;
+        eat() {
+            console.log(`This ${this.name} is Eating`);
+
+        }
+        sleep() {
+            console.log(`This ${this.name} is sleeping`);
+        }
+    }
+    class Rabbit extends Animal {
+        name = "Rabbit"
+    }
+    class Cat extends Animal {
+        name = "Cat"
+    }
+
+    const rabbit = new Rabbit();
+    console.log(rabbit.alive);
+    rabbit.eat();
+    rabbit.sleep();
+</script>
+
+
+<!-- <script>
+    class Car {
+        latest = true;
+        speed = 0;
+        price = 0;
+        displaySpeed() {
+            console.log(`This Car runs at ${this.speed} km/hr`);
+        }
+        displayPrice() {
+            console.log(`This Car price is ${this.price}`);
+        }
+    }
+    class Tata extends Car {
+        speed = 200;
+        price = 10;
+    }
+    class Nissan extends Car {
+        speed = 300;
+        price = 20;
+    }
+    class Ferrari extends Car {
+        latest = false;
+        speed = 400;
+        price = 100;
+    }
+
+    const tata = new Tata();
+    console.log(tata.latest); // true
+    tata.displaySpeed(); // This Car runs at 200 km/hr
+    tata.displayPrice(); // This Car price is 10
+</script> -->
+
+
+<h1>Inheritance in class</h1>
+
+<!-- <script>
+    class School {
+        constructor(schoolName) {
+            this.schoolName = schoolName;
+        }
+        SchoolInfo() {
+            console.log(`This is ${this.schoolName}`);
+        }
+    }
+    class Student extends School {
+        constructor(studentName) {
+            this.studentName = studentName
+        }
+        StudentInfo() {
+            console.log(`${this.studentName} study in ${this.schoolName}`);
+        }
+    }
+    const school = new School("Abc School")
+    const student = new Student("Riyan")
+    student.StudentInfo();
+</script> -->
+
+
+<script>
+    class Parent {
+        constructor(pName) {
+            this.pName = pName;
+        }
+        parentInfo() {
+            console.log(`this is parent info- ${this.pName}`);
+        }
+    }
+    class Child extends Parent {
+        constructor(pName, cName) {
+            super(pName);
+            this.cName = cName;
+        }
+        childInfo() {
+            console.log(`this is Child Info- ${this.cName}`)
+        }
+        show() {
+            return this.parentInfo()
+        }
+    }
+    const parent = new Parent("john doe");
+    const child = new Child("John Doe", "Jimmy Doe");
+    child.show();
+    child.childInfo();
+</script>
+
+<h1>Static Class</h1>
+
+<script>
+    class Car {
+        constructor(name) {
+            this.name = name;
+        }
+        static hello() {
+            return "Hello!!";
+        }
+    }
+
+    const myCar = new Car("Ford");
+
+    //You can call 'hello()' on the Car Class:
+    console.log(Car.hello());
+
+
+    // But NOT on  a Car Object:
+    console.log(myCar.hello());
+    // uncaught TypeError: myCar.hello is not a function
+    // this will raise an error.
+</script>
+
+<h1 id="demo"></h1>
