@@ -1,0 +1,38 @@
+<h1>filter and find</h1>
+
+<h3>filter()</h3>
+<script>
+    const myArr = ["apple", "banana", "orange", "banana", "banana", "apple", "cherry", "mango", "pineApple", "banana"]
+    let banana = myArr.filter(fruit => fruit === "banana");
+    console.log(banana);
+</script>
+
+<h3>find()</h3>
+
+<script>
+    const myArr1 = ["apple", "banana", "orange", "banana", "banana", "apple", "cherry", "mango", "pineApple", "banana"]
+    let apple = myArr1.find(fruit => fruit === "apple");
+    console.log(apple);
+</script>
+
+<script>
+    var fruit = ["apple", "banana", "orange", "banana", "banana", "apple", "cherry", "mango", "pineApple", "banana"]
+    let iterator = fruit[Symbol.iterator]();
+    console.log(iterator.next());
+    console.log(iterator.next());
+</script>
+
+<script>
+    var number = [1, 23, 43];
+    // change the original array
+    // insert from last
+    number.splice(number.length, 0, 56, 77, 990, 12);
+    console.log(number)
+</script>
+
+<script>
+    var number1 = [1, 23, 43, 99, 0, 23, 45];
+    // does not change the original array
+    var slicedArr = number1.slice(1, 3)
+    console.log(slicedArr)
+</script>
