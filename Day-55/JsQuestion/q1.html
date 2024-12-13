@@ -1,0 +1,213 @@
+interviewer: what is Javascript?
+ans: javasript is high level, interpreted programming language. it is primarly used to create web application,
+it is a versatile language that used to build client-side and server-side application.
+on client-side: javascript is used to create dynamic content of th eappplication.
+while on the otherside-
+on serer-sde:javascript is used to on server using node js .node js allow js to run on server
+with framework like express simplified the process to handle httpRequest and build API's.
+
+interviewer: {
+const myfn=()=>{
+console.log("hi")
+}
+}
+myfn();
+
+what will be the result
+
+<script>
+    // for both arrow and expression 
+    {
+        const myfn = function () {
+            console.log("hi")
+        }
+    }
+    // on using function expression it give error
+    // while using function decralation
+
+    // myfn(); 
+
+    //Reference Error: myfn is not defined
+
+    {
+        function myfn1() {
+            console.log("hi")
+        }
+    }
+    myfn1();
+</script>
+
+<h1>Function Question 2</h1>
+
+<!-- <script>
+    // a and b are already parameters of the function. //
+    function add(a, b) {
+        "use strict";
+        // In strict mode, you cannot redeclare parameters as local variables with the same name //
+        let a = 100, b = 200;
+        return arguments[0] + arguments[1];
+        // The return statement will stop the function execution immediately, //
+        // so the console.log(a + b); will not execute //
+        console.log(a + b);
+    }
+
+    console.log(add(10, 20));
+</script> -->
+
+<h5>on using var gives - 30 on result</h5>
+
+<script>
+    // a and b are already parameters of the function. //
+    "use strict";
+    function add(a, b) {
+        // In strict mode, you cannot redeclare parameters as local variables with the same name //
+        var a = 100, b = 200;
+        return arguments[0] + arguments[1];
+        // The return statement will stop the function execution immediately, //
+        // so the console.log(a + b); will not execute //
+        console.log(a + b);
+    }
+
+    console.log(add(10, 20));
+</script>
+
+<h1>window scope</h1>
+
+<script>
+    var abc = 10;
+    let bcd = 20;
+
+    console.log(window.abc, window.bcd);
+
+    // 10 undefined 
+</script>
+
+<h3>Class type</h3>
+
+<script>
+    class Car {
+        constructor(name) {
+            name: 'Nissan'
+        }
+        myfun() {
+            console.log(`this is ${this.name}`);
+        }
+    }
+    console.log(typeof (Car));
+</script>
+
+<h3>Map method</h3>
+
+<script>
+    const arr = [1, 2, 3, 4];
+    const MultiplyByTwo = arr.map((value) => { return value * 2 });
+    console.log(MultiplyByTwo);
+</script>
+<h3>check map return new arr or not</h3>
+<script>
+    const myArr = [1, 2, 3, 4];
+    const new1 = myArr.map((val) => val * 3);
+    console.log(myArr);
+    console.log(new1);
+</script>
+
+<h3>Check the output</h3>
+
+<script>
+    const x = [1, 2, 3, 4];
+    const y = x.map((val) => {
+        return val > 1;
+    })
+    console.log(y)
+</script>
+
+<h3>reduce Function</h3>
+
+<script>
+    const numbers = [1, 2, 3, 4];
+    const sum = numbers.reduce((sum, num) => {
+        return sum + num
+    });
+    console.log(sum)
+</script>
+
+<h3>char counter</h3>
+
+<!-- <script>
+    var word = prompt("Enter the name: ");
+    var wordArr = word.split("");
+    var charCount = wordArr.reduce((acc, curr) => {
+        if (acc[curr]) {
+            acc[curr] += 1;
+        } else {
+            acc[curr] = 1;
+        }
+        return acc;
+    }, {});
+
+    console.log(charCount)
+</script> -->
+
+
+<h2>equality and strictly equal</h2>
+
+<script>
+    // loosely equal because they are both used to represent "no value" or "empty value"
+    console.log(null == undefined);  // true
+    //  It requires both the value and the type to be the same.
+    console.log(null === undefined);  // false
+    console.log(NaN == NaN); // false
+    console.log(NaN === NaN); // false
+</script>
+
+
+<h3>Merge Array</h3>
+
+<script>
+    const arr1 = [1, 2, 3, 4];
+    const arr2 = [5, 6, 7, 'b', 'x'];
+    const arr3 = [];
+    // copare array length
+    const checkMaxLength = Math.max(arr1.length, arr2.length);
+    for (i = 0; i < checkMaxLength; i++) {
+        if (i < arr1.length) {
+            arr3.push(arr1[i]);
+        }
+        if (i < arr2.length) {
+            arr3.push(arr2[i]);
+        }
+    }
+
+    console.log(arr3);
+
+</script>
+
+<h1>remove value from Array</h1>
+
+<script>
+    var myArray = [1, 2, 3, 's', 'd', 'd', 'e', 'e', 3, 2, 2, 1, 1, 4];
+    var noRepeat = []
+    for (i = 0; i < myArray.length; i++) {
+        if (noRepeat.includes(myArray[i])) {
+            noRepeat.push(myArray[i])
+        }
+    }
+    console.log(noRepeat)
+
+</script>
+
+<h1>Remove selected number from Array</h1>
+
+<!-- <script>
+    var val1 = prompt('Enter the value : ');
+    var val2 = prompt('Enter the value : ');
+
+    val1 = isNaN(val1) ? val1 : Number(val1);
+    val2 = isNaN(val2) ? val2 : Number(val2);
+
+    var myArray = ['a', 'b', 'b', 1, 2, 3, 2, 2, 2];
+
+    var newArray = myArray.filter(item => item !== val1 && item !== val2);
+
+    console.log(newArray)
+</script> -->

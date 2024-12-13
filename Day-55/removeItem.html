@@ -1,0 +1,11 @@
+<h1>remove Items</h1>
+
+<script>
+    function removeItem(myItems) {
+        const newItems = myItems.filter(item => item !== 'item1' && item !== 'item3');
+        console.log(newItems)
+
+    }
+    myItems = ["item1", "item2", "item3", "item4"];
+    removeItem(myItems);
+</script>
