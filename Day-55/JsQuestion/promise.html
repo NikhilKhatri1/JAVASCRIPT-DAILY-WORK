@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Example</title>
+</head>
+
+<body>
+
+    <h1>Promise in JS</h1>
+    <p>Promise is a special object in JS used to represent the eventual completion or rejection of an asynchronous
+        operation.</p>
+
+    <button onclick="showResult(true)">Click Me</button>
+    <button onclick="showResult(false)">Don't Click Me</button>
+
+    <script>
+        function showResult(isClicked) {
+            const greet = new Promise((resolve, reject) => {
+                if (isClicked) {
+                    resolve("Button is clicked!");
+                } else {
+                    reject("Button is not clicked!");
+                }
+            });
+
+            greet
+                .then((message) => {
+                    alert(message); // Show success message
+                })
+                .catch((error) => {
+                    alert(error); // Show error message
+                });
+        }
+    </script>
+
+</body>
+
+</html>

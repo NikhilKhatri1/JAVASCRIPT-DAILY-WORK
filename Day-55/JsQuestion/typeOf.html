@@ -1,0 +1,31 @@
+<h1>Type of function,array,class</h1>
+
+<script>
+    class Car {
+        constructor(name, model) {
+            this.name = name
+            this.model = model
+        }
+        info() {
+            console.log(`Car Name : ${this.name} and Model : ${this.model}`)
+        }
+    }
+    const car = new Car('Nissan', 2024);
+    car.info();
+    console.log(typeof (car));      // variable  // object
+    console.log(typeof (Car));   // Class Car  // function
+</script>
+
+<script>
+    function name() {
+        console.log('this is name')
+    }
+    var namInfo = name();
+    console.log(typeof (name))// function
+    console.log(typeof (namInfo))// undefined
+</script>
+
+<script>
+    var arr = [1, 2, 3, 4];
+    console.log(typeof (arr));
+</script>
