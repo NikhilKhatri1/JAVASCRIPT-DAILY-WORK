@@ -1,0 +1,25 @@
+<h1>Hoisting</h1>
+
+<script>
+    console.log(age);   // undefined
+    var age = 20;
+    console.log(age);   // 20
+</script>
+
+<p>Interview Answer
+
+    If an interviewer asks about hoisting, a good explanation might be:
+
+    "Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their containing
+    scope during the compile phase. This means you can reference variables or call functions before they appear in the
+    code.
+    However, only the declarations are hoisted, not the initializations or assignments. For variables declared with var,
+    this can lead to unexpected results, like accessing a variable before it’s assigned a value, which will return
+    undefined. With function declarations, the entire function is hoisted, so you can call it before it’s defined in the
+    code."</p>
+
+<script>
+    age1 = 100;
+    console.log(age1);  // reference error: let and const are not hoisted
+    let age1 = 20;
+</script>

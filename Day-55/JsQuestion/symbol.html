@@ -1,0 +1,39 @@
+<h2>Symbol in js</h2>
+
+<script>
+    // Create two unique symbols
+        const uniqueKey1 = Symbol('id');
+        const uniqueKey2 = Symbol('id');
+
+        // Create an object with symbol keys
+        const person = {
+            name: "John",
+            age: 30,
+            [uniqueKey1]: "abc123",  // Use a symbol as a key
+            [uniqueKey2]: "xyz789"   // Another symbol key
+        };
+
+        // Accessing symbol properties
+        console.log(person.name);  // John
+        console.log(person.age);   // 30
+        console.log(person[uniqueKey1]); // abc123
+        console.log(person[uniqueKey2]); // xyz789
+
+        // Showing that the symbols are unique
+        console.log(uniqueKey1 === uniqueKey2);  // false (symbols are unique)
+
+        // Symbols do not show up in Object.keys() or for...in loops
+        console.log(Object.keys(person));  // [ 'name', 'age' ] (symbol keys are not included)
+        for (let key in person) {
+            console.log(key);  // name, age (again, no symbol keys)
+        }
+
+        // But you can get symbol keys using Object.getOwnPropertySymbols()
+        const symbolKeys = Object.getOwnPropertySymbols(person);
+        console.log(symbolKeys);  // [ Symbol(id), Symbol(id) ]
+
+        // Accessing symbol values
+        console.log(person[symbolKeys[0]]);  // abc123
+        console.log(person[symbolKeys[1]]);  // xyz789
+
+</script>

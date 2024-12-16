@@ -1,0 +1,93 @@
+<h1>Write a program to reverse a string without using the reverse() method.</h1>
+
+<script>
+    var mystr = 'name is john';
+    var newStr = '';
+    for (i = mystr.length - 1; i >= 0; i--) {
+        // when you dont require space
+
+        // if (mystr[i] !== " ") {
+        //     newStr += mystr[i];
+        // }
+        // when require space same as original string..
+        newStr += mystr[i];
+    }
+    console.log(newStr);
+</script>
+
+<h1>Promise in js</h1>
+
+<!-- <script>
+
+    // Function to simulate a promise with status logging
+    function checkPromiseStatus() {
+        console.log("Promise status: Pending...");
+
+        // Create a promise
+        let myPromise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                let success = true; // Set this to false to simulate a rejection
+
+                if (success) {
+                    resolve("Operation was successful!");
+                } else {
+                    reject("Operation failed!");
+                }
+            }, 2000); // Simulate 2-second delay
+        });
+
+        // Handle promise resolution
+        myPromise
+            .then(result => {
+                console.log("Promise status: Resolved");
+                console.log(result);  // This will print the resolved message
+            })
+            .catch(error => {
+                console.log("Promise status: Rejected");
+                console.log(error);  // This will print the error message
+            })
+            .finally(() => {
+                console.log("Promise status: Finalized");
+                // The `finally` block will always run, regardless of resolve or reject
+            });
+    }
+
+    // Run the function
+    checkPromiseStatus();
+
+
+
+
+</script> -->
+
+<h1>Promise</h1>
+
+<script>
+    function checkMyPromise(success) {
+        console.log("Promise status: Pending...");
+        let myPromise = new Promise((res, rej) => {
+            setTimeout(() => {
+
+                if (success === 'true') {
+                    res('Welcome to Promise in js')
+                } else {
+                    rej('Error in promise')
+                }
+            }, 2000)
+        })
+        myPromise
+            .then((result) => {
+                console.log("Promise status: Resolved");
+                console.log(result)
+            })
+            .catch((error) => {
+                console.log("Promise Status : Reject");
+                console.log(error)
+            })
+            .finally(() => {
+                console.log("Promise is Finished")
+            })
+    }
+    let success = prompt("Enter the success true/false : ")
+    checkMyPromise(success);
+</script>
