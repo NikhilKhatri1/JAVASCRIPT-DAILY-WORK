@@ -1,0 +1,27 @@
+<h2>Question-2</h2>
+
+<p>Given Two array return a third array which is the intersection of both the array , Ex. A1={1, 1, 2, 2, 3} A2={1, 2,
+    2,
+    2, 3, 4} ans: A3={1, 2, 2, 3}, as in A1 1 occur 2 times and in A2 1 occur 1 time so in A3 1 will occur 1 time, same
+    for
+    2 and 3. The interviewer clearly mentioned not to use extra space . The space of third array is not taken into
+    consideration.</p>
+
+
+<script>
+
+    function intersectingArray(arr1, arr2) {
+        var a3 = [];
+        var maxLength = Math.max(a1.length, a2.length);
+        for (i = 0; i < maxLength; i++) {
+            if (a1[i] === a2[i]) {
+                a3.push(a1[i]);
+            }
+        }
+        return a3;
+    }
+    var a1 = [1, 1, 2, 2, 3];
+    var a2 = [1, 2, 2, 2, 3, 4];
+    var result = intersectingArray(a1, a2)
+    console.log(result);
+</script>

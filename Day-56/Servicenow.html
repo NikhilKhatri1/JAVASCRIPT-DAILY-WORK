@@ -1,0 +1,27 @@
+<h1>Majority Element</h1>
+
+<p>Given an array arr. Find the majority element in the array. If no majority exists, return -1. A majority element in
+    an
+    array is an element that appears strictly more than arr.size() / 2 times in the array.</p>
+
+<script>
+    function majorityElement(myArr) {
+        let n = myArr.length;
+        for (var i = 0; i < n; i++) {
+            var count = 0;
+            for (var j = 0; j < n; j++) {
+                if (myArr[i] === myArr[j]) {
+                    count++;
+                }
+            }
+            if (count > n / 2) {
+                return myArr[i];
+            }
+        }
+        return -1;
+
+    }
+    const myArr = [1, 2, 3, 1, 2, 1, 1, 1];
+    const result = majorityElement(myArr);
+    console.log(result);
+</script>

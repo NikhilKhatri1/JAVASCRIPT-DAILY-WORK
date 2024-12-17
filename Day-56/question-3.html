@@ -1,0 +1,41 @@
+<h1>Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the
+decimal value of each fraction on a new line with places after the decimal.</h1>
+
+
+<script>
+    function plusminus(arr) {
+            let pos = 0;
+            let neg = 0;
+            let zero = 0;
+            let n = arr.length;
+
+            // Loop through the array and count positive, negative, and zero numbers
+            for (let i = 0; i < n; i++) {
+                if (arr[i] > 0) {
+                    pos++;
+                } else if (arr[i] < 0) {
+                    neg++;
+                } else {
+                    zero++;
+                }
+            }
+
+            // Calculate and print the ratios, formatted to 6 decimal places
+            console.log((pos / n).toFixed(6));
+            console.log((neg / n).toFixed(6));
+            console.log((zero / n).toFixed(6));
+        }
+
+        // Read input from stdin (Hackerrank automatically handles this)
+        const input = require('fs').readFileSync(0, 'utf-8').split('\n');
+
+        // Get the length of the array (first line)
+        const length = parseInt(input[0]);
+
+        // Get the array elements (second line)
+        const arr = input[1].split(" ").map(Number);
+
+        // Call the function with the array
+        plusminus(arr);
+
+</script>
