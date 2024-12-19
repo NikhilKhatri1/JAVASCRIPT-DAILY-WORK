@@ -8,7 +8,19 @@
     var str = 'string';
     document.write('reverString = ', revStr(str));
 </script>
+<h2>2nd approach</h2>
+<script>
+    // Reverse the string
 
+    function reverse(str) {
+        let reverseStr = str.split("").reverse().join("");
+        console.log(reverseStr);
+
+    }
+
+    let str = "This is Javascript";
+    reverse(str);
+</script>
 
 <h1>String is Palindrome</h1>
 
@@ -22,6 +34,22 @@
     }
     let string = 'man nam';   //'A man a plan a canal Panama'
     document.write(isPalindrome(string));
+</script>
+
+<h2>2nd approach</h2>
+
+<script>
+    function isPalindrome(str10) {
+        let revStr = str10.split("").reverse().join("");
+        if (str10 === revStr) {
+            return true
+        } else {
+            return false
+        }
+    }
+    let str10 = "man nam";
+    document.write(isPalindrome(str10));
+
 </script>
 
 <h1>find the longest word in string</h1>
@@ -74,6 +102,33 @@
     document.write(longestWord(string1));  // Output: ['jhonny']
 
 </script>
+
+<h2>2nd approach</h2>
+<script>
+    // find the longest word in string;
+
+    function longestWord(str) {
+        if (!str || str.length === 0) {
+            return -1;
+        }
+        else if (n === 1) {
+            return str;
+        }
+        let maxWordLength = 0
+        let Word = null;
+        let words = str.split(" ");
+        words.map((word) => {
+            if (word.length > maxWordLength) {
+                maxWordLength = word.length;
+                Word = word
+            }
+        });
+        console.log(Word)
+    }
+    const str = "";
+    longestWord(str);
+</script>
+
 
 <h1>Find the factorial of a number</h1>
 

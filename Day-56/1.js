@@ -1,3 +1,5 @@
-age = 100;
-console.log(age);
-let age = 300;
+// console.log(typeof NaN);    // Number
+
+// console.log(1 < 2 < 3);   // false
+
+// console.log(3 > 2 > 1);    //true
