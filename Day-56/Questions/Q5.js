@@ -58,3 +58,6 @@ function first(a) {
 
 const result = first(3)(2);
 console.log(result);
+
+
+

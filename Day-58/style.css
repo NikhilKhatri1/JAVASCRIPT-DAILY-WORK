@@ -1,0 +1,29 @@
+html {
+    font-family: sans-serif;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 5px;
+}
+
+div {
+    border: 1px solid red;
+    width: 500px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+form {
+    border: 1px solid red;
+    height: 100px;
+    padding: 10px;
+}
+
+button {
+    border: 1px solid red;
+    display: block;
+    width: 100px;
+    height: 30px;
+}
