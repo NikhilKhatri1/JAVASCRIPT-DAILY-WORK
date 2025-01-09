@@ -47,7 +47,7 @@ console.log(deepCopy);
 console.log(deepCopy);
 
 
-// Currying in javascrip
+// Currying in javascript
 
 function first(a) {
     return function second(b) {
