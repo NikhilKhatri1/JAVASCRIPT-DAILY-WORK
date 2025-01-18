@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    font-family: sans-serif;
+}
+
+
+.box1 {
+    height: 200px;
+    width: 200px;
+    background-color: orangered;
+}
+
+.box2 {
+    height: 200px;
+    width: 200px;
+    background-color: skyblue;
+}

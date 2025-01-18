@@ -1,0 +1,44 @@
+<h1>CallBack</h1>
+
+<script>
+    function greet(name, cb) {
+        console.log('Hello ' + name);
+        cb();
+    }
+    function greeting() {
+        console.log('Welcome to Node js')
+    }
+
+    greet('Alice', greeting);
+</script>
+
+<h1>Callback Hell</h1>
+
+<script>
+    function first(second) {
+        setTimeout(() => {
+            console.log('Going to print Second')
+            second()
+        }, 1000)
+    }
+
+    function second(third) {
+        setTimeout(() => {
+            console.log('Going to print Third')
+            third()
+        }, 1000)
+    }
+
+    function third() {
+        setTimeout(() => {
+            console.log('Final Message')
+        }, 1000)
+    }
+
+    // callback hell
+    first(() => {
+        second(() => {
+            third()
+        })
+    })
+</script>

@@ -1,0 +1,93 @@
+<h1>Promise</h1>
+
+
+<script>
+    let myPromise = () => {
+        return new Promise((res, rej) => {
+            let success = false;
+            if (success) {
+                res('Promise Completed')
+            } else {
+                rej('Promise Failed')
+            }
+        })
+    }
+    myPromise()
+        .then((data) => console.log(data))
+        .catch((error) => console.log(error))
+
+
+</script>
+<h1>Async/await</h1>
+<script>
+
+    function fetchData() {
+        return new Promise((res, rej) => {
+            let success = true;
+            if (success) {
+                res('Promise Success')
+            } else {
+                rej('Promise Failed')
+            }
+        })
+    }
+
+    async function getData() {
+        console.log('Fetching Data.....');
+        const result = await fetchData();
+        console.log(result)
+        console.log('Data Process Completed')
+    }
+
+
+    getData();
+</script>
+
+<h1>Callback</h1>
+<script>
+
+    function greetUser(name, greeting) {
+        console.log(`Hello, ${name}`);
+        greeting();
+    }
+
+    function greeting() {
+        console.log("Greeting finished.....")
+    }
+
+    greetUser('alice', greeting)
+</script>
+
+
+<script>
+    function doSomething(callback) {
+            // Simulate an async task
+            setTimeout(() => {
+                const result1 = "Task 1 Completed";
+                callback(null, result1); // No error, passing result1
+            }, 1000);
+        }
+
+        function doSomethingElse(result1, callback) {
+            // Simulate another async task that depends on result1
+            setTimeout(() => {
+                const result2 = `Task 2 completed after: ${result1}`;
+                callback(null, result2); // No error, passing result2
+            }, 1000);
+        }
+
+        doSomething(function (err, result1) {
+            if (err) {
+                console.log(err);
+            } else {
+                doSomethingElse(result1, function (err, result2) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("All tasks completed:", result2);
+                    }
+                });
+            }
+        });
+
+</script>
