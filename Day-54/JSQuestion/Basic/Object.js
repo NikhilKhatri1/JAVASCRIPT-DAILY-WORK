@@ -38,4 +38,37 @@ myObj1.hobby = "Cricket"
 console.log(myObj1)
 
 // iterate object using Object.entries
-Object.entries(myObj1).map(prop=>console.log(prop))
+Object.entries(myObj1).map(prop => console.log(prop))
+
+
+
+// this //
+
+let person1 = {
+    name: "James",
+    greet() {
+        console.log(`Hello, ${this.name}`);
+    }
+}
+
+person1.greet(); // Hello, James
+
+let person = {
+    name: "Ron",
+    greet: () => {
+        console.log(`Hello, ${this.name}`)
+    }
+
+}
+
+person.greet();   // Hello, undefined
+
+
+// === splice === ///
+
+
+let val = ["a", "b", "c"];
+
+val.splice(3, 0, "d");
+
+console.log(val);
