@@ -1,0 +1,35 @@
+< !DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>innerText vs textContent Example</title>
+        <style>
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="example">
+            <p>This is visible text.</p>
+            <p class="hidden">This is hidden text.</p>
+            <p>This is more visible text.</p>
+        </div>
+
+        <button id="showText">Show Text</button>
+
+        <script>
+            const exampleDiv = document.getElementById('example');
+            const button = document.getElementById('showText');
+
+            button.addEventListener('click', function () {
+                alert("innerText: " + exampleDiv.innerText);
+                alert("textContent: " + exampleDiv.textContent);
+            });
+        </script>
+    </body>
+
+    </html>

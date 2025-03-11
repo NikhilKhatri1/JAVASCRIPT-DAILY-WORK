@@ -9,7 +9,7 @@ function Display() {
         // If content is already displayed, hide it
         Heading.textContent = "";
         Para.textContent = "";
-        list.innerHTML = "";  // Remove the list
+        list.remove();  // Remove the list
     } else {
         // Display the content
         Heading.textContent = "Hello World!";
