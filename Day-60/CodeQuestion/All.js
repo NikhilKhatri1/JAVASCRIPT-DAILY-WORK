@@ -1,3 +1,4 @@
+/*
 Here are 20 JavaScript coding questions, ranging from beginner to intermediate levels:
 1. Reverse a String
 
@@ -198,3 +199,5 @@ function average(arr) {
 }
 
 Feel free to ask if you'd like to explore solutions or explanations for any of these in more detail!
+
+*/

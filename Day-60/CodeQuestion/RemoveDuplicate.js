@@ -6,15 +6,14 @@ Write a function that removes duplicate values from an array.
 
 */
 
-function RemoveDuplicate(arr) {
-    let newArr = [];
+function removeDuplicate(arr) {
+    let noDuplicate = [];
     for (let i = 0; i < arr.length; i++) {
-        // Only push the element if it's not already in newArr
-        if (!newArr.includes(arr[i])) {
-            newArr.push(arr[i]);
+        if (!noDuplicate.includes(arr[i])) {
+            noDuplicate.push(arr[i]);
         }
     }
-    console.log(newArr);
+    console.log(noDuplicate);
 }
 
-RemoveDuplicate([1, 2, 3, 1, 2]); // Output: [1, 2, 3]
+removeDuplicate([1, 2, 2, 3, 3, 5]);    // [ 1, 2, 3, 5 ]
